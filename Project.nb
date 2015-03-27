@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     45126,        992]
-NotebookOptionsPosition[     44400,        966]
-NotebookOutlinePosition[     44746,        981]
-CellTagsIndexPosition[     44703,        978]
+NotebookDataLength[     44117,        970]
+NotebookOptionsPosition[     43443,        945]
+NotebookOutlinePosition[     43779,        960]
+CellTagsIndexPosition[     43736,        957]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -58,14 +58,16 @@ Cell[BoxData[{
    "Number", " ", "of", " ", "points", " ", "to", " ", "use", " ", "for", " ",
      "path", " ", "drawing"}], "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"solid", " ", "=", " ", "0"}], ";", " ", 
+  RowBox[{
+   RowBox[{"solid", " ", "=", " ", "0"}], ";"}], " ", 
   RowBox[{"(*", 
    RowBox[{
    "The", " ", "ability", " ", "to", " ", "sort", " ", "by", " ", "state", 
     " ", "later", " ", "could", " ", "help", " ", "make", " ", "collision", 
     " ", 
-    RowBox[{"detection", "/", "resolution"}], " ", "better"}], "*)"}], 
-  "\[IndentingNewLine]", 
+    RowBox[{"detection", "/", "resolution"}], " ", "better"}], 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"gaseous", " ", "=", " ", "1"}], ";"}]}], "Input",
  CellChangeTimes->{{3.636391730204666*^9, 3.636391737892166*^9}, 
    3.636392253199103*^9, 3.63646840782017*^9, 3.6364857230116043`*^9, {
@@ -91,6 +93,7 @@ Cell[BoxData[
       RowBox[{
        RowBox[{"4", "/", "3"}], "Pi", " ", 
        RowBox[{"rad", "^", "3"}], "*", "den"}]}], ",", "\[IndentingNewLine]", 
+     
      RowBox[{"\"\<col\>\"", "\[Rule]", 
       RowBox[{"If", "[", 
        RowBox[{
@@ -317,39 +320,6 @@ oo0EFlcwSLx2NN62E0y/M8m0ZgLS0dP3gumQwMu17EB6+7YrzSBaQMWkA0Qb
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"makeFrames", "[", 
-   RowBox[{"circs_", ",", "count_", ",", 
-    RowBox[{"dt_:", ".1"}]}], "]"}], ":=", 
-  RowBox[{"NestList", "[", " ", 
-   RowBox[{"(*", 
-    RowBox[{
-    "Precalculating", " ", "frames", " ", "is", " ", "a", " ", "bad", " ", 
-     "idea", " ", "because", " ", "you", " ", 
-     RowBox[{"won", "'"}], "t", " ", "know", " ", "how", " ", "many", " ", 
-     "to", " ", "calculate", " ", "and", " ", "it", " ", "will", " ", "be", 
-     " ", "an", " ", "initial", " ", "slow", " ", "loading", " ", "time"}], 
-    "*)"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"moveCirc", "[", 
-        RowBox[{"c", ",", "#", ",", "dt"}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"c", ",", "#"}], "}"}]}], "]"}], "&"}], ",", 
-    "\[IndentingNewLine]", "circs", ",", "\[IndentingNewLine]", 
-    RowBox[{"count", "-", "1"}]}], "]"}]}]], "Input",
- CellChangeTimes->{{3.636386499560011*^9, 3.63638651077151*^9}, {
-   3.636386545981552*^9, 3.636386548732108*^9}, {3.636386805443246*^9, 
-   3.6363868964311666`*^9}, 3.636386929602602*^9, {3.636387186059326*^9, 
-   3.636387213726071*^9}, {3.636389863846306*^9, 3.6363898718138957`*^9}, {
-   3.6363904571690736`*^9, 3.636390462726574*^9}, {3.6363905595365734`*^9, 
-   3.6363906065440736`*^9}, {3.6364602955483418`*^9, 3.636460295551158*^9}, {
-   3.6364606660495453`*^9, 3.636460669909124*^9}, {3.6364874021623435`*^9, 
-   3.6364874384393167`*^9}}],
-
-Cell[BoxData[
- RowBox[{
   RowBox[{"SimulateSpaceToTheBestOfYourAbilites", "[", "]"}], ":=", 
   "\[IndentingNewLine]", 
   RowBox[{"DynamicModule", "[", "\[IndentingNewLine]", 
@@ -495,25 +465,30 @@ Cell[BoxData[
      "\[IndentingNewLine]", "\[IndentingNewLine]", 
      RowBox[{"RunScheduledTask", "[", "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{
-        RowBox[{"If", "[", 
-         RowBox[{"running", ",", "\[IndentingNewLine]", 
-          RowBox[{
-           RowBox[{"frameTime", "=", 
-            RowBox[{
-             RowBox[{"Timing", "[", 
-              RowBox[{
-               RowBox[{"circs", "=", 
+       RowBox[{"If", "[", 
+        RowBox[{"running", ",", "\[IndentingNewLine]", 
+         RowBox[{"frameTime", "=", 
+          RowBox[{"Timing", "@", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"circs", "=", 
+               RowBox[{
                 RowBox[{
-                 RowBox[{
-                  RowBox[{"moveCirc", "[", 
-                   RowBox[{"#", ",", "circs", ",", "dt", ",", "ds"}], "]"}], 
-                  "&"}], "/@", "circs"}]}], ";", "\[IndentingNewLine]", 
-               RowBox[{"time", "+=", "dt"}], ";"}], "]"}], "[", 
-             RowBox[{"[", "1", "]"}], "]"}]}], ";"}]}], "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"frame", "=", 
-         RowBox[{"drawCircs", "@", "circs"}]}], ";"}], ",", 
+                 RowBox[{"moveCirc", "[", 
+                  RowBox[{"#", ",", "circs", ",", "dt", ",", "ds"}], "]"}], 
+                 "&"}], "/@", "circs"}]}], ";", "\[IndentingNewLine]", 
+              RowBox[{"time", "+=", "dt"}], ";", 
+              RowBox[{"frame", "=", 
+               RowBox[{"drawCircs", "@", "circs"}]}]}], ")"}], 
+            "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"frameTime", "=", 
+          RowBox[{"Timing", "@", 
+           RowBox[{"(", 
+            RowBox[{"frame", "=", 
+             RowBox[{"drawCircs", "@", "circs"}]}], ")"}]}]}]}], "]"}], ",", 
+       "\[IndentingNewLine]", 
        RowBox[{"Max", "[", 
         RowBox[{
          RowBox[{"dt", "-", "frameTime"}], ",", "0"}], "]"}]}], "]"}]}]}], 
@@ -573,7 +548,8 @@ Cell[BoxData[
    3.6364871664298787`*^9, 3.6364871823425474`*^9}, {3.6364873047788343`*^9, 
    3.6364873179714727`*^9}, {3.6364874793047433`*^9, 
    3.6364875144371147`*^9}, {3.636488017082884*^9, 3.636488022913949*^9}, {
-   3.636488112578007*^9, 3.636488129305204*^9}}],
+   3.636488112578007*^9, 3.636488129305204*^9}, {3.63648873198667*^9, 
+   3.636488784676177*^9}, {3.636488833339417*^9, 3.6364888527993593`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -587,8 +563,8 @@ Cell[BoxData[
  DynamicBox[ToBoxes[
    Column[{
      Row[{
-       Show[$CellContext`frame$338, ImageSize -> 
-        Large], $CellContext`menu$338}, Frame -> True], 
+       Show[$CellContext`frame$3678, ImageSize -> 
+        Large], $CellContext`menu$3678}, Frame -> True], 
      TableForm[
       Prepend[
        SetPrecision[
@@ -600,16 +576,16 @@ Cell[BoxData[
           #["col"], 
           #["ste"], 
           Length[
-           #["his"]]}& , $CellContext`circs$338], 3], {
+           #["his"]]}& , $CellContext`circs$3678], 3], {
        "radius", "position", "velocity", "mass", "color", "state", 
         "Length of History"}]], 
      StringJoin["Time: ", 
-      ToString[$CellContext`time$338]]}], StandardForm],
-  ImageSizeCache->{702., {305., 312.}}]], "Print",
+      ToString[$CellContext`time$3678]]}], StandardForm],
+  ImageSizeCache->{707., {334.5, 339.5}}]], "Print",
  CellChangeTimes->{
   3.636486423953066*^9, 3.636487121171867*^9, {3.6364873204589996`*^9, 
    3.6364873491967993`*^9}, 3.6364880254019747`*^9, 3.636488132230239*^9, 
-   3.6364881626386104`*^9}],
+   3.6364881626386104`*^9, 3.636488613150909*^9, 3.636488865066264*^9}],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`frame$$ = 
@@ -761,7 +737,7 @@ dEAPPwB9A46P
              RowBox[{
               TagBox["\<\"Unique ID: \"\>",
                "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-              TagBox["4",
+              TagBox["5",
                "SummaryItem"]}]},
             {
              RowBox[{
@@ -776,6 +752,7 @@ dEAPPwB9A46P
             ShowStringCharacters -> False, NumberMarks -> False, 
              PrintPrecision -> 3, ShowSyntaxStyles -> False},
            GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+           
            
            GridBoxItemSize->{
             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
@@ -900,7 +877,7 @@ dEAPPwB9A46P
              RowBox[{
               TagBox["\<\"Unique ID: \"\>",
                "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-              TagBox["4",
+              TagBox["5",
                "SummaryItem"]}]},
             {
              RowBox[{
@@ -930,6 +907,7 @@ dEAPPwB9A46P
              PrintPrecision -> 3, ShowSyntaxStyles -> False},
            GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
            
+           
            GridBoxItemSize->{
             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
            GridBoxSpacings->{"Columns" -> {{2}}, "Rows" -> {{Automatic}}}]}
@@ -943,15 +921,16 @@ dEAPPwB9A46P
        ImageSize->Automatic],
       BaselinePosition->Baseline],
      DynamicModuleValues:>{}], "]"}],
-   ScheduledTaskObject[4, 
-    HoldForm[If[$CellContext`running$$, $CellContext`frameTime$$ = Part[
-          
-          Timing[$CellContext`circs$$ = 
-            Map[$CellContext`moveCirc[#, $CellContext`circs$$, \
+   ScheduledTaskObject[5, 
+    HoldForm[
+     If[$CellContext`running$$, $CellContext`frameTime$$ = Timing[
+        Part[$CellContext`circs$$ = 
+          Map[$CellContext`moveCirc[#, $CellContext`circs$$, \
 $CellContext`dt$$, $CellContext`ds$$]& , $CellContext`circs$$]; 
-           AddTo[$CellContext`time$$, $CellContext`dt$$]; Null], 1]; 
-       Null]; $CellContext`frame$$ = \
-$CellContext`drawCircs[$CellContext`circs$$]; Null], {0.005, 
+         AddTo[$CellContext`time$$, $CellContext`dt$$]; $CellContext`frame$$ = \
+$CellContext`drawCircs[$CellContext`circs$$], 1]], $CellContext`frameTime$$ = 
+      Timing[$CellContext`frame$$ = \
+$CellContext`drawCircs[$CellContext`circs$$]]]], {0.005, 
      DirectedInfinity[1]}, Automatic, True, "AutoRemove" -> False, 
     "EpilogFunction" :> Null, "TaskGroup" -> "Global`"],
    Editable->False,
@@ -961,12 +940,12 @@ $CellContext`drawCircs[$CellContext`circs$$]; Null], {0.005,
  CellChangeTimes->{
   3.636486423981041*^9, 3.636487121201867*^9, {3.636487320479*^9, 
    3.6364873492468*^9}, 3.636488025421975*^9, 3.6364881322502394`*^9, 
-   3.6364881626986113`*^9}]
+   3.6364881626986113`*^9, 3.6364886131817617`*^9, 3.636488865081462*^9}]
 }, Open  ]]
 },
-WindowSize->{1366, 686},
-WindowMargins->{{-8, Automatic}, {Automatic, -8}},
-FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
+WindowSize->{1366, 715},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.0 for Linux x86 (64-bit) (December 4, 2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -980,19 +959,18 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 342, 8, 87, "Text"],
-Cell[903, 30, 1699, 43, 152, "Input"],
-Cell[2605, 75, 1781, 36, 212, "Input"],
-Cell[4389, 113, 1115, 26, 92, "Input"],
-Cell[5507, 141, 3814, 85, 232, "Input"],
-Cell[9324, 228, 1199, 26, 152, "Input"],
-Cell[10526, 256, 2255, 59, 192, "Input"],
-Cell[12784, 317, 1499, 31, 112, "Input"],
-Cell[14286, 350, 11218, 225, 532, "Input"],
+Cell[558, 20, 342, 8, 89, "Text"],
+Cell[903, 30, 1726, 45, 165, "Input"],
+Cell[2632, 77, 1787, 37, 231, "Input"],
+Cell[4422, 116, 1115, 26, 99, "Input"],
+Cell[5540, 144, 3814, 85, 253, "Input"],
+Cell[9357, 231, 1199, 26, 165, "Input"],
+Cell[10559, 259, 2255, 59, 209, "Input"],
+Cell[12817, 320, 11534, 231, 649, "Input"],
 Cell[CellGroupData[{
-Cell[25529, 579, 298, 4, 31, "Input"],
-Cell[25830, 585, 861, 26, 627, "Print"],
-Cell[26694, 613, 17690, 350, 75, "Output"]
+Cell[24376, 555, 298, 4, 32, "Input"],
+Cell[24677, 561, 911, 26, 684, "Print"],
+Cell[25591, 589, 17836, 353, 69, "Output"]
 }, Open  ]]
 }
 ]
