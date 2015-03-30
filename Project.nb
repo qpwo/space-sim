@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     75322,       1646]
-NotebookOptionsPosition[     74279,       1611]
-NotebookOutlinePosition[     74615,       1626]
-CellTagsIndexPosition[     74572,       1623]
+NotebookDataLength[     77618,       1719]
+NotebookOptionsPosition[     76194,       1671]
+NotebookOutlinePosition[     76530,       1686]
+CellTagsIndexPosition[     76487,       1683]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -608,13 +608,13 @@ Cell[BoxData[
             {GrayLevel[0], RectangleBox[{0, 0}]}, 
             {GrayLevel[0], RectangleBox[{1, -1}]}, 
             {RGBColor[
-             0.7423463231116907, 0.052427153428276085`, 0.9770001604914882], 
+             0.3685443338272114, 0.6898396516091916, 0.06217434012615741], 
              RectangleBox[{0, -1}, {2, 1}]}},
            AspectRatio->1,
            Frame->True,
            
            FrameStyle->RGBColor[
-            0.4948975487411271, 0.034951435618850724`, 0.6513334403276588],
+            0.24569622255147427`, 0.4598931010727944, 0.04144956008410494],
            FrameTicks->None,
            
            ImageSize->
@@ -622,8 +622,8 @@ Cell[BoxData[
              Automatic, 1.35 CurrentValue["FontCapHeight"]/
               AbsoluteCurrentValue[Magnification]}],
            PlotRangePadding->None], "\[InvisibleSpace]"}],
-         "RGBColor[0.7423463231116907, 0.052427153428276085, \
-0.9770001604914882]"],
+         "RGBColor[0.3685443338272114, 0.6898396516091916, \
+0.06217434012615741]"],
         Appearance->None,
         BaseStyle->{},
         BaselinePosition->Baseline,
@@ -635,7 +635,7 @@ Cell[BoxData[
            FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
            FrontEnd`Private`$ColorSelectorInitialColor = 
             RGBColor[
-             0.7423463231116907, 0.052427153428276085`, 0.9770001604914882]; 
+             0.3685443338272114, 0.6898396516091916, 0.06217434012615741]; 
            FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
            MathLink`CallFrontEnd[
              FrontEnd`AttachCell[Typeset`box$, 
@@ -646,7 +646,7 @@ Cell[BoxData[
         DefaultBaseStyle->{},
         Evaluator->Automatic,
         Method->"Preemptive"],
-       RGBColor[0.7423463231116907, 0.052427153428276085`, 0.9770001604914882],
+       RGBColor[0.3685443338272114, 0.6898396516091916, 0.06217434012615741],
        Editable->False,
        Selectable->False]}], ",", 
      RowBox[{"\<\"his\"\>", "\[Rule]", 
@@ -675,13 +675,13 @@ Cell[BoxData[
             {GrayLevel[0], RectangleBox[{0, 0}]}, 
             {GrayLevel[0], RectangleBox[{1, -1}]}, 
             {RGBColor[
-             0.7887965760347633, 0.48325647475059275`, 0.46067531161565656`], 
+             0.19929472285740002`, 0.3764721618120266, 0.6827068840315327], 
              RectangleBox[{0, -1}, {2, 1}]}},
            AspectRatio->1,
            Frame->True,
            
            FrameStyle->RGBColor[
-            0.5258643840231756, 0.32217098316706183`, 0.3071168744104377],
+            0.13286314857160003`, 0.25098144120801774`, 0.4551379226876885],
            FrameTicks->None,
            
            ImageSize->
@@ -689,8 +689,8 @@ Cell[BoxData[
              Automatic, 1.35 CurrentValue["FontCapHeight"]/
               AbsoluteCurrentValue[Magnification]}],
            PlotRangePadding->None], "\[InvisibleSpace]"}],
-         "RGBColor[0.7887965760347633, 0.48325647475059275, \
-0.46067531161565656]"],
+         "RGBColor[0.19929472285740002, 0.3764721618120266, \
+0.6827068840315327]"],
         Appearance->None,
         BaseStyle->{},
         BaselinePosition->Baseline,
@@ -702,7 +702,7 @@ Cell[BoxData[
            FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
            FrontEnd`Private`$ColorSelectorInitialColor = 
             RGBColor[
-             0.7887965760347633, 0.48325647475059275`, 0.46067531161565656`]; 
+             0.19929472285740002`, 0.3764721618120266, 0.6827068840315327]; 
            FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
            MathLink`CallFrontEnd[
              FrontEnd`AttachCell[Typeset`box$, 
@@ -713,8 +713,8 @@ Cell[BoxData[
         DefaultBaseStyle->{},
         Evaluator->Automatic,
         Method->"Preemptive"],
-       RGBColor[
-       0.7887965760347633, 0.48325647475059275`, 0.46067531161565656`],
+       RGBColor[0.19929472285740002`, 0.3764721618120266, 0.6827068840315327],
+       
        Editable->False,
        Selectable->False]}], ",", 
      RowBox[{"\<\"his\"\>", "\[Rule]", 
@@ -733,7 +733,8 @@ Cell[BoxData[
    3.636551688113545*^9, 3.636551713097808*^9}, 3.636552021292468*^9, 
    3.636553751510935*^9, 3.636554570119726*^9, 3.636554960834857*^9, 
    3.6365553929888783`*^9, 3.6365639711447763`*^9, 3.6367386474923897`*^9, 
-   3.636740858322381*^9, 3.6367434026341467`*^9}]
+   3.636740858322381*^9, 3.6367434026341467`*^9, {3.636743564118767*^9, 
+   3.6367435761052647`*^9}}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -934,17 +935,27 @@ Cell[BoxData[
                 RowBox[{"FieldSize", "\[Rule]", "4"}]}], "]"}]}], "}"}]}], 
            "}"}]}], ",", "\[IndentingNewLine]", "\"\<state\>\"", ",", 
          "\[IndentingNewLine]", 
-         RowBox[{"Row", "@", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"Setter", "[", 
+         RowBox[{"SetterBar", "[", 
+          RowBox[{
+           RowBox[{"Dynamic", "@", "oste"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"solid", "\[Rule]", "\"\<solid\>\""}], ",", 
+             RowBox[{"gaseous", "\[Rule]", "\"\<gaseous\>\""}]}], "}"}]}], 
+          "]"}], ",", "\[IndentingNewLine]", 
+         RowBox[{"(*", 
+          RowBox[{
+           RowBox[{"Row", "@", 
+            RowBox[{"{", 
              RowBox[{
-              RowBox[{"Dynamic", "@", "oste"}], ",", "solid", ",", " ", 
-              "\"\<solid\>\""}], "]"}], ",", 
-            RowBox[{"Setter", "[", 
-             RowBox[{
-              RowBox[{"Dynamic", "@", "oste"}], ",", "gaseous", ",", " ", 
-              "\"\<gaseous\>\""}], "]"}]}], "}"}]}], ",", 
+              RowBox[{"Setter", "[", 
+               RowBox[{
+                RowBox[{"Dynamic", "@", "oste"}], ",", "solid", ",", " ", 
+                "\"\<solid\>\""}], "]"}], ",", 
+              RowBox[{"Setter", "[", 
+               RowBox[{
+                RowBox[{"Dynamic", "@", "oste"}], ",", "gaseous", ",", " ", 
+                "\"\<gaseous\>\""}], "]"}]}], "}"}]}], ","}], "*)"}], 
          "\[IndentingNewLine]", "\"\<color\>\"", ",", "\[IndentingNewLine]", 
          RowBox[{"ColorSlider", "@", 
           RowBox[{"Dynamic", "@", "ocol"}]}], ",", "\[IndentingNewLine]", 
@@ -1141,7 +1152,8 @@ Cell[BoxData[
    3.63674156995945*^9, 3.636741577070211*^9}, {3.636742195986011*^9, 
    3.636742198479321*^9}, {3.636742330902005*^9, 3.636742375962536*^9}, {
    3.636742444650597*^9, 3.636742450493216*^9}, {3.6367425383752413`*^9, 
-   3.636742546651479*^9}, {3.636743382784811*^9, 3.6367433828450603`*^9}}],
+   3.636742546651479*^9}, {3.636743382784811*^9, 3.6367433828450603`*^9}, {
+   3.6367437930409813`*^9, 3.636743837649023*^9}}],
 
 Cell[CellGroupData[{
 
@@ -1158,13 +1170,13 @@ Cell[BoxData[
 Cell[BoxData[
  DynamicBox[ToBoxes[
    Column[{
-     Row[{$CellContext`frame$3360, $CellContext`ocol$3360, \
-$CellContext`oste$3360, 
+     Row[{$CellContext`frame$5340, $CellContext`ocol$5340, \
+$CellContext`oste$5340, 
        TabView[{
-        "World" -> $CellContext`worldMenu$3360, 
-         "Object Creation" -> $CellContext`objectCreationMenu$3360}]}, Frame -> 
-      True], $CellContext`table$3360}], StandardForm],
-  ImageSizeCache->{801., {315.5, 320.5}}]], "Print",
+        "World" -> $CellContext`worldMenu$5340, 
+         "Object Creation" -> $CellContext`objectCreationMenu$5340}]}, Frame -> 
+      True], $CellContext`table$5340}], StandardForm],
+  ImageSizeCache->{801., {328.5, 333.5}}]], "Print",
  CellChangeTimes->{
   3.636550025116231*^9, 3.6365500734459333`*^9, 3.636550151858882*^9, 
    3.636550250608458*^9, 3.6365503421369257`*^9, 3.636550463080206*^9, 
@@ -1196,7 +1208,9 @@ $CellContext`oste$3360,
    3.636740858361773*^9, 3.636740882112308*^9}, {3.6367409249145184`*^9, 
    3.6367409527918167`*^9}, {3.636741418720008*^9, 3.63674141979125*^9}, {
    3.6367416003339663`*^9, 3.636741604367503*^9}, 3.63674197845474*^9, {
-   3.636742468703017*^9, 3.636742469972279*^9}, 3.636743402712682*^9}],
+   3.636742468703017*^9, 3.636742469972279*^9}, 3.636743402712682*^9, {
+   3.636743564298459*^9, 3.636743576153245*^9}, {3.6367438421482964`*^9, 
+   3.6367438430783453`*^9}}],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`frame$$ = ClickPane[
@@ -1239,11 +1253,8 @@ $CellContext`oste$$, $CellContext`ocol$$]]& ], $CellContext`worldMenu$$ =
         Dynamic[$CellContext`oden$$], FieldSize -> 4]}, {"speed", 
        InputField[
         Dynamic[$CellContext`ospe$$], FieldSize -> 4]}}], "state", 
-    Row[{
-      Setter[
-       Dynamic[$CellContext`oste$$], 0, "solid"], 
-      Setter[
-       Dynamic[$CellContext`oste$$], 1, "gaseous"]}], "color", 
+    SetterBar[
+     Dynamic[$CellContext`oste$$], {0 -> "solid", 1 -> "gaseous"}], "color", 
     ColorSlider[
      Dynamic[$CellContext`ocol$$]], "direction", 
     EventHandler[
@@ -1385,7 +1396,7 @@ dEAPPwB9A46P
              RowBox[{
               TagBox["\<\"Unique ID: \"\>",
                "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-              TagBox["4",
+              TagBox["6",
                "SummaryItem"]}]},
             {
              RowBox[{
@@ -1524,7 +1535,7 @@ dEAPPwB9A46P
              RowBox[{
               TagBox["\<\"Unique ID: \"\>",
                "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-              TagBox["4",
+              TagBox["6",
                "SummaryItem"]}]},
             {
              RowBox[{
@@ -1568,7 +1579,7 @@ dEAPPwB9A46P
        ImageSize->Automatic],
       BaselinePosition->Baseline],
      DynamicModuleValues:>{}], "]"}],
-   ScheduledTaskObject[4, 
+   ScheduledTaskObject[6, 
     HoldForm[
     If[$CellContext`running$$, $CellContext`circs$$ = \
 $CellContext`resolveCollisions[
@@ -1606,8 +1617,57 @@ $CellContext`dt$$, $CellContext`ds$$]& , $CellContext`circs$$]];
    3.6367393121866503`*^9, 3.636739410785378*^9, 3.636739483160132*^9, 
    3.636739573710369*^9, 3.636740778515486*^9, 3.6367408584128857`*^9, 
    3.6367414187409067`*^9, 3.6367416043946238`*^9, 3.636742468723847*^9, 
-   3.63674340275508*^9}]
-}, Open  ]]
+   3.63674340275508*^9, {3.636743564310512*^9, 3.636743576168968*^9}, 
+   3.636743842164132*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Length", "@", 
+  RowBox[{"ScheduledTasks", "[", "]"}]}]], "Input",
+ CellChangeTimes->{{3.636743583797124*^9, 3.636743589165629*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{{3.636743590262535*^9, 3.6367436070658827`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"x", "=", "1"}]], "Input",
+ CellChangeTimes->{{3.6367436739788933`*^9, 3.636743676413059*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.636743676891371*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Dynamic", "@", "x"}]], "Input",
+ CellChangeTimes->{{3.636743677581159*^9, 3.636743679520535*^9}}],
+
+Cell[BoxData[
+ DynamicBox[ToBoxes[$CellContext`x, StandardForm],
+  ImageSizeCache->{9., {0., 10.}}]], "Output",
+ CellChangeTimes->{3.636743679815089*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"RunScheduledTask", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "=", 
+     RowBox[{"RandomReal", "[", "]"}]}], ";", 
+    RowBox[{"Pause", "[", "x", "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"RunScheduledTask", "[", 
+     RowBox[{
+      RowBox[{"x", "=", 
+       RowBox[{"RandomReal", "[", "]"}]}], ";", 
+      RowBox[{"Pause", "[", "x", "]"}]}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.636743670039051*^9, 3.636743742781534*^9}}]
 },
 WindowSize->{1366, 715},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -1639,15 +1699,28 @@ Cell[19176, 464, 1322, 28, 165, "Input"],
 Cell[20501, 494, 2381, 61, 209, "Input"],
 Cell[CellGroupData[{
 Cell[22907, 559, 850, 25, 32, "Input"],
-Cell[23760, 586, 6234, 149, 59, "Output"]
+Cell[23760, 586, 6274, 150, 59, "Output"]
 }, Open  ]],
-Cell[30009, 738, 720, 18, 55, "Input"],
-Cell[30732, 758, 19715, 385, 1089, "Input"],
+Cell[30049, 739, 720, 18, 55, "Input"],
+Cell[30772, 759, 20182, 396, 1111, "Input"],
 Cell[CellGroupData[{
-Cell[50472, 1147, 545, 8, 32, "Input"],
-Cell[51020, 1157, 2689, 41, 646, "Print"],
-Cell[53712, 1200, 20551, 408, 69, "Output"]
-}, Open  ]]
+Cell[50979, 1159, 545, 8, 32, "Input"],
+Cell[51527, 1169, 2793, 43, 672, "Print"],
+Cell[54323, 1214, 20563, 406, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74923, 1625, 156, 3, 32, "Input"],
+Cell[75082, 1630, 96, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75215, 1636, 117, 2, 32, "Input"],
+Cell[75335, 1640, 70, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75442, 1646, 121, 2, 32, "Input"],
+Cell[75566, 1650, 153, 3, 32, "Output"]
+}, Open  ]],
+Cell[75734, 1656, 456, 13, 32, "Input"]
 }
 ]
 *)
