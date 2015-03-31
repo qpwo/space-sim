@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     55501,       1238]
-NotebookOptionsPosition[     54575,       1206]
-NotebookOutlinePosition[     54919,       1221]
-CellTagsIndexPosition[     54876,       1218]
+NotebookDataLength[     55327,       1234]
+NotebookOptionsPosition[     54401,       1202]
+NotebookOutlinePosition[     54745,       1217]
+CellTagsIndexPosition[     54702,       1214]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -785,12 +785,7 @@ Cell[BoxData[
         "\[IndentingNewLine]", 
         RowBox[{
          RowBox[{"AppendTo", "[", 
-          RowBox[{"circs", ",", 
-           RowBox[{"makeCirc", "[", 
-            RowBox[{"orad", ",", 
-             RowBox[{"screenCenter", "+", "#"}], ",", 
-             RowBox[{"odir", "*", "ospe"}], ",", "oden", ",", "oste", ",", 
-             "ocol"}], "]"}]}], "]"}], "&"}]}], "]"}]}], ";", 
+          RowBox[{"circs", ",", "circ"}], "]"}], "&"}]}], "]"}]}], ";", 
      "\[IndentingNewLine]", 
      RowBox[{"worldMenu", ":=", 
       RowBox[{"Column", "@", "\[IndentingNewLine]", 
@@ -1138,7 +1133,8 @@ Cell[BoxData[
    3.6367437930409813`*^9, 3.636743837649023*^9}, {3.6367444543501472`*^9, 
    3.636744472369418*^9}, {3.6367445227266226`*^9, 3.6367445869974146`*^9}, 
    3.636744666145612*^9, {3.6367497211970453`*^9, 3.6367498520104795`*^9}, {
-   3.636750043587307*^9, 3.6367500484279623`*^9}, 3.6367500868753057`*^9}],
+   3.636750043587307*^9, 3.6367500484279623`*^9}, 3.6367500868753057`*^9, {
+   3.63675034553769*^9, 3.6367503460861235`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -1235,10 +1231,10 @@ Cell[CellGroupData[{
 Cell[22899, 554, 850, 25, 31, "Input"],
 Cell[23752, 581, 6340, 150, 55, "Output"]
 }, Open  ]],
-Cell[30107, 734, 20715, 406, 972, "Input"],
+Cell[30107, 734, 20541, 402, 972, "Input"],
 Cell[CellGroupData[{
-Cell[50847, 1144, 545, 8, 31, "Input"],
-Cell[51395, 1154, 3164, 49, 585, "Print"]
+Cell[50673, 1140, 545, 8, 31, "Input"],
+Cell[51221, 1150, 3164, 49, 585, "Print"]
 }, Open  ]]
 }
 ]
