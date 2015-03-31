@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     46281,       1043]
-NotebookOptionsPosition[     45433,       1015]
-NotebookOutlinePosition[     45769,       1030]
-CellTagsIndexPosition[     45726,       1027]
+NotebookDataLength[     44950,       1023]
+NotebookOptionsPosition[     44142,        996]
+NotebookOutlinePosition[     44478,       1011]
+CellTagsIndexPosition[     44435,       1008]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -334,80 +334,56 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"(*", 
-   RowBox[{"Possible", " ", 
-    RowBox[{
-     RowBox[{"imporvement", "?", " ", "reap"}], "/", "sow"}]}], "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{"resolveCollisions", "[", "circs_", "]"}], ":=", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"a", ",", "b", ",", 
-       RowBox[{"newCircs", "=", "circs"}], ",", " ", 
-       RowBox[{"offset", "=", "0"}]}], "}"}], ",", "\[IndentingNewLine]", 
+  RowBox[{"resolveCollisions", "[", "circs_", "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
      RowBox[{
-      RowBox[{"Do", "[", "\[IndentingNewLine]", 
-       RowBox[{
+      RowBox[{"newCircs", "=", "circs"}], ",", " ", 
+      RowBox[{"offset", "=", "0"}]}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Do", "[", 
+      RowBox[{
+       RowBox[{"With", "[", 
         RowBox[{
-         RowBox[{"a", "=", 
-          RowBox[{"newCircs", "\[LeftDoubleBracket]", 
-           RowBox[{"i", "-", "offset"}], "\[RightDoubleBracket]"}]}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"Do", "[", " ", 
+         RowBox[{"{", 
+          RowBox[{"c1", "=", 
+           RowBox[{"newCircs", "\[LeftDoubleBracket]", 
+            RowBox[{"i", "-", "offset"}], "\[RightDoubleBracket]"}]}], "}"}], 
+         ",", "\[IndentingNewLine]", 
+         RowBox[{"Do", "[", 
           RowBox[{
-           RowBox[{
-            RowBox[{"b", "=", 
-             RowBox[{"newCircs", "\[LeftDoubleBracket]", 
-              RowBox[{"j", "-", "offset"}], "\[RightDoubleBracket]"}]}], ";", 
-            "\[IndentingNewLine]", 
-            RowBox[{"If", "[", 
-             RowBox[{
+           RowBox[{"With", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"c2", "=", 
+               RowBox[{"newCircs", "\[LeftDoubleBracket]", 
+                RowBox[{"j", "-", "offset"}], "\[RightDoubleBracket]"}]}], 
+              "}"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
               RowBox[{
-               RowBox[{"EuclideanDistance", "[", 
-                RowBox[{
-                 RowBox[{"a", "@", "\"\<pos\>\""}], ",", 
-                 RowBox[{"b", "@", "\"\<pos\>\""}]}], "]"}], "\[LessEqual]", 
-               " ", 
                RowBox[{
-                RowBox[{"a", "@", "\"\<rad\>\""}], "+", 
-                RowBox[{"b", "@", "\"\<rad\>\""}]}]}], ",", 
-              "\[IndentingNewLine]", 
-              RowBox[{
-               RowBox[{"If", "[", 
                 RowBox[{
-                 RowBox[{
-                  RowBox[{"a", "@", "\"\<ste\>\""}], ">", 
-                  RowBox[{"b", "@", "\"\<ste\>\""}]}], ",", 
-                 RowBox[{
-                  RowBox[{"{", 
-                   RowBox[{"a", ",", "b"}], "}"}], "=", 
-                  RowBox[{"{", 
-                   RowBox[{"b", ",", "a"}], "}"}]}]}], "]"}], ";", 
-               "\[IndentingNewLine]", 
-               RowBox[{"Switch", "[", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"a", "@", "\"\<ste\>\""}], "+", 
-                  RowBox[{"b", "@", "\"\<ste\>\""}]}], ",", 
-                 "\[IndentingNewLine]", 
-                 RowBox[{"(*", 
-                  RowBox[{"Both", " ", "solid"}], "*)"}], 
-                 "\[IndentingNewLine]", "0.", ",", ",", "\[IndentingNewLine]", 
-                 RowBox[{"(*", 
+                 RowBox[{"EuclideanDistance", "[", 
                   RowBox[{
-                  "a", " ", "is", " ", "solid", " ", "and", " ", "b", " ", 
-                   "is", " ", "gaseous"}], "*)"}], "\[IndentingNewLine]", 
-                 "1.", ",", ",", "\[IndentingNewLine]", 
-                 RowBox[{"(*", 
-                  RowBox[{"Both", " ", "gaseous"}], "*)"}], 
-                 "\[IndentingNewLine]", "2.", ",", 
+                   RowBox[{"c1", "@", "\"\<pos\>\""}], ",", 
+                   RowBox[{"c2", "@", "\"\<pos\>\""}]}], "]"}], 
+                 "\[LessEqual]", " ", 
                  RowBox[{
-                  RowBox[{"newCircs", "=", 
-                   RowBox[{"Append", "[", 
-                    RowBox[{
-                    RowBox[{"Delete", "[", 
+                  RowBox[{"c1", "@", "\"\<rad\>\""}], "+", 
+                  RowBox[{"c2", "@", "\"\<rad\>\""}]}]}], 
+                "\[IndentingNewLine]", "&&", 
+                RowBox[{
+                 RowBox[{"c1", "@", "\"\<ste\>\""}], "\[Equal]", "gaseous"}], 
+                "&&", 
+                RowBox[{
+                 RowBox[{"c2", "@", "\"\<ste\>\""}], "\[Equal]", 
+                 "gaseous"}]}], ",", "\[IndentingNewLine]", 
+               RowBox[{
+                RowBox[{"newCircs", "=", 
+                 RowBox[{"Append", "[", 
+                  RowBox[{
+                   RowBox[{"Delete", "[", 
                     RowBox[{"newCircs", ",", 
                     RowBox[{"{", 
                     RowBox[{
@@ -415,32 +391,24 @@ Cell[BoxData[
                     RowBox[{"i", "-", "offset"}], "}"}], ",", 
                     RowBox[{"{", 
                     RowBox[{"j", "-", "offset"}], "}"}]}], "}"}]}], "]"}], 
-                    ",", " ", 
-                    RowBox[{"mergeCircs", "[", 
-                    RowBox[{"a", ",", "b"}], "]"}]}], "]"}]}], ";", 
-                  RowBox[{"offset", "++"}], ";"}]}], "]"}]}]}], "]"}]}], ",", 
+                   ",", " ", 
+                   RowBox[{"mergeCircs", "[", 
+                    RowBox[{"c1", ",", "c2"}], "]"}]}], "]"}]}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"offset", "++"}], ";"}]}], "]"}]}], "]"}], ",", 
            "\[IndentingNewLine]", 
            RowBox[{"{", 
             RowBox[{"j", ",", " ", 
              RowBox[{"1", "+", "i"}], ",", " ", 
-             RowBox[{"Length", "@", "newCircs"}]}], "}"}]}], "]"}]}], ",", 
-        "\[IndentingNewLine]", 
-        RowBox[{"{", 
-         RowBox[{"i", ",", " ", "1", ",", " ", 
-          RowBox[{"Length", "@", "newCircs"}]}], "}"}]}], "]"}], ";", 
-      "\[IndentingNewLine]", "newCircs"}]}], "]"}]}]}]], "Input",
- CellChangeTimes->{{3.6365481178761387`*^9, 3.636548146461571*^9}, {
-  3.63654848055995*^9, 3.6365487254477253`*^9}, {3.6365487620320945`*^9, 
-  3.6365488794724026`*^9}, {3.6365491902250624`*^9, 3.6365492395460625`*^9}, {
-  3.6365492992691627`*^9, 3.6365493859877625`*^9}, {3.6365494416891623`*^9, 
-  3.6365494834884624`*^9}, {3.63654978887767*^9, 3.636549881966668*^9}, {
-  3.636549920960719*^9, 3.6365499808015037`*^9}, {3.6365500671512585`*^9, 
-  3.636550165533683*^9}, {3.636550197559472*^9, 3.636550241365611*^9}, {
-  3.6365505888031445`*^9, 3.6365505979809446`*^9}, {3.636552072864135*^9, 
-  3.6365521066047535`*^9}, {3.636564962151988*^9, 3.6365650245395803`*^9}, {
-  3.636565059947806*^9, 3.636565086608823*^9}, {3.636740346844719*^9, 
-  3.636740459376884*^9}, {3.636740723680335*^9, 3.636740725395046*^9}, {
-  3.636740757011644*^9, 3.6367407696167307`*^9}}],
+             RowBox[{"Length", "@", "newCircs"}]}], "}"}]}], "]"}]}], "]"}], 
+       ",", "\[IndentingNewLine]", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", " ", "1", ",", " ", 
+         RowBox[{"Length", "@", "newCircs"}]}], "}"}]}], "]"}], ";", 
+     "\[IndentingNewLine]", "newCircs"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.636754923749324*^9, 3.636754926411322*^9}, {
+   3.636755004867797*^9, 3.636755084450032*^9}, 3.636755148147273*^9, {
+   3.636755237513361*^9, 3.636755329849057*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -549,25 +517,39 @@ Cell[BoxData[
   RowBox[{"NestList", "[", "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
-     RowBox[{"Table", "[", 
-      RowBox[{
-       RowBox[{"moveCirc", "[", 
-        RowBox[{"c", ",", "#", ",", "dt"}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"c", ",", "#"}], "}"}]}], "]"}], "&"}], ",", 
+     RowBox[{"resolveCollisions", "@", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"moveCirc", "[", 
+         RowBox[{"c", ",", "#", ",", "dt"}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"c", ",", "#"}], "}"}]}], "]"}]}], "&"}], ",", 
     "\[IndentingNewLine]", "circs", ",", "\[IndentingNewLine]", 
     RowBox[{"count", "-", "1"}]}], "]"}]}]], "Input",
- CellChangeTimes->{{3.636754420934078*^9, 3.63675443542947*^9}}],
+ CellChangeTimes->{{3.636754420934078*^9, 3.63675443542947*^9}, {
+  3.636801123770233*^9, 3.636801125280911*^9}}],
 
-Cell[BoxData[
- RowBox[{"drawCircs", "/@", 
-  RowBox[{"makeFrames", "[", 
-   RowBox[{"orbit", ",", "100"}], "]"}]}]], "Input",
- CellChangeTimes->{{3.636754450560321*^9, 3.636754482793206*^9}, {
-  3.636754525142178*^9, 3.636754526887788*^9}, {3.636754558576911*^9, 
-  3.636754563846789*^9}}],
-
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"testCircs", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"makeCirc", "[", 
+      RowBox[{"10", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "50"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"15", ",", "0"}], "}"}], ",", "10", ",", "gaseous"}], "]"}], 
+     ",", 
+     RowBox[{"makeCirc", "[", 
+      RowBox[{"6", ",", 
+       RowBox[{"{", 
+        RowBox[{"70", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "5"}], ",", "0"}], "}"}], ",", "5", ",", "gaseous"}], 
+      "]"}]}], "}"}]}], ";"}], "\n", 
  RowBox[{
   RowBox[{"orbit", "=", 
    RowBox[{"{", 
@@ -592,9 +574,8 @@ Cell[BoxData[
              RowBox[{"20", " ", 
               RowBox[{"4", "/", "3"}], "\[Pi]", " ", 
               RowBox[{"10", "^", "3"}]}], ")"}], "/", "70"}]}], "]"}]}], 
-        "}"}], ",", "5", ",", "solid"}], "]"}]}], "}"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.636540829441111*^9, 3.636540830934269*^9}, 
-   3.636753965760688*^9}],
+        "}"}], ",", "5", ",", "solid"}], "]"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.636755663038659*^9, 3.6367557796581917`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1011,7 +992,7 @@ Cell[BoxData[
   3.636539949095606*^9, 3.636539950125592*^9}, {3.63654703825555*^9, 
   3.636547038468313*^9}, {3.636552379494174*^9, 3.6365523795712852`*^9}, {
   3.6365524659681273`*^9, 3.6365524661389513`*^9}, {3.636743372609673*^9, 
-  3.636743372691571*^9}}]
+  3.636743372691571*^9}, {3.6367551734348087`*^9, 3.636755174815483*^9}}]
 },
 WindowSize->{1366, 715},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
@@ -1034,17 +1015,16 @@ Cell[1185, 34, 1800, 46, 165, "Input"],
 Cell[2988, 82, 1794, 37, 209, "Input"],
 Cell[4785, 121, 1511, 34, 234, "Input"],
 Cell[6299, 157, 1115, 26, 99, "Input"],
-Cell[7417, 185, 3962, 86, 308, "Input"],
+Cell[7417, 185, 3962, 86, 275, "Input"],
 Cell[11382, 273, 2309, 59, 294, "Input"],
-Cell[13694, 334, 4903, 108, 385, "Input"],
-Cell[18600, 444, 693, 18, 32, "Input"],
-Cell[19296, 464, 1322, 28, 165, "Input"],
-Cell[20621, 494, 1778, 47, 187, "Input"],
-Cell[22402, 543, 643, 16, 121, "Input"],
-Cell[23048, 561, 289, 6, 32, "Input"],
-Cell[23340, 569, 918, 27, 32, "Input"],
-Cell[24261, 598, 20593, 403, 1111, "Input"],
-Cell[44857, 1003, 572, 10, 32, "Input"]
+Cell[13694, 334, 3175, 76, 231, "Input"],
+Cell[16872, 412, 693, 18, 32, "Input"],
+Cell[17568, 432, 1322, 28, 165, "Input"],
+Cell[18893, 462, 1778, 47, 187, "Input"],
+Cell[20674, 511, 740, 18, 121, "Input"],
+Cell[21417, 531, 1502, 46, 55, "Input"],
+Cell[22922, 579, 20593, 403, 1111, "Input"],
+Cell[43518, 984, 620, 10, 32, "Input"]
 }
 ]
 *)
