@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     76068,       1632]
-NotebookOptionsPosition[     75105,       1600]
-NotebookOutlinePosition[     75441,       1615]
-CellTagsIndexPosition[     75398,       1612]
+NotebookDataLength[     75507,       1619]
+NotebookOptionsPosition[     74546,       1587]
+NotebookOutlinePosition[     74882,       1602]
+CellTagsIndexPosition[     74839,       1599]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -36,10 +36,12 @@ Cell["\<\
 known bugs:
 FIXED-if you click to create 3 planets, and the first 2 combine while the \
 latest is still alive, an error occurs
--speed, density, radius and state are all broken\
+-speed, density, radius and state are all broken
+-random crashes\
 \>", "Text",
  CellChangeTimes->{{3.636894680566555*^9, 3.636894762818967*^9}, {
-  3.636898756625635*^9, 3.636898758057077*^9}}],
+  3.636898756625635*^9, 3.636898758057077*^9}, {3.636899112729369*^9, 
+  3.63689911563927*^9}}],
 
 Cell[BoxData[{
  RowBox[{
@@ -135,35 +137,17 @@ Cell[BoxData[
    RowBox[{"rad_", ",", "pos_", ",", "vel_", ",", "mas_", ",", "ste_", ",", 
     RowBox[{"col_:", "True"}], ",", 
     RowBox[{"his_:", "True"}]}], "]"}], ":=", "\[IndentingNewLine]", 
-  RowBox[{"N", "@", 
-   RowBox[{"<|", "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{"\"\<rad\>\"", "\[Rule]", "rad"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"\"\<pos\>\"", "\[Rule]", "pos"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"\"\<vel\>\"", "\[Rule]", "vel"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"\"\<den\>\"", "\[Rule]", 
-      RowBox[{"mas", "/", 
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"4", "/", "3"}], " ", "Pi", " ", 
-         SuperscriptBox["rad", "3"]}], ")"}]}]}], ",", "\[IndentingNewLine]", 
-     
-     RowBox[{"\"\<ste\>\"", "\[Rule]", "ste"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"\"\<mas\>\"", "\[Rule]", "mas"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"\"\<col\>\"", "\[Rule]", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"TrueQ", "@", "col"}], ",", 
-        RowBox[{"RandomColor", "[", "]"}], ",", "col"}], "]"}]}], ",", 
-     "\[IndentingNewLine]", 
-     RowBox[{"\"\<his\>\"", "\[Rule]", 
-      RowBox[{"If", "[", 
-       RowBox[{
-        RowBox[{"TrueQ", "@", "his"}], ",", " ", 
-        RowBox[{"{", "pos", "}"}], ",", " ", "his"}], "]"}]}]}], 
-    "|>"}]}]}]], "Input",
+  RowBox[{"makeCirc", "[", 
+   RowBox[{"rad", ",", "pos", ",", "vel", ",", 
+    RowBox[{"mas", "/", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"4", "/", "3"}], " ", "Pi", " ", 
+       SuperscriptBox["rad", "3"]}], ")"}]}], ",", "ste", ",", "col", ",", 
+    "his"}], "]"}]}]], "Input",
  CellChangeTimes->{{3.636545946878078*^9, 3.636545977933833*^9}, {
-  3.6365460291678314`*^9, 3.6365460408074903`*^9}}],
+  3.6365460291678314`*^9, 3.6365460408074903`*^9}, {3.636899267132699*^9, 
+  3.6368992911434193`*^9}, {3.63689933684378*^9, 3.636899344575993*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -639,7 +623,7 @@ Cell[BoxData[
       RowBox[{
       "Make", " ", "sure", " ", "no", " ", "previous", " ", "instance", " ", 
        "of", " ", "function"}], "*)"}], "\[IndentingNewLine]", 
-     RowBox[{"ohover", " ", "=", " ", 
+     RowBox[{"ohover", "=", 
       RowBox[{"makeCirc", "[", 
        RowBox[{"orad", ",", 
         RowBox[{
@@ -925,8 +909,8 @@ Cell[BoxData[
           RowBox[{"{", 
            RowBox[{"Max", "[", 
             RowBox[{
-             RowBox[{"framePeriod", "-", "frameTime"}], ",", "0.01"}], "]"}], 
-           "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
+             RowBox[{"framePeriod", "-", "frameTime"}], ",", "0.001"}], "]"}],
+            "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
         RowBox[{"frameTime", " ", "=", " ", 
          RowBox[{
           RowBox[{"AbsoluteTiming", "[", "\[IndentingNewLine]", 
@@ -1135,7 +1119,8 @@ Cell[BoxData[
    3.63689223916072*^9}, {3.6368923976486797`*^9, 3.6368924006009207`*^9}, {
    3.636892500395884*^9, 3.636892503825019*^9}, {3.636892768493062*^9, 
    3.63689278350169*^9}, {3.636893474592393*^9, 3.6368935215259247`*^9}, {
-   3.636893711953923*^9, 3.636893753844515*^9}}],
+   3.636893711953923*^9, 3.636893753844515*^9}, {3.636899202770503*^9, 
+   3.6368992299189663`*^9}}],
 
 Cell[CellGroupData[{
 
@@ -1146,18 +1131,19 @@ Cell[BoxData[
 Cell[BoxData[
  DynamicBox[ToBoxes[
    Column[{
-     Row[{$CellContext`frame$363, 
+     Row[{$CellContext`frame$346, 
        Column[{
-         Style["World:", Bold], $CellContext`worldMenu$363, 
+         Style["World:", Bold], $CellContext`worldMenu$346, 
          Style[
-         "Object Creation:", Bold], $CellContext`objectCreationMenu$363}]}, 
-      Frame -> True], $CellContext`table$363}], StandardForm],
+         "Object Creation:", Bold], $CellContext`objectCreationMenu$346}]}, 
+      Frame -> True], $CellContext`table$346}], StandardForm],
   ImageSizeCache->{766., {359., 364.}}]], "Print",
  CellChangeTimes->{
   3.636893529301415*^9, 3.636893610443756*^9, {3.636893735832272*^9, 
    3.636893759652985*^9}, 3.636894570395217*^9, {3.636894648761588*^9, 
    3.6368946640501204`*^9}, 3.636898411859455*^9, 3.636898446845948*^9, 
-   3.6368986679221992`*^9, 3.636898768761071*^9}],
+   3.6368986679221992`*^9, 3.636898768761071*^9, 3.636899124306416*^9, 
+   3.636899359208955*^9}],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`frame$$ = EventHandler[
@@ -1547,7 +1533,7 @@ dEAPPwB9A46P
    ScheduledTaskObject[4, 
     HoldForm[ResetScheduledTask[$ScheduledTask, {
         Max[$CellContext`framePeriod$$ - $CellContext`frameTime$$, 
-         0.01]}]; $CellContext`frameTime$$ = Part[
+         0.001]}]; $CellContext`frameTime$$ = Part[
         AbsoluteTiming[
         If[$CellContext`running$$, $CellContext`circs$$ = Select[
               $CellContext`resolveCollisions[
@@ -1595,11 +1581,12 @@ $CellContext`ohover$$ = $CellContext`updateAssoc[$CellContext`ohover$$,
    3.6368935293458853`*^9}, 3.636893610487715*^9, {3.636893735877246*^9, 
    3.636893759670624*^9}, 3.6368945704383802`*^9, {3.63689464899575*^9, 
    3.636894664124033*^9}, 3.636898411948072*^9, 3.636898446927347*^9, 
-   3.636898667972171*^9, 3.63689876883045*^9}]
+   3.636898667972171*^9, 3.63689876883045*^9, 3.636899124347515*^9, 
+   3.6368993592584753`*^9}]
 }, Open  ]]
 },
 WindowSize->{1366, 715},
-WindowMargins->{{1, Automatic}, {Automatic, 0}},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.0 for Linux x86 (64-bit) (December 4, 2014)",
 StyleDefinitions->"Default.nb"
 ]
@@ -1615,24 +1602,24 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 624, 12, 89, "Text"],
-Cell[1185, 34, 314, 7, 71, "Text"],
-Cell[1502, 43, 1851, 47, 165, "Input"],
-Cell[3356, 92, 1794, 37, 209, "Input"],
-Cell[5153, 131, 1511, 34, 234, "Input"],
-Cell[6667, 167, 1115, 26, 99, "Input"],
-Cell[7785, 195, 3995, 86, 275, "Input"],
-Cell[11783, 283, 2643, 66, 253, "Input"],
-Cell[14429, 351, 3269, 79, 416, "Input"],
-Cell[17701, 432, 693, 18, 32, "Input"],
-Cell[18397, 452, 1347, 29, 165, "Input"],
-Cell[19747, 483, 1903, 49, 187, "Input"],
-Cell[21653, 534, 1502, 46, 55, "Input"],
-Cell[23158, 582, 750, 22, 55, "Input"],
-Cell[23911, 606, 28226, 531, 1419, "Input"],
+Cell[1185, 34, 378, 9, 90, "Text"],
+Cell[1566, 45, 1851, 47, 165, "Input"],
+Cell[3420, 94, 1794, 37, 209, "Input"],
+Cell[5217, 133, 746, 16, 58, "Input"],
+Cell[5966, 151, 1115, 26, 99, "Input"],
+Cell[7084, 179, 3995, 86, 275, "Input"],
+Cell[11082, 267, 2643, 66, 253, "Input"],
+Cell[13728, 335, 3269, 79, 416, "Input"],
+Cell[17000, 416, 693, 18, 32, "Input"],
+Cell[17696, 436, 1347, 29, 165, "Input"],
+Cell[19046, 467, 1903, 49, 187, "Input"],
+Cell[20952, 518, 1502, 46, 55, "Input"],
+Cell[22457, 566, 750, 22, 55, "Input"],
+Cell[23210, 590, 28269, 532, 1419, "Input"],
 Cell[CellGroupData[{
-Cell[52162, 1141, 152, 2, 32, "Input"],
-Cell[52317, 1145, 650, 14, 733, "Print"],
-Cell[52970, 1161, 22119, 436, 69, "Output"]
+Cell[51504, 1126, 152, 2, 32, "Input"],
+Cell[51659, 1130, 698, 15, 733, "Print"],
+Cell[52360, 1147, 22170, 437, 69, "Output"]
 }, Open  ]]
 }
 ]
