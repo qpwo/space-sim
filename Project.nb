@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     77741,       1666]
-NotebookOptionsPosition[     76780,       1634]
-NotebookOutlinePosition[     77116,       1649]
-CellTagsIndexPosition[     77073,       1646]
+NotebookDataLength[     77163,       1665]
+NotebookOptionsPosition[     76233,       1634]
+NotebookOutlinePosition[     76579,       1649]
+CellTagsIndexPosition[     76536,       1646]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -599,346 +599,373 @@ Cell[BoxData[
   3.636891699225041*^9, 3.636891743566799*^9}, {3.637421328342605*^9, 
   3.637421334489126*^9}}],
 
-Cell[BoxData[
+Cell[CellGroupData[{
+
+Cell[BoxData[{
  RowBox[{
-  RowBox[{"SimulateSpaceToTheBestOfYourAbilites", "[", "]"}], ":=", 
-  RowBox[{"DynamicModule", "[", "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"{", 
-     RowBox[{"frame", ",", "worldMenu", ",", "table", ",", 
-      RowBox[{"circs", "=", 
-       RowBox[{"{", "}"}]}], ",", "curMenu", ",", "menuChooser", ",", 
-      "\[IndentingNewLine]", "ohover", ",", "objectCreationMenu", ",", 
-      RowBox[{"orad", "=", "5"}], ",", 
-      RowBox[{"oden", "=", "10"}], ",", 
-      RowBox[{"ospd", "=", "10"}], ",", 
-      RowBox[{"odir", "=", 
-       RowBox[{"{", 
-        RowBox[{"0", ",", "1"}], "}"}]}], ",", 
-      RowBox[{"ocol", "=", 
-       RowBox[{"Darker", "@", "Green"}]}], ",", 
-      RowBox[{"oste", "=", "gaseous"}], ",", "\[IndentingNewLine]", 
-      RowBox[{"framePeriod", "=", ".02"}], ",", 
-      RowBox[{"time", "=", "0"}], ",", 
-      RowBox[{"running", "=", "False"}], ",", 
-      RowBox[{"frameTime", "=", "0"}], ",", 
-      RowBox[{"dt", "=", ".05"}], ",", 
-      RowBox[{"ds", "=", "2"}]}], "}"}], ",", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"SimulateSpaceToTheBestOfYourAbilites", "[", "]"}], ":=", 
+   RowBox[{"DynamicModule", "[", "\[IndentingNewLine]", 
     RowBox[{
-     RowBox[{"screenCenter", "=", 
-      RowBox[{"{", 
-       RowBox[{"0", ",", "0"}], "}"}]}], ";", "\[IndentingNewLine]", 
-     RowBox[{"RemoveScheduledTask", "@", 
-      RowBox[{"ScheduledTasks", "[", "]"}]}], ";", " ", 
-     RowBox[{"(*", 
-      RowBox[{
-      "Make", " ", "sure", " ", "no", " ", "previous", " ", "instance", " ", 
-       "of", " ", "function"}], "*)"}], "\[IndentingNewLine]", 
-     "\[IndentingNewLine]", 
-     RowBox[{"ohover", "=", 
-      RowBox[{"makeCirc", "[", 
-       RowBox[{"orad", ",", 
-        RowBox[{
-         RowBox[{"{", 
-          RowBox[{"0", ",", "0"}], "}"}], "+", "orad", "+", "windowSize"}], 
-        ",", 
-        RowBox[{"odir", " ", "ospd"}], ",", "oden", ",", "oste", ",", 
-        "ocol"}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-     
-     RowBox[{"frame", ":=", 
-      RowBox[{"EventHandler", "[", 
-       RowBox[{
-        RowBox[{"Show", "[", 
-         RowBox[{
-          RowBox[{"drawCircs", "@", 
-           RowBox[{"(", 
-            RowBox[{"circs", "~", "Append", "~", "ohover"}], ")"}]}], ",", 
-          RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}], ",", 
-        "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"frame", ",", "worldMenu", ",", "table", ",", 
+       RowBox[{"circs", "=", 
+        RowBox[{"{", "}"}]}], ",", "curMenu", ",", "menuChooser", ",", 
+       "\[IndentingNewLine]", "ohover", ",", "objectCreationMenu", ",", 
+       RowBox[{"orad", "=", "5"}], ",", 
+       RowBox[{"oden", "=", "10"}], ",", 
+       RowBox[{"ospd", "=", "10"}], ",", 
+       RowBox[{"odir", "=", 
         RowBox[{"{", 
+         RowBox[{"0", ",", "1"}], "}"}]}], ",", 
+       RowBox[{"ocol", "=", 
+        RowBox[{"Darker", "@", "Green"}]}], ",", 
+       RowBox[{"oste", "=", "gaseous"}], ",", 
+       RowBox[{"otype", "=", "0"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"framePeriod", "=", ".02"}], ",", 
+       RowBox[{"time", "=", "0"}], ",", 
+       RowBox[{"running", "=", "False"}], ",", 
+       RowBox[{"frameTime", "=", "0"}], ",", 
+       RowBox[{"dt", "=", ".05"}], ",", 
+       RowBox[{"ds", "=", "2"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"screenCenter", "=", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"RemoveScheduledTask", "@", 
+       RowBox[{"ScheduledTasks", "[", "]"}]}], ";", " ", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Make", " ", "sure", " ", "no", " ", "previous", " ", "instance", " ", 
+        "of", " ", "function"}], "*)"}], "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ohover", "=", 
+       RowBox[{"makeCirc", "[", 
+        RowBox[{"orad", ",", 
          RowBox[{
-          RowBox[{"\"\<MouseDown\>\"", "\[RuleDelayed]", 
-           RowBox[{"(", 
-            RowBox[{"circs", "  ", "~", "AppendTo", "~", " ", "ohover"}], 
-            ")"}]}], ",", "\[IndentingNewLine]", 
-          RowBox[{"\"\<MouseMoved\>\"", "\[RuleDelayed]", 
-           RowBox[{"(", 
-            RowBox[{"ohover", "=", 
-             RowBox[{"updateAssoc", "[", 
-              RowBox[{"ohover", ",", "\[IndentingNewLine]", 
-               RowBox[{"<|", 
-                RowBox[{
-                 RowBox[{"\"\<pos\>\"", "\[Rule]", 
-                  RowBox[{"(", 
-                   RowBox[{"MousePosition", "[", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0"}], "}"}], "+", "orad", "+", "windowSize"}], 
+         ",", 
+         RowBox[{"odir", " ", "ospd"}], ",", "oden", ",", "oste", ",", 
+         "ocol"}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"frame", ":=", 
+       RowBox[{"EventHandler", "[", 
+        RowBox[{
+         RowBox[{"Show", "[", 
+          RowBox[{
+           RowBox[{"drawCircs", "@", 
+            RowBox[{"(", 
+             RowBox[{"circs", "~", "Append", "~", 
+              RowBox[{"updateAssoc", "[", 
+               RowBox[{"ohover", ",", 
+                RowBox[{"<|", 
+                 RowBox[{"\"\<col\>\"", "\[Rule]", 
+                  RowBox[{"Opacity", "[", 
+                   RowBox[{".5", ",", 
+                    RowBox[{"ohover", "@", "\"\<col\>\""}]}], "]"}]}], 
+                 "|>"}]}], "]"}]}], ")"}]}], ",", 
+           RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}], ",", 
+         "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"\"\<MouseDown\>\"", "\[RuleDelayed]", 
+            RowBox[{"(", 
+             RowBox[{"circs", "  ", "~", "AppendTo", "~", " ", "ohover"}], 
+             ")"}]}], ",", "\[IndentingNewLine]", 
+           RowBox[{"\"\<MouseMoved\>\"", "\[RuleDelayed]", 
+            RowBox[{"(", 
+             RowBox[{"ohover", "=", 
+              RowBox[{"updateAssoc", "[", 
+               RowBox[{"ohover", ",", "\[IndentingNewLine]", 
+                RowBox[{"<|", 
+                 RowBox[{
+                  RowBox[{"\"\<pos\>\"", "\[Rule]", 
+                   RowBox[{"(", 
+                    RowBox[{"MousePosition", "[", 
                     RowBox[{"\"\<Graphics\>\"", ",", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"0", ",", "0"}], "}"}], "+", "orad", "+", 
                     "windowSize"}]}], "]"}], ")"}]}], ",", 
-                 RowBox[{"\"\<his\>\"", "\[Rule]", 
-                  RowBox[{"{", 
-                   RowBox[{"MousePosition", "@", "\"\<Graphics\>\""}], 
-                   "}"}]}]}], "|>"}]}], "]"}]}], ")"}]}]}], "}"}]}], "]"}]}], 
-     ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-     RowBox[{"table", ":=", 
-      RowBox[{"Column", "@", 
-       RowBox[{"{", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"\"\<Number of circles: \>\"", " ", "<>", " ", 
-          RowBox[{"ToString", "@", 
-           RowBox[{"Length", "@", "circs"}]}]}], ",", "\[IndentingNewLine]", 
-         RowBox[{"TableForm", "@", 
-          RowBox[{"Prepend", "[", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"SetPrecision", "[", 
-             RowBox[{
+                  RowBox[{"\"\<his\>\"", "\[Rule]", 
+                   RowBox[{"{", 
+                    RowBox[{"MousePosition", "@", "\"\<Graphics\>\""}], 
+                    "}"}]}]}], "|>"}]}], "]"}]}], ")"}]}]}], "}"}]}], "]"}]}],
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"table", ":=", 
+       RowBox[{"Column", "@", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"\"\<Number of circles: \>\"", " ", "<>", " ", 
+           RowBox[{"ToString", "@", 
+            RowBox[{"Length", "@", "circs"}]}]}], ",", "\[IndentingNewLine]", 
+          
+          RowBox[{"TableForm", "@", 
+           RowBox[{"Prepend", "[", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"SetPrecision", "[", 
               RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"#", "@", "\"\<rad\>\""}], ",", 
+                   RowBox[{"#", "@", "\"\<pos\>\""}], ",", 
+                   RowBox[{"#", "@", "\"\<vel\>\""}], ",", 
+                   RowBox[{"#", "@", "\"\<mas\>\""}], ",", 
+                   RowBox[{"#", "@", "\"\<col\>\""}], ",", 
+                   RowBox[{"#", "@", "\"\<ste\>\""}], ",", 
+                   RowBox[{"Length", "@", 
+                    RowBox[{"#", "@", "\"\<his\>\""}]}]}], "}"}], "&"}], "/@",
+                 "circs"}], ",", "3"}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{
+              "\"\<radius\>\"", ",", "\"\<position\>\"", ",", 
+               "\"\<velocity\>\"", ",", "\"\<mass\>\"", ",", "\"\<color\>\"", 
+               ",", "\"\<state\>\"", ",", "\"\<Length of History\>\""}], 
+              "}"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"\"\<Time: \>\"", "<>", 
+           RowBox[{"ToString", "@", "time"}]}], ",", "\[IndentingNewLine]", 
+          RowBox[{"\"\<framePeriod: \>\"", " ", "<>", " ", 
+           RowBox[{"ToString", "@", 
+            RowBox[{"Max", "[", 
+             RowBox[{
+              RowBox[{"dt", "-", "frameTime"}], ",", "0.01"}], "]"}]}]}]}], 
+         "}"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"worldMenu", ":=", 
+       RowBox[{"Column", "@", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<Reset\>\"", ",", 
+            RowBox[{
+             RowBox[{"screenCenter", "=", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0"}], "}"}]}], ";", 
+             RowBox[{"time", "=", "0"}], ";", 
+             RowBox[{"circs", "=", 
+              RowBox[{"{", "}"}]}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<New Orbit\>\"", ",", 
+            RowBox[{
+             RowBox[{"screenCenter", "=", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0"}], "}"}]}], ";", 
+             RowBox[{"time", "=", "0"}], ";", 
+             RowBox[{"circs", "=", "orbit"}]}]}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<New Random\>\"", ",", 
+            RowBox[{
+             RowBox[{"screenCenter", "=", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0"}], "}"}]}], ";", 
+             RowBox[{"time", "=", "0"}], ";", 
+             RowBox[{"circs", "=", 
+              RowBox[{"Table", "[", 
+               RowBox[{
+                RowBox[{"makeRandCirc", "[", 
+                 RowBox[{"20", ",", "80", ",", "15", ",", "50"}], "]"}], ",", 
+                
+                RowBox[{"{", 
+                 RowBox[{"RandomInteger", "@", "8"}], "}"}]}], "]"}]}]}]}], 
+           "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<New dust\>\"", ",", 
+            RowBox[{
+             RowBox[{"screenCenter", "=", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0"}], "}"}]}], ";", 
+             RowBox[{"time", "=", "0"}], ";", 
+             RowBox[{"circs", "=", 
+              RowBox[{"Table", "[", 
+               RowBox[{
+                RowBox[{"makeRandCirc", "[", 
+                 RowBox[{"5", ",", "spaceSize", ",", "0", ",", "1"}], "]"}], 
+                ",", 
+                RowBox[{"{", 
+                 RowBox[{"RandomInteger", "@", "150"}], "}"}]}], "]"}]}]}]}], 
+           "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Button", "[", 
+           RowBox[{
+            RowBox[{"Dynamic", "@", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"!", "running"}], ",", "\"\<Continue\>\"", ",", 
+               "\"\<Pause\>\""}], "]"}]}], ",", 
+            RowBox[{"running", "=", 
+             RowBox[{"!", "running"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+          
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<Add Random Planet\>\"", ",", 
+            RowBox[{"circs", " ", "~", "AppendTo", "~", " ", 
+             RowBox[{"makeRandCirc", "[", 
+              RowBox[{"20", ",", "80", ",", "15", ",", "50"}], "]"}]}]}], 
+           "]"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"Slider2D", "[", 
+           RowBox[{
+            RowBox[{"Dynamic", "@", "screenCenter"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "spaceSize"}], ",", "spaceSize"}], "}"}]}], 
+           "]"}]}], "}"}]}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"objectCreationMenu", ":=", 
+       RowBox[{"Column", "@", 
+        RowBox[{"{", "\[IndentingNewLine]", 
+         RowBox[{
+          RowBox[{"TableForm", "@", "\[IndentingNewLine]", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"\"\<type\>\"", ",", 
+               RowBox[{"PopupMenu", "[", 
+                RowBox[{
+                 RowBox[{"Dynamic", "@", "otype"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"0", "\[Rule]", "Planet"}], ",", 
+                   RowBox[{"1", "\[Rule]", "Star"}], ",", 
+                   RowBox[{"2", "\[Rule]", "Particle"}], ",", 
+                   RowBox[{"3", "\[Rule]", "Asteroid"}]}], "}"}]}], "]"}]}], 
+              "}"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{"\"\<radius\>\"", ",", 
+               RowBox[{"InputField", "[", 
+                RowBox[{
+                 RowBox[{"Dynamic", "@", "orad"}], ",", 
+                 RowBox[{"FieldSize", "\[Rule]", "4"}]}], "]"}]}], "}"}], ",",
+              "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{"\"\<density\>\"", ",", 
+               RowBox[{"InputField", "[", 
+                RowBox[{
+                 RowBox[{"Dynamic", "@", "oden"}], ",", 
+                 RowBox[{"FieldSize", "\[Rule]", "4"}]}], "]"}]}], "}"}], ",",
+              "\[IndentingNewLine]", 
+             RowBox[{"{", 
+              RowBox[{"\"\<speed\>\"", ",", 
+               RowBox[{"InputField", "[", 
+                RowBox[{
+                 RowBox[{"Dynamic", "@", "ospd"}], ",", 
+                 RowBox[{"FieldSize", "\[Rule]", "4"}]}], "]"}]}], "}"}]}], 
+            "}"}]}], ",", "\[IndentingNewLine]", "\"\<state\>\"", ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"SetterBar", "[", 
+           RowBox[{
+            RowBox[{"Dynamic", "@", "oste"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"solid", "\[Rule]", "\"\<solid\>\""}], ",", 
+              RowBox[{"gaseous", "\[Rule]", "\"\<gaseous\>\""}]}], "}"}]}], 
+           "]"}], ",", "\[IndentingNewLine]", "\"\<color\>\"", ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"ColorSlider", "@", 
+           RowBox[{"Dynamic", "@", "ocol"}]}], ",", "\[IndentingNewLine]", 
+          "\"\<direction\>\"", ",", "\[IndentingNewLine]", 
+          RowBox[{"EventHandler", "[", 
+           RowBox[{
+            RowBox[{"Show", "[", 
+             RowBox[{
+              RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
                RowBox[{
                 RowBox[{"{", 
                  RowBox[{
-                  RowBox[{"#", "@", "\"\<rad\>\""}], ",", 
-                  RowBox[{"#", "@", "\"\<pos\>\""}], ",", 
-                  RowBox[{"#", "@", "\"\<vel\>\""}], ",", 
-                  RowBox[{"#", "@", "\"\<mas\>\""}], ",", 
-                  RowBox[{"#", "@", "\"\<col\>\""}], ",", 
-                  RowBox[{"#", "@", "\"\<ste\>\""}], ",", 
-                  RowBox[{"Length", "@", 
-                   RowBox[{"#", "@", "\"\<his\>\""}]}]}], "}"}], "&"}], "/@", 
-               "circs"}], ",", "3"}], "]"}], ",", "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{
-             "\"\<radius\>\"", ",", "\"\<position\>\"", ",", 
-              "\"\<velocity\>\"", ",", "\"\<mass\>\"", ",", "\"\<color\>\"", 
-              ",", "\"\<state\>\"", ",", "\"\<Length of History\>\""}], 
-             "}"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
-         RowBox[{"\"\<Time: \>\"", "<>", 
-          RowBox[{"ToString", "@", "time"}]}], ",", "\[IndentingNewLine]", 
-         RowBox[{"\"\<framePeriod: \>\"", " ", "<>", " ", 
-          RowBox[{"ToString", "@", 
-           RowBox[{"Max", "[", 
-            RowBox[{
-             RowBox[{"dt", "-", "frameTime"}], ",", "0.01"}], "]"}]}]}]}], 
-        "}"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-     RowBox[{"worldMenu", ":=", 
-      RowBox[{"Column", "@", "\[IndentingNewLine]", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"Button", "[", 
-          RowBox[{"\"\<Reset\>\"", ",", 
-           RowBox[{
-            RowBox[{"screenCenter", "=", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "0"}], "}"}]}], ";", 
-            RowBox[{"time", "=", "0"}], ";", 
-            RowBox[{"circs", "=", 
-             RowBox[{"{", "}"}]}]}]}], "]"}], ",", "\[IndentingNewLine]", 
-         RowBox[{"Button", "[", 
-          RowBox[{"\"\<New Orbit\>\"", ",", 
-           RowBox[{
-            RowBox[{"screenCenter", "=", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "0"}], "}"}]}], ";", 
-            RowBox[{"time", "=", "0"}], ";", 
-            RowBox[{"circs", "=", "orbit"}]}]}], "]"}], ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"Button", "[", 
-          RowBox[{"\"\<New Random\>\"", ",", 
-           RowBox[{
-            RowBox[{"screenCenter", "=", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "0"}], "}"}]}], ";", 
-            RowBox[{"time", "=", "0"}], ";", 
-            RowBox[{"circs", "=", 
-             RowBox[{"Table", "[", 
-              RowBox[{
-               RowBox[{"makeRandCirc", "[", 
-                RowBox[{"20", ",", "80", ",", "15", ",", "50"}], "]"}], ",", 
-               RowBox[{"{", 
-                RowBox[{"RandomInteger", "@", "8"}], "}"}]}], "]"}]}]}]}], 
-          "]"}], ",", "\[IndentingNewLine]", 
-         RowBox[{"Button", "[", 
-          RowBox[{"\"\<New dust\>\"", ",", 
-           RowBox[{
-            RowBox[{"screenCenter", "=", 
-             RowBox[{"{", 
-              RowBox[{"0", ",", "0"}], "}"}]}], ";", 
-            RowBox[{"time", "=", "0"}], ";", 
-            RowBox[{"circs", "=", 
-             RowBox[{"Table", "[", 
-              RowBox[{
-               RowBox[{"makeRandCirc", "[", 
-                RowBox[{"5", ",", "spaceSize", ",", "0", ",", "1"}], "]"}], 
-               ",", 
-               RowBox[{"{", 
-                RowBox[{"RandomInteger", "@", "150"}], "}"}]}], "]"}]}]}]}], 
-          "]"}], ",", "\[IndentingNewLine]", 
-         RowBox[{"Button", "[", 
-          RowBox[{
-           RowBox[{"Dynamic", "@", 
-            RowBox[{"If", "[", 
-             RowBox[{
-              RowBox[{"!", "running"}], ",", "\"\<Continue\>\"", ",", 
-              "\"\<Pause\>\""}], "]"}]}], ",", 
-           RowBox[{"running", "=", 
-            RowBox[{"!", "running"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
-         RowBox[{"Button", "[", 
-          RowBox[{"\"\<Add Random Planet\>\"", ",", 
-           RowBox[{"circs", " ", "~", "AppendTo", "~", " ", 
-            RowBox[{"makeRandCirc", "[", 
-             RowBox[{"20", ",", "80", ",", "15", ",", "50"}], "]"}]}]}], 
-          "]"}], ",", "\[IndentingNewLine]", 
-         RowBox[{"Slider2D", "[", 
-          RowBox[{
-           RowBox[{"Dynamic", "@", "screenCenter"}], ",", 
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{"-", "spaceSize"}], ",", "spaceSize"}], "}"}]}], "]"}]}],
-         "}"}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-     RowBox[{"objectCreationMenu", ":=", 
-      RowBox[{"Column", "@", "\[IndentingNewLine]", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"TableForm", "@", "\[IndentingNewLine]", 
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"{", 
-             RowBox[{"\"\<radius\>\"", ",", 
-              RowBox[{"InputField", "[", 
-               RowBox[{
-                RowBox[{"Dynamic", "@", "orad"}], ",", 
-                RowBox[{"FieldSize", "\[Rule]", "4"}]}], "]"}]}], "}"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{"\"\<density\>\"", ",", 
-              RowBox[{"InputField", "[", 
-               RowBox[{
-                RowBox[{"Dynamic", "@", "oden"}], ",", 
-                RowBox[{"FieldSize", "\[Rule]", "4"}]}], "]"}]}], "}"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"{", 
-             RowBox[{"\"\<speed\>\"", ",", 
-              RowBox[{"InputField", "[", 
-               RowBox[{
-                RowBox[{"Dynamic", "@", "ospd"}], ",", 
-                RowBox[{"FieldSize", "\[Rule]", "4"}]}], "]"}]}], "}"}]}], 
-           "}"}]}], ",", "\[IndentingNewLine]", "\"\<state\>\"", ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"SetterBar", "[", 
-          RowBox[{
-           RowBox[{"Dynamic", "@", "oste"}], ",", 
-           RowBox[{"{", 
-            RowBox[{
-             RowBox[{"solid", "\[Rule]", "\"\<solid\>\""}], ",", 
-             RowBox[{"gaseous", "\[Rule]", "\"\<gaseous\>\""}]}], "}"}]}], 
-          "]"}], ",", "\[IndentingNewLine]", "\"\<color\>\"", ",", 
-         "\[IndentingNewLine]", 
-         RowBox[{"ColorSlider", "@", 
-          RowBox[{"Dynamic", "@", "ocol"}]}], ",", "\[IndentingNewLine]", 
-         "\"\<direction\>\"", ",", "\[IndentingNewLine]", 
-         RowBox[{"EventHandler", "[", 
-          RowBox[{
-           RowBox[{"Show", "[", 
-            RowBox[{
-             RowBox[{"Graphics", "[", "\[IndentingNewLine]", 
-              RowBox[{
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"{", 
-                  RowBox[{"White", ",", 
-                   RowBox[{"Disk", "[", "]"}]}], "}"}], ",", 
-                 "\[IndentingNewLine]", 
-                 RowBox[{"{", 
-                  RowBox[{"Thick", ",", 
-                   RowBox[{"Arrowheads", "@", "Large"}], ",", 
-                   RowBox[{"Arrow", "@", 
+                  RowBox[{"{", 
+                   RowBox[{"White", ",", 
+                    RowBox[{"Disk", "[", "]"}]}], "}"}], ",", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"{", 
+                   RowBox[{"Thick", ",", 
+                    RowBox[{"Arrowheads", "@", "Large"}], ",", 
+                    RowBox[{"Arrow", "@", 
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"0", ",", "0"}], "}"}], ",", 
                     RowBox[{"Dynamic", "@", "odir"}]}], "}"}]}]}], "}"}]}], 
-                "}"}], ",", "\[IndentingNewLine]", 
-               RowBox[{"{", 
-                RowBox[{"PlotRange", "\[Rule]", 
-                 RowBox[{"{", 
-                  RowBox[{
-                   RowBox[{"{", 
+                 "}"}], ",", "\[IndentingNewLine]", 
+                RowBox[{"{", 
+                 RowBox[{"PlotRange", "\[Rule]", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"{", 
                     RowBox[{
                     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
-                   RowBox[{"{", 
+                    RowBox[{"{", 
                     RowBox[{
                     RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]}], "}"}]}],
-               "]"}], ",", "\[IndentingNewLine]", 
-             RowBox[{"ImageSize", "\[Rule]", "Small"}]}], "]"}], ",", 
-           "\[IndentingNewLine]", 
-           RowBox[{"{", 
-            RowBox[{"\"\<MouseDragged\>\"", "\[RuleDelayed]", 
-             RowBox[{"(", 
-              RowBox[{"odir", "=", 
-               RowBox[{"Normalize", "@", 
-                RowBox[{"MousePosition", "@", "\"\<Graphics\>\""}]}]}], 
-              ")"}]}], "}"}]}], "]"}]}], "}"}]}]}], ";", 
-     "\[IndentingNewLine]", "\[IndentingNewLine]", 
-     RowBox[{"menuChooser", ":=", 
-      RowBox[{"SetterBar", "[", 
-       RowBox[{
-        RowBox[{"Dynamic", "@", "curMenu"}], ",", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"worldMenu", "\[Rule]", "\"\<world\>\""}], ",", 
-          RowBox[{"objectCreationMenu", "\[Rule]", "\"\<object\>\""}]}], 
-         "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-     
-     RowBox[{"Print", "@", 
-      RowBox[{"Dynamic", "@", 
-       RowBox[{"Column", "@", "\[IndentingNewLine]", 
-        RowBox[{"{", 
-         RowBox[{
-          RowBox[{"Row", "[", 
-           RowBox[{
+                "]"}], ",", "\[IndentingNewLine]", 
+              RowBox[{"ImageSize", "\[Rule]", "Small"}]}], "]"}], ",", 
+            "\[IndentingNewLine]", 
             RowBox[{"{", 
-             RowBox[{"frame", ",", 
-              RowBox[{"Column", "@", 
-               RowBox[{"{", 
-                RowBox[{"menuChooser", ",", "curMenu"}], "}"}]}]}], "}"}], 
-            ",", 
-            RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], ",", "table"}], 
-         "}"}]}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-     RowBox[{"RunScheduledTask", "[", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"If", "[", 
-         RowBox[{"running", ",", "\[IndentingNewLine]", 
+             RowBox[{"\"\<MouseDragged\>\"", "\[RuleDelayed]", 
+              RowBox[{"(", 
+               RowBox[{"odir", "=", 
+                RowBox[{"Normalize", "@", 
+                 RowBox[{"MousePosition", "@", "\"\<Graphics\>\""}]}]}], 
+               ")"}]}], "}"}]}], "]"}]}], "}"}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"menuChooser", ":=", 
+       RowBox[{"SetterBar", "[", 
+        RowBox[{
+         RowBox[{"Dynamic", "@", "curMenu"}], ",", 
+         RowBox[{"{", 
           RowBox[{
-           RowBox[{"circs", "=", 
-            RowBox[{"Select", "[", 
-             RowBox[{
-              RowBox[{"resolveCollisions", "@", 
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"moveCirc", "[", 
-                   RowBox[{"#", ",", "circs", ",", "dt", ",", "ds"}], "]"}], 
-                  "&"}], "/@", "circs"}], ")"}]}], ",", 
-              RowBox[{
-               RowBox[{"onScreen", "[", 
-                RowBox[{"#", "@", "\"\<pos\>\""}], "]"}], "&"}]}], "]"}]}], 
-           ";", "\[IndentingNewLine]", 
-           RowBox[{"time", "+=", "dt"}]}]}], "]"}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"ohover", "=", 
-         RowBox[{"updateAssoc", "[", 
-          RowBox[{"ohover", ",", 
-           RowBox[{"<|", 
+           RowBox[{"worldMenu", "\[Rule]", "\"\<world\>\""}], ",", 
+           RowBox[{"objectCreationMenu", "\[Rule]", "\"\<object\>\""}]}], 
+          "}"}]}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"Print", "@", 
+       RowBox[{"Dynamic", "@", 
+        RowBox[{"Column", "@", "\[IndentingNewLine]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Row", "[", 
             RowBox[{
-             RowBox[{"\"\<rad\>\"", "\[Rule]", "orad"}], ",", 
-             RowBox[{"\"\<den\>\"", "\[Rule]", "oden"}], ",", 
-             RowBox[{"\"\<vel\>\"", "\[Rule]", 
-              RowBox[{"odir", " ", "ospd"}]}], ",", 
-             RowBox[{"\"\<ste\>\"", "\[Rule]", "oste"}], ",", 
-             RowBox[{"\"\<col\>\"", "\[Rule]", "ocol"}]}], "|>"}]}], "]"}]}], 
-        ";", "\[IndentingNewLine]", "frame"}], ",", "\[IndentingNewLine]", 
-       "framePeriod"}], "]"}]}]}], "]"}]}]], "Input",
+             RowBox[{"{", 
+              RowBox[{"frame", ",", 
+               RowBox[{"Column", "@", 
+                RowBox[{"{", 
+                 RowBox[{"menuChooser", ",", "curMenu"}], "}"}]}]}], "}"}], 
+             ",", 
+             RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], ",", "table"}], 
+          "}"}]}]}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"RunScheduledTask", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"If", "[", 
+          RowBox[{"running", ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"circs", "=", 
+             RowBox[{"Select", "[", 
+              RowBox[{
+               RowBox[{"resolveCollisions", "@", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"moveCirc", "[", 
+                    RowBox[{"#", ",", "circs", ",", "dt", ",", "ds"}], "]"}], 
+                   "&"}], "/@", "circs"}], ")"}]}], ",", 
+               RowBox[{
+                RowBox[{"onScreen", "[", 
+                 RowBox[{"#", "@", "\"\<pos\>\""}], "]"}], "&"}]}], "]"}]}], 
+            ";", "\[IndentingNewLine]", 
+            RowBox[{"time", "+=", "dt"}]}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"ohover", "=", 
+          RowBox[{"updateAssoc", "[", 
+           RowBox[{"ohover", ",", 
+            RowBox[{"<|", 
+             RowBox[{
+              RowBox[{"\"\<rad\>\"", "\[Rule]", "orad"}], ",", 
+              RowBox[{"\"\<den\>\"", "\[Rule]", "oden"}], ",", 
+              RowBox[{"\"\<vel\>\"", "\[Rule]", 
+               RowBox[{"odir", " ", "ospd"}]}], ",", 
+              RowBox[{"\"\<ste\>\"", "\[Rule]", "oste"}], ",", 
+              RowBox[{"\"\<col\>\"", "\[Rule]", "ocol"}]}], "|>"}]}], "]"}]}],
+          ";", "\[IndentingNewLine]", "frame"}], ",", "\[IndentingNewLine]", 
+        "framePeriod"}], "]"}]}]}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SimulateSpaceToTheBestOfYourAbilites", "[", "]"}]}], "Input",
  CellChangeTimes->{{3.6363929212917576`*^9, 3.6363932097843714`*^9}, {
    3.636393247334293*^9, 3.636393273482505*^9}, {3.6363933168890486`*^9, 
    3.636393358908249*^9}, {3.6363934141746917`*^9, 3.6363934448216324`*^9}, {
@@ -1115,33 +1142,29 @@ Cell[BoxData[
    3.6374210134685793`*^9, 3.637421071347557*^9}, {3.637421365286672*^9, 
    3.637421367629491*^9}, {3.637422545847981*^9, 3.637422548157836*^9}, {
    3.6374230976204367`*^9, 3.6374232448846893`*^9}, {3.6374232767078037`*^9, 
-   3.637423310907403*^9}, {3.637423438390191*^9, 3.637423452833227*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"SimulateSpaceToTheBestOfYourAbilites", "[", "]"}]], "Input",
- CellChangeTimes->{{3.636816582950842*^9, 3.6368165848979273`*^9}}],
+   3.637423310907403*^9}, {3.637423438390191*^9, 3.637423452833227*^9}, {
+   3.6376036514001703`*^9, 3.637603687293889*^9}, {3.6376037625642986`*^9, 
+   3.6376037823747883`*^9}, {3.6376038716096716`*^9, 3.637603932409037*^9}, {
+   3.6376039709747634`*^9, 3.6376040957858276`*^9}}],
 
 Cell[BoxData[
  DynamicBox[ToBoxes[
    Column[{
-     Row[{$CellContext`frame$43629, 
-       Column[{$CellContext`menuChooser$43629, $CellContext`curMenu$43629}]}, 
-      Frame -> True], $CellContext`table$43629}], StandardForm],
-  ImageSizeCache->{707., {336.5, 341.5}}]], "Print",
+     Row[{$CellContext`frame$47999, 
+       Column[{$CellContext`menuChooser$47999, $CellContext`curMenu$47999}]}, 
+      Frame -> True], $CellContext`table$47999}], StandardForm],
+  ImageSizeCache->{766., {320.5, 327.5}}]], "Print",
  CellChangeTimes->{
-  3.637335282341256*^9, 3.6374209928622828`*^9, 3.637421374082542*^9, 
-   3.6374219735393248`*^9, 3.6374221700629883`*^9, 3.63742251791052*^9, 
-   3.6374233171439037`*^9, 3.6374234062742987`*^9, {3.637423459190447*^9, 
-   3.637423462039579*^9}, 3.637423529380035*^9}],
+  3.6376037829067936`*^9, {3.6376040293037004`*^9, 3.6376040530201883`*^9}, 
+   3.6376040962928343`*^9}],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`frame$$ = EventHandler[
    Graphics[{{{
-       RGBColor[0., 0.6666666666666666, 0.], 
+       Opacity[0.5, 
+        RGBColor[0., 0.6666666666666666, 0.]], 
        Disk[{105., 105.}, 5.]}, {
-       RGBColor[0.5, 0.8333333333333333, 0.5], 
+       RGBColor[0.5, 0.8333333333333333, 0.5, 0.5], 
        Arrow[{{105., 105.}, {105., 115.}}]}}}, {
     ImageSize -> Large, PlotRange -> {{-100, 100}, {-100, 100}}, Background -> 
      RGBColor[0.2, 0.2, 0.2]}], {
@@ -1213,7 +1236,11 @@ $CellContext`menuChooser$$ = SetterBar[
          $CellContext`makeRandCirc[20, 80, 15, 50]]], 
        Slider2D[
         Dynamic[$CellContext`screenCenter], {-500, 500}]}] -> "world", Column[{
-       TableForm[{{"radius", 
+       TableForm[{{"type", 
+          PopupMenu[
+           Dynamic[$CellContext`otype$$], {
+           0 -> $CellContext`Planet, 1 -> Star, 2 -> $CellContext`Particle, 
+            3 -> $CellContext`Asteroid}]}, {"radius", 
           InputField[
            Dynamic[$CellContext`orad$$], FieldSize -> 4]}, {"density", 
           InputField[
@@ -1241,7 +1268,11 @@ $CellContext`menuChooser$$ = SetterBar[
    1., "mas" -> 5235.987755982988, "col" -> 
    RGBColor[0., 0.6666666666666666, 0.], 
    "his" -> {{105., 105.}}], $CellContext`objectCreationMenu$$ = Column[{
-    TableForm[{{"radius", 
+    TableForm[{{"type", 
+       PopupMenu[
+        Dynamic[$CellContext`otype$$], {
+        0 -> $CellContext`Planet, 1 -> Star, 2 -> $CellContext`Particle, 
+         3 -> $CellContext`Asteroid}]}, {"radius", 
        InputField[
         Dynamic[$CellContext`orad$$], FieldSize -> 4]}, {"density", 
        InputField[
@@ -1265,10 +1296,10 @@ $CellContext`menuChooser$$ = SetterBar[
          MousePosition["Graphics"]])}]}], $CellContext`orad$$ = 
   5, $CellContext`oden$$ = 10, $CellContext`ospd$$ = 
   10, $CellContext`odir$$ = {0, 1}, $CellContext`ocol$$ = RGBColor[0, 
-   Rational[2, 3], 0], $CellContext`oste$$ = 1, $CellContext`framePeriod$$ = 
-  0.02, $CellContext`time$$ = 0, $CellContext`running$$ = 
-  False, $CellContext`frameTime$$ = 0, $CellContext`dt$$ = 
-  0.05, $CellContext`ds$$ = 2}, 
+   Rational[2, 3], 0], $CellContext`oste$$ = 1, $CellContext`otype$$ = 
+  0, $CellContext`framePeriod$$ = 0.02, $CellContext`time$$ = 
+  0, $CellContext`running$$ = False, $CellContext`frameTime$$ = 
+  0, $CellContext`dt$$ = 0.05, $CellContext`ds$$ = 2}, 
   InterpretationBox[
    RowBox[{
     TagBox["ScheduledTaskObject",
@@ -1391,7 +1422,7 @@ dEAPPwB9A46P
              RowBox[{
               TagBox["\<\"Unique ID: \"\>",
                "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-              TagBox["9",
+              TagBox["10",
                "SummaryItem"]}]},
             {
              RowBox[{
@@ -1531,7 +1562,7 @@ dEAPPwB9A46P
              RowBox[{
               TagBox["\<\"Unique ID: \"\>",
                "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-              TagBox["9",
+              TagBox["10",
                "SummaryItem"]}]},
             {
              RowBox[{
@@ -1575,7 +1606,7 @@ dEAPPwB9A46P
        ImageSize->Automatic],
       BaselinePosition->Baseline],
      DynamicModuleValues:>{}], "]"}],
-   ScheduledTaskObject[9, 
+   ScheduledTaskObject[10, 
     HoldForm[If[$CellContext`running$$, $CellContext`circs$$ = Select[
           $CellContext`resolveCollisions[
            
@@ -1597,44 +1628,13 @@ $CellContext`updateAssoc[$CellContext`ohover$$,
    Selectable->False],
   DynamicModuleValues:>{}]], "Output",
  CellChangeTimes->{
-  3.636816585297943*^9, 3.6368166424373283`*^9, 3.636816759159232*^9, 
-   3.6368168834653454`*^9, 3.6368170988558407`*^9, 3.6368171438215647`*^9, 
-   3.636817258386846*^9, 3.636817380242934*^9, 3.636817410886696*^9, 
-   3.636817762739083*^9, 3.636819589848082*^9, 3.6368196288202343`*^9, 
-   3.6368200799935226`*^9, {3.6368201218087225`*^9, 3.6368201329371223`*^9}, 
-   3.636820283593301*^9, 3.636820439306879*^9, 3.6368205261759233`*^9, 
-   3.63682056427838*^9, 3.6368206526153803`*^9, 3.636822513328187*^9, 
-   3.636822567002567*^9, 3.6368226209513464`*^9, 3.6368233522597523`*^9, 
-   3.636834223952955*^9, 3.6368342598446903`*^9, {3.6368343758255806`*^9, 
-   3.6368344058050823`*^9}, {3.6368344582391367`*^9, 3.636834510641786*^9}, {
-   3.636834548344039*^9, 3.636834565905058*^9}, 3.636834620111617*^9, 
-   3.636834716683572*^9, {3.636834960584695*^9, 3.6368349694094534`*^9}, 
-   3.636835041754133*^9, {3.6368353188696055`*^9, 3.6368353480772023`*^9}, 
-   3.6368355422957067`*^9, 3.6368356329214334`*^9, 3.636835741104352*^9, 
-   3.6368357766591945`*^9, 3.6368360408656483`*^9, 3.6368362308739243`*^9, 
-   3.636836336503341*^9, 3.6368364366125255`*^9, 3.6368372067897987`*^9, 
-   3.6368373073061295`*^9, 3.636837488961129*^9, {3.6368375287561293`*^9, 
-   3.636837562268629*^9}, 3.636837620246129*^9, 3.6368902533438187`*^9, 
-   3.636890285899722*^9, 3.6368913206693687`*^9, {3.6368914359085073`*^9, 
-   3.63689148681396*^9}, 3.636891761724049*^9, 3.636891877773879*^9, 
-   3.636891919671754*^9, 3.636892143441997*^9, 3.636892230678842*^9, 
-   3.636892510634905*^9, 3.636892788240315*^9, {3.636893504800901*^9, 
-   3.6368935293458853`*^9}, 3.636893610487715*^9, {3.636893735877246*^9, 
-   3.636893759670624*^9}, 3.6368945704383802`*^9, {3.63689464899575*^9, 
-   3.636894664124033*^9}, 3.636898411948072*^9, 3.636898446927347*^9, 
-   3.636898667972171*^9, 3.63689876883045*^9, 3.636899124347515*^9, 
-   3.6368993592584753`*^9, 3.636899559271364*^9, 3.6368996635963793`*^9, 
-   3.636899701472814*^9, 3.636899776917351*^9, 3.636899840520299*^9, 
-   3.636900008065316*^9, 3.637322237853524*^9, 3.637322355460739*^9, 
-   3.6373352823595457`*^9, 3.637420992951255*^9, 3.637421374101527*^9, 
-   3.637421973582408*^9, 3.6374221701070137`*^9, 3.6374225179332647`*^9, 
-   3.6374233171729813`*^9, 3.6374234063021793`*^9, {3.6374234592178*^9, 
-   3.637423462066575*^9}, 3.6374235294082212`*^9}]
+  3.637603782916794*^9, {3.637604029536703*^9, 3.6376040530311885`*^9}, 
+   3.6376040963228345`*^9}]
 }, Open  ]]
 },
-WindowSize->{1366, 715},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"10.0 for Linux x86 (64-bit) (December 4, 2014)",
+WindowSize->{1366, 686},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"10.0 for Microsoft Windows (64-bit) (December 4, 2014)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -1648,25 +1648,24 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 624, 12, 89, "Text"],
-Cell[1185, 34, 339, 8, 70, "Text"],
-Cell[1527, 44, 1880, 48, 165, "Input"],
-Cell[3410, 94, 1835, 38, 209, "Input"],
-Cell[5248, 134, 746, 16, 58, "Input"],
-Cell[5997, 152, 1115, 26, 99, "Input"],
-Cell[7115, 180, 4016, 87, 275, "Input"],
-Cell[11134, 269, 2643, 66, 253, "Input"],
-Cell[13780, 337, 3554, 86, 386, "Input"],
-Cell[17337, 425, 710, 18, 32, "Input"],
-Cell[18050, 445, 1445, 30, 165, "Input"],
-Cell[19498, 477, 1903, 49, 187, "Input"],
-Cell[21404, 528, 1502, 46, 55, "Input"],
-Cell[22909, 576, 794, 23, 55, "Input"],
-Cell[23706, 601, 27661, 516, 1419, "Input"],
+Cell[558, 20, 624, 12, 87, "Text"],
+Cell[1185, 34, 339, 8, 68, "Text"],
+Cell[1527, 44, 1880, 48, 152, "Input"],
+Cell[3410, 94, 1835, 38, 192, "Input"],
+Cell[5248, 134, 746, 16, 54, "Input"],
+Cell[5997, 152, 1115, 26, 92, "Input"],
+Cell[7115, 180, 4016, 87, 252, "Input"],
+Cell[11134, 269, 2643, 66, 232, "Input"],
+Cell[13780, 337, 3554, 86, 328, "Input"],
+Cell[17337, 425, 710, 18, 31, "Input"],
+Cell[18050, 445, 1445, 30, 152, "Input"],
+Cell[19498, 477, 1903, 49, 172, "Input"],
+Cell[21404, 528, 1502, 46, 52, "Input"],
+Cell[22909, 576, 794, 23, 52, "Input"],
 Cell[CellGroupData[{
-Cell[51392, 1121, 152, 2, 32, "Input"],
-Cell[51547, 1125, 568, 11, 688, "Print"],
-Cell[52118, 1138, 24646, 493, 69, "Output"]
+Cell[23728, 603, 29283, 544, 1252, "Input"],
+Cell[53014, 1149, 405, 9, 658, "Print"],
+Cell[53422, 1160, 22795, 471, 75, "Output"]
 }, Open  ]]
 }
 ]
