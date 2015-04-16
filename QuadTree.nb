@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     24860,        686]
-NotebookOptionsPosition[     23599,        644]
-NotebookOutlinePosition[     23945,        659]
-CellTagsIndexPosition[     23902,        656]
+NotebookDataLength[     25272,        671]
+NotebookOptionsPosition[     24423,        643]
+NotebookOutlinePosition[     24769,        658]
+CellTagsIndexPosition[     24726,        655]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,43 +25,36 @@ Cell[BoxData[
    "A", " ", "quadTree", " ", "is", " ", "an", " ", "association", " ", "of", 
     " ", 
     RowBox[{"planets", "/", "quadTrees"}], " ", "followed", " ", "a", " ", 
-    "list", " ", "of", " ", "the", " ", "corners", " ", "of", " ", "the", " ",
-     "bounding", " ", "box", " ", "follwed", " ", "by", " ", "the", " ", 
-    "center", " ", "of", " ", "mass", " ", "of", " ", "the", " ", "tree", " ",
-     "followed", " ", "by", " ", "total", " ", 
+    "list", " ", "of", " ", "the", " ", "corners", " ", 
+    RowBox[{"(", 
+     RowBox[{
+     "lower", " ", "left", " ", "and", " ", "then", " ", "upper", " ", 
+      "right"}], ")"}], " ", "of", " ", "the", " ", "bounding", " ", "box", 
+    " ", "follwed", " ", "by", " ", "the", " ", "center", " ", "of", " ", 
+    "mass", " ", "of", " ", "the", " ", "tree", " ", "followed", " ", "by", 
+    " ", "total", " ", 
     RowBox[{"mass", ".", " ", "It"}], " ", "looks", " ", "kinda", " ", "like",
      " ", 
     RowBox[{"this", ":", "\[IndentingNewLine]", 
-     RowBox[{"{", 
+     RowBox[{"<|", 
       RowBox[{
        RowBox[{"quadTrees", "/", "circs"}], ",", " ", "corners", ",", " ", 
        RowBox[{"center", " ", "of", " ", "mass"}], ",", " ", 
-       RowBox[{"total", " ", "mass"}]}], "}"}]}]}], " ", "*)"}], 
+       RowBox[{"total", " ", "mass"}]}], "|>"}]}]}], " ", "*)"}], 
   "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
-    RowBox[{"divideSize", " ", "=", " ", "20"}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"divideSize", " ", "=", "8"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"undivideSize", " ", "=", " ", "10"}], ";"}]}]}]], "Input",
+    RowBox[{"undivideSize", " ", "=", "3"}], ";"}]}]}]], "Input",
  CellChangeTimes->{{3.637942811045989*^9, 3.637942849001234*^9}, {
    3.637949524654851*^9, 3.6379495423666034`*^9}, {3.6379495814761286`*^9, 
    3.6379496110420046`*^9}, {3.638129039981452*^9, 3.638129053589798*^9}, {
    3.638129091040882*^9, 3.6381291447853785`*^9}, 3.6381295060060635`*^9, {
-   3.6381297067741814`*^9, 3.6381297093761597`*^9}}],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"testCircs", "=", 
-   RowBox[{"Table", "[", 
-    RowBox[{
-     RowBox[{"makeRandCircRadial", "[", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"0", ",", "0"}], "}"}], ",", "3", ",", "200", ",", "15", ",", 
-       "10"}], "]"}], ",", 
-     RowBox[{"{", "100", "}"}]}], "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.6381293714732833`*^9, 3.638129406398512*^9}, {
-  3.638133118474907*^9, 3.6381331187274065`*^9}}],
+   3.6381297067741814`*^9, 3.6381297093761597`*^9}, {3.638134693303788*^9, 
+   3.6381346969759073`*^9}, {3.6381347541619644`*^9, 3.638134760609188*^9}, {
+   3.6381411921170063`*^9, 3.6381411946545696`*^9}, {3.6381412558535423`*^9, 
+   3.638141263521223*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -190,32 +183,22 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"quadTree", "=", 
-   RowBox[{"createQuadTree", "[", 
-    RowBox[{"testCircs", ",", 
-     RowBox[{"{", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"-", "1000"}], ",", 
-         RowBox[{"-", "1000"}]}], "}"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"1000", ",", "1000"}], "}"}]}], "}"}]}], "]"}]}], 
-  ";"}]], "Input",
- CellChangeTimes->{{3.638129496448698*^9, 3.638129539600233*^9}, 
-   3.638129867735983*^9, {3.638129914763029*^9, 3.6381299165514174`*^9}}],
-
-Cell[BoxData[
- RowBox[{
   RowBox[{"hasChildrenQ", "[", "qTree_", "]"}], " ", ":=", " ", 
   RowBox[{
    RowBox[{
     RowBox[{"Length", "[", 
      RowBox[{"qTree", "@", "\"\<chlds\>\""}], "]"}], "\[Equal]", "4"}], "&&", 
-   RowBox[{"AssociationQ", "[", 
-    RowBox[{"First", "@", 
-     RowBox[{"qTree", "@", "\"\<chlds\>\""}]}], "]"}]}]}]], "Input",
- CellChangeTimes->{{3.6381302805339613`*^9, 3.638130362597912*^9}}],
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"First", "@", 
+       RowBox[{"qTree", "@", "\"\<chlds\>\""}]}], ")"}], "@", 
+     "\"\<CofM\>\""}], "=!=", 
+    RowBox[{"Missing", "[", 
+     RowBox[{"\"\<KeyAbsent\>\"", ",", "\"\<CofM\>\""}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.6381302805339613`*^9, 3.638130362597912*^9}, {
+   3.6381403858885183`*^9, 3.6381404058081994`*^9}, 3.638140744165985*^9, {
+   3.638140783073485*^9, 3.638140789303485*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -277,10 +260,7 @@ Cell[BoxData[
            "circs", "\[LeftDoubleBracket]", "i", "\[RightDoubleBracket]"}]}], 
           "]"}]}], ";"}], "\[IndentingNewLine]", ",", 
        RowBox[{"{", 
-        RowBox[{"i", ",", "3"}], "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"circs", "\[LeftDoubleBracket]", "4", "\[RightDoubleBracket]"}],
-       "=", "origCircs"}], ";", "\[IndentingNewLine]", 
+        RowBox[{"i", ",", "4"}], "}"}]}], "]"}], ";", "\[IndentingNewLine]", 
      RowBox[{"updateAssoc", "[", 
       RowBox[{"qTree", ",", 
        RowBox[{"<|", 
@@ -301,7 +281,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.63812957630249*^9, 3.638129617796949*^9}, {
   3.6381299260952473`*^9, 3.6381299312948074`*^9}, {3.638129966123758*^9, 
   3.6381299731236906`*^9}, {3.6381300057019615`*^9, 3.6381300559291615`*^9}, {
-  3.6381301365861616`*^9, 3.6381301682481613`*^9}}],
+  3.6381301365861616`*^9, 3.6381301682481613`*^9}, {3.6381395061895933`*^9, 
+  3.638139508677672*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -321,30 +302,74 @@ Cell[BoxData[
        RowBox[{"hasChildrenQ", "[", "qTree", "]"}]}], ",", 
       "\[IndentingNewLine]", 
       RowBox[{"updateAssoc", "[", 
-       RowBox[{"qTree", ",", 
+       RowBox[{"qTree", ",", "\[IndentingNewLine]", 
         RowBox[{"<|", 
-         RowBox[{"\"\<chlds\>\"", "\[Rule]", 
-          RowBox[{
-           RowBox[{"qTree", "@", "\"\<chlds\>\""}], "~", "Append", "~", 
-           "circ"}]}], "|>"}]}], "]"}], ",", "\[IndentingNewLine]", 
-      RowBox[{"updateAssoc", "[", 
-       RowBox[{"qTree", ",", 
-        RowBox[{"<|", 
-         RowBox[{"\"\<chlds\>\"", "\[Rule]", 
-          RowBox[{"(", 
+         RowBox[{
+          RowBox[{"\"\<chlds\>\"", "\[Rule]", 
            RowBox[{
+            RowBox[{"qTree", "@", "\"\<chlds\>\""}], "~", "Append", "~", 
+            "circ"}]}], ",", 
+          RowBox[{"\"\<CofM\>\"", "\[Rule]", 
+           FractionBox[
             RowBox[{
-             RowBox[{"addCircToQuadTree", "[", 
-              RowBox[{"#", ",", "circ"}], "]"}], "&"}], "/@", 
-            RowBox[{"qTree", "@", "\"\<chlds\>\""}]}], ")"}]}], "|>"}]}], 
-       "]"}]}], "\[IndentingNewLine]", "]"}]}], "]"}]}]], "Input",
+             RowBox[{
+              RowBox[{"qTree", "@", "\"\<mas\>\""}], " ", 
+              RowBox[{"qTree", "@", "\"\<CofM\>\""}]}], "+", 
+             RowBox[{
+              RowBox[{"circ", "@", "\"\<mas\>\""}], " ", 
+              RowBox[{"circ", "@", "\"\<pos\>\""}]}]}], 
+            RowBox[{
+             RowBox[{"qTree", "@", "\"\<mas\>\""}], "+", 
+             RowBox[{"circ", "@", "\"\<mas\>\""}]}]]}], ",", 
+          RowBox[{"\"\<mas\>\"", "\[Rule]", 
+           RowBox[{
+            RowBox[{"qTree", "@", "\"\<mas\>\""}], "+", 
+            RowBox[{"circ", "@", "\"\<mas\>\""}]}]}]}], "|>"}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"With", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"children", "=", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"addCircToQuadTree", "[", 
+             RowBox[{"#", ",", "circ"}], "]"}], "&"}], "/@", 
+           RowBox[{"qTree", "@", "\"\<chlds\>\""}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"updateAssoc", "[", 
+         RowBox[{"qTree", ",", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<chlds\>\"", "\[Rule]", "children"}], ",", 
+            RowBox[{"\"\<CofM\>\"", "\[Rule]", 
+             FractionBox[
+              RowBox[{"Sum", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"qt", "@", "\"\<mas\>\""}], " ", 
+                 RowBox[{"qt", "@", "\"\<CofM\>\""}]}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"qt", ",", "children"}], "}"}]}], "]"}], 
+              RowBox[{"Sum", "[", 
+               RowBox[{
+                RowBox[{"qt", "@", "\"\<mas\>\""}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"qt", ",", "children"}], "}"}]}], "]"}]]}], ",", 
+            RowBox[{"\"\<mas\>\"", "\[Rule]", 
+             RowBox[{"Sum", "[", 
+              RowBox[{
+               RowBox[{"qt", "@", "\"\<mas\>\""}], ",", 
+               RowBox[{"{", 
+                RowBox[{"qt", ",", "children"}], "}"}]}], "]"}]}]}], "|>"}]}],
+          "]"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.6381292582274156`*^9, 3.638129259155439*^9}, {
    3.6381293126592493`*^9, 3.638129313288267*^9}, {3.6381302312223616`*^9, 
    3.638130244087762*^9}, {3.6381306981440535`*^9, 3.638130834984124*^9}, {
    3.638130952764139*^9, 3.638130972943042*^9}, 3.638131063946655*^9, {
    3.6381311158408656`*^9, 3.6381311330606766`*^9}, {3.638131356178562*^9, 
    3.6381313582426257`*^9}, {3.6381314056088667`*^9, 3.638131454588399*^9}, {
-   3.638132394235942*^9, 3.638132439702015*^9}}],
+   3.638132394235942*^9, 3.638132439702015*^9}, {3.638135088202183*^9, 
+   3.6381353541924944`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -363,106 +388,53 @@ Cell[BoxData[
       RowBox[{"!", 
        RowBox[{"hasChildrenQ", "[", "qTree", "]"}]}], ",", 
       "\[IndentingNewLine]", 
-      RowBox[{"updateAssoc", "[", 
-       RowBox[{"qTree", ",", 
-        RowBox[{"<|", 
-         RowBox[{"\"\<chlds\>\"", "\[Rule]", 
-          RowBox[{"Complement", "[", 
-           RowBox[{
-            RowBox[{"qTree", "@", "\"\<chlds\>\""}], ",", 
-            RowBox[{"{", "circ", "}"}]}], "]"}]}], "|>"}]}], "]"}], ",", 
-      "\[IndentingNewLine]", 
-      RowBox[{"updateAssoc", "[", 
-       RowBox[{"qTree", ",", 
-        RowBox[{"<|", 
-         RowBox[{"\"\<chlds\>\"", "\[Rule]", 
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"removeCircFromQuadTree", "[", 
-              RowBox[{"#", ",", "circ"}], "]"}], "&"}], "/@", 
-            RowBox[{"qTree", "@", "\"\<chlds\>\""}]}], ")"}]}], "|>"}]}], 
-       "]"}]}], "\[IndentingNewLine]", "]"}]}], "]"}]}]], "Input",
- CellChangeTimes->{{3.638132492098255*^9, 3.6381325097486987`*^9}, {
-  3.6381326069160004`*^9, 3.6381326552421427`*^9}}],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"testCirc", "=", 
-  RowBox[{"makeRandCirc", "[", 
-   RowBox[{"10", ",", "20", ",", "5", ",", "8"}], "]"}]}]], "Input",
- CellChangeTimes->{{3.6381310109353456`*^9, 3.6381310437507844`*^9}}],
-
-Cell[BoxData[
- RowBox[{"\[LeftAssociation]", 
-  RowBox[{
-   RowBox[{"\<\"rad\"\>", "\[Rule]", "9.65025655511672`"}], ",", 
-   RowBox[{"\<\"pos\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"16.410723691442357`", ",", "16.494108502055127`"}], "}"}]}], 
-   ",", 
-   RowBox[{"\<\"vel\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"1.8347676726880273`", ",", "2.875631631386277`"}], "}"}]}], ",", 
-   RowBox[{"\<\"den\"\>", "\[Rule]", "7.733340010077484`"}], ",", 
-   RowBox[{"\<\"ste\"\>", "\[Rule]", "1.`"}], ",", 
-   RowBox[{"\<\"mas\"\>", "\[Rule]", "29112.016752356958`"}], ",", 
-   RowBox[{"\<\"col\"\>", "\[Rule]", 
-    InterpretationBox[
-     ButtonBox[
-      TooltipBox[
+      RowBox[{"createQuadTree", "[", 
        RowBox[{
-        GraphicsBox[{
-          {GrayLevel[0], RectangleBox[{0, 0}]}, 
-          {GrayLevel[0], RectangleBox[{1, -1}]}, 
-          {RGBColor[
-           0.18544928654469683`, 0.07083250039364808, 0.3016094282179942], 
-           RectangleBox[{0, -1}, {2, 1}]}},
-         AspectRatio->1,
-         Frame->True,
-         FrameStyle->RGBColor[
-          0.12363285769646457`, 0.047221666929098724`, 0.20107295214532947`],
-         FrameTicks->None,
-         ImageSize->
-          Dynamic[{
-           Automatic, 1.35 CurrentValue["FontCapHeight"]/AbsoluteCurrentValue[
-            Magnification]}],
-         PlotRangePadding->None], "\[InvisibleSpace]"}],
-       "RGBColor[0.18544928654469683, 0.07083250039364808, \
-0.3016094282179942]"],
-      Appearance->None,
-      BaseStyle->{},
-      BaselinePosition->Baseline,
-      ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
-        If[
-         Not[
-          AbsoluteCurrentValue["Deployed"]], 
-         SelectionMove[Typeset`box$, All, Expression]; 
-         FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
-         FrontEnd`Private`$ColorSelectorInitialColor = 
-          RGBColor[
-           0.18544928654469683`, 0.07083250039364808, 0.3016094282179942]; 
-         FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
-         MathLink`CallFrontEnd[
-           FrontEnd`AttachCell[Typeset`box$, 
-            FrontEndResource["RGBColorValueSelector"], {0, {Left, Bottom}}, {
-            Left, Top}, 
-            "ClosingActions" -> {
-             "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
-      DefaultBaseStyle->{},
-      Evaluator->Automatic,
-      Method->"Preemptive"],
-     RGBColor[0.18544928654469683`, 0.07083250039364808, 0.3016094282179942],
-     Editable->False,
-     Selectable->False]}], ",", 
-   RowBox[{"\<\"his\"\>", "\[Rule]", 
-    RowBox[{"{", 
-     RowBox[{"{", 
-      RowBox[{"16.410723691442357`", ",", "16.494108502055127`"}], "}"}], 
-     "}"}]}]}], "\[RightAssociation]"}]], "Output",
- CellChangeTimes->{3.6381310456304417`*^9}]
-}, Open  ]],
+        RowBox[{"Complement", "[", 
+         RowBox[{
+          RowBox[{"qTree", "@", "\"\<chlds\>\""}], ",", 
+          RowBox[{"{", "circ", "}"}]}], "]"}], ",", 
+        RowBox[{"qTree", "@", "\"\<crnrs\>\""}]}], "]"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"With", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"children", "=", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"removeCircFromQuadTree", "[", 
+             RowBox[{"#", ",", "circ"}], "]"}], "&"}], "/@", 
+           RowBox[{"qTree", "@", "\"\<chlds\>\""}]}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"updateAssoc", "[", 
+         RowBox[{"qTree", ",", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<chlds\>\"", "\[Rule]", "children"}], ",", 
+            RowBox[{"\"\<CofM\>\"", "\[Rule]", 
+             FractionBox[
+              RowBox[{"Sum", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"qt", "@", "\"\<mas\>\""}], " ", 
+                 RowBox[{"qt", "@", "\"\<CofM\>\""}]}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"qt", ",", "children"}], "}"}]}], "]"}], 
+              RowBox[{"Sum", "[", 
+               RowBox[{
+                RowBox[{"qt", "@", "\"\<mas\>\""}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"qt", ",", "children"}], "}"}]}], "]"}]]}], ",", 
+            RowBox[{"\"\<mas\>\"", "\[Rule]", 
+             RowBox[{"Sum", "[", 
+              RowBox[{
+               RowBox[{"qt", "@", "\"\<mas\>\""}], ",", 
+               RowBox[{"{", 
+                RowBox[{"qt", ",", "children"}], "}"}]}], "]"}]}]}], "|>"}]}],
+          "]"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.638132492098255*^9, 3.6381325097486987`*^9}, {
+  3.6381326069160004`*^9, 3.6381326552421427`*^9}, {3.6381353823524723`*^9, 
+  3.638135440620571*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -530,24 +502,24 @@ Cell[BoxData[
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"quadTree", "=", 
-   RowBox[{"updateQuadTree", "[", "quadTree", "]"}]}], ";"}]], "Input",
- CellChangeTimes->{{3.6381342934710684`*^9, 3.6381342987936583`*^9}}],
-
-Cell[BoxData[
- RowBox[{
   RowBox[{"gravitationalForce", "[", 
    RowBox[{"qTree_", ",", "circ_", ",", "\[Theta]_"}], "]"}], " ", ":=", 
   "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Cheap", " ", "fix", " ", "to", " ", "stop", " ", "dist", " ", "from", " ",
+     "being", " ", "0", " ", "because", " ", "I", " ", "feel", " ", "lazy", 
+    " ", "right", " ", "now"}], "*)"}], "\[IndentingNewLine]", 
   RowBox[{"With", "[", 
    RowBox[{
     RowBox[{"{", 
      RowBox[{"dist", "=", 
-      RowBox[{"EuclideanDistance", "[", 
-       RowBox[{
-        RowBox[{"circ", "@", "\"\<pos\>\""}], ",", 
-        RowBox[{"qTree", "@", "\"\<CofM\>\""}]}], "]"}]}], "}"}], ",", 
-    "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"EuclideanDistance", "[", 
+        RowBox[{
+         RowBox[{"circ", "@", "\"\<pos\>\""}], ",", 
+         RowBox[{"qTree", "@", "\"\<CofM\>\""}]}], "]"}], "+", ".0001"}]}], 
+     "}"}], ",", "\[IndentingNewLine]", 
     RowBox[{"If", "[", 
      RowBox[{
       RowBox[{
@@ -580,18 +552,24 @@ Cell[BoxData[
         RowBox[{"G", " ", 
          RowBox[{"Sum", "[", 
           RowBox[{
-           FractionBox[
+           RowBox[{"If", "[", 
             RowBox[{
-             RowBox[{"c", "@", "\"\<mas\>\""}], " ", 
-             RowBox[{"(", 
+             RowBox[{
+              RowBox[{"c", "@", "\"\<pos\>\""}], "\[Equal]", 
+              RowBox[{"circ", "@", "\"\<pos\>\""}]}], ",", "0", ",", 
+             FractionBox[
               RowBox[{
-               RowBox[{"c", "@", "\"\<pos\>\""}], "-", 
-               RowBox[{"circ", "@", "\"\<pos\>\""}]}], ")"}]}], 
-            SuperscriptBox[
-             RowBox[{"EuclideanDistance", "[", 
-              RowBox[{
-               RowBox[{"c", "@", "\"\<pos\>\""}], ",", 
-               RowBox[{"circ", "@", "\"\<pos\>\""}]}], "]"}], "3"]], ",", 
+               RowBox[{"c", "@", "\"\<mas\>\""}], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"c", "@", "\"\<pos\>\""}], "-", 
+                 RowBox[{"circ", "@", "\"\<pos\>\""}]}], ")"}]}], 
+              SuperscriptBox[
+               RowBox[{"EuclideanDistance", "[", 
+                RowBox[{
+                 RowBox[{"c", "@", "\"\<pos\>\""}], ",", 
+                 RowBox[{"circ", "@", "\"\<pos\>\""}]}], "]"}], "3"]]}], 
+            "]"}], ",", 
            RowBox[{"{", 
             RowBox[{"c", ",", 
              RowBox[{"qTree", "@", "\"\<chlds\>\""}]}], "}"}]}], "]"}]}], ",",
@@ -606,41 +584,62 @@ Cell[BoxData[
        "]"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
  CellChangeTimes->{{3.6381336094484034`*^9, 3.63813362760634*^9}, {
   3.6381337213136845`*^9, 3.638133773182442*^9}, {3.638133865000166*^9, 
-  3.6381339582651663`*^9}, {3.638133991830166*^9, 3.638134269190675*^9}}],
-
-Cell[CellGroupData[{
+  3.6381339582651663`*^9}, {3.638133991830166*^9, 3.638134269190675*^9}, {
+  3.6381383238123245`*^9, 3.6381383779523244`*^9}, {3.638138594440374*^9, 
+  3.6381385959624343`*^9}}],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"gravitationalForce", "[", 
-   RowBox[{"quadTree", ",", "testCirc", ",", "0"}], "]"}], " ", 
-  RowBox[{"(*", 
-   RowBox[{"Calculate", " ", "all", " ", "pairs", " ", "explicitly"}], 
-   "*)"}]}]], "Input",
- CellChangeTimes->{{3.638134354597163*^9, 3.63813437183245*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"-", "3.1201380892740427`"}], ",", 
-   RowBox[{"-", "2.3876961708462945`"}]}], "}"}]], "Output",
- CellChangeTimes->{3.638134372844965*^9}]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"gravitationalForce", "[", 
-  RowBox[{"quadTree", ",", "testCirc", ",", "1.5"}], "]"}]], "Input",
- CellChangeTimes->{{3.6381343109813557`*^9, 3.638134350364592*^9}}],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"-", "3.1234655082979272`"}], ",", 
-   RowBox[{"-", "2.38725403497047`"}]}], "}"}]], "Output",
- CellChangeTimes->{{3.6381343239940634`*^9, 3.6381343507495995`*^9}}]
-}, Open  ]]
+  RowBox[{"mapQuadTree", "[", 
+   RowBox[{"f_", ",", "qTree_"}], "]"}], " ", ":=", "\[IndentingNewLine]", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"!", 
+     RowBox[{"hasChildrenQ", "[", "qTree", "]"}]}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"createQuadTree", "[", 
+     RowBox[{
+      RowBox[{"f", "/@", 
+       RowBox[{"qTree", "@", "\"\<chlds\>\""}]}], ",", 
+      RowBox[{"qTree", "@", "\"\<crnrs\>\""}]}], "]"}], ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"With", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"children", "=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"mapQuadTree", "[", 
+           RowBox[{"f", ",", "#"}], "]"}], "&"}], "/@", 
+         RowBox[{"qTree", "@", "\"\<chlds\>\""}]}]}], "}"}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"updateAssoc", "[", 
+       RowBox[{"qTree", ",", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<chlds\>\"", "\[Rule]", "children"}], ",", 
+          RowBox[{"\"\<CofM\>\"", "\[Rule]", 
+           FractionBox[
+            RowBox[{"Sum", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"qt", "@", "\"\<mas\>\""}], " ", 
+               RowBox[{"qt", "@", "\"\<CofM\>\""}]}], ",", 
+              RowBox[{"{", 
+               RowBox[{"qt", ",", "children"}], "}"}]}], "]"}], 
+            RowBox[{"Sum", "[", 
+             RowBox[{
+              RowBox[{"qt", "@", "\"\<mas\>\""}], ",", 
+              RowBox[{"{", 
+               RowBox[{"qt", ",", "children"}], "}"}]}], "]"}]]}], ",", 
+          RowBox[{"\"\<mas\>\"", "\[Rule]", 
+           RowBox[{"Sum", "[", 
+            RowBox[{
+             RowBox[{"qt", "@", "\"\<mas\>\""}], ",", 
+             RowBox[{"{", 
+              RowBox[{"qt", ",", "children"}], "}"}]}], "]"}]}]}], "|>"}]}], 
+       "]"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.638135999081102*^9, 3.6381361436158752`*^9}}]
 },
 WindowSize->{1366, 686},
 WindowMargins->{{-8, Automatic}, {Automatic, -8}},
@@ -658,36 +657,22 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 1435, 29, 112, "Input"],
-Cell[1996, 51, 454, 12, 31, "Input"],
-Cell[2453, 65, 1287, 40, 67, "Input"],
-Cell[3743, 107, 1085, 28, 31, "Input"],
-Cell[4831, 137, 305, 8, 31, "Input"],
-Cell[5139, 147, 837, 24, 46, "Input"],
-Cell[5979, 173, 725, 15, 31, "Input"],
-Cell[6707, 190, 521, 15, 31, "Input"],
-Cell[7231, 207, 415, 10, 31, "Input"],
-Cell[7649, 219, 525, 14, 31, "Input"],
-Cell[8177, 235, 2695, 68, 192, "Input"],
-Cell[10875, 305, 1814, 41, 152, "Input"],
-Cell[12692, 348, 1504, 38, 152, "Input"],
-Cell[CellGroupData[{
-Cell[14221, 390, 211, 4, 31, "Input"],
-Cell[14435, 396, 2728, 67, 33, "Output"]
-}, Open  ]],
-Cell[17178, 466, 558, 14, 112, "Input"],
-Cell[17739, 482, 426, 11, 52, "Input"],
-Cell[18168, 495, 1341, 33, 192, "Input"],
-Cell[19512, 530, 193, 4, 31, "Input"],
-Cell[19708, 536, 2912, 72, 287, "Input"],
-Cell[CellGroupData[{
-Cell[22645, 612, 303, 7, 31, "Input"],
-Cell[22951, 621, 189, 5, 31, "Output"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[23177, 631, 188, 3, 31, "Input"],
-Cell[23368, 636, 215, 5, 31, "Output"]
-}, Open  ]]
+Cell[558, 20, 1765, 36, 112, "Input"],
+Cell[2326, 58, 1287, 40, 67, "Input"],
+Cell[3616, 100, 1085, 28, 31, "Input"],
+Cell[4704, 130, 305, 8, 31, "Input"],
+Cell[5012, 140, 837, 24, 46, "Input"],
+Cell[5852, 166, 725, 15, 31, "Input"],
+Cell[6580, 183, 688, 17, 31, "Input"],
+Cell[7271, 202, 525, 14, 31, "Input"],
+Cell[7799, 218, 2597, 66, 172, "Input"],
+Cell[10399, 286, 3640, 85, 267, "Input"],
+Cell[14042, 373, 2538, 63, 221, "Input"],
+Cell[16583, 438, 558, 14, 112, "Input"],
+Cell[17144, 454, 426, 11, 52, "Input"],
+Cell[17573, 467, 1341, 33, 192, "Input"],
+Cell[18917, 502, 3553, 86, 307, "Input"],
+Cell[22473, 590, 1946, 51, 173, "Input"]
 }
 ]
 *)
