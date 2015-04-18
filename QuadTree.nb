@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     25272,        671]
-NotebookOptionsPosition[     24423,        643]
-NotebookOutlinePosition[     24769,        658]
-CellTagsIndexPosition[     24726,        655]
+NotebookDataLength[     25341,        669]
+NotebookOptionsPosition[     24492,        641]
+NotebookOutlinePosition[     24838,        656]
+CellTagsIndexPosition[     24795,        653]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -369,7 +369,7 @@ Cell[BoxData[
    3.6381311158408656`*^9, 3.6381311330606766`*^9}, {3.638131356178562*^9, 
    3.6381313582426257`*^9}, {3.6381314056088667`*^9, 3.638131454588399*^9}, {
    3.638132394235942*^9, 3.638132439702015*^9}, {3.638135088202183*^9, 
-   3.6381353541924944`*^9}}],
+   3.6381353541924944`*^9}, {3.638361061576952*^9, 3.6383610919086485`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -433,8 +433,8 @@ Cell[BoxData[
                 RowBox[{"qt", ",", "children"}], "}"}]}], "]"}]}]}], "|>"}]}],
           "]"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.638132492098255*^9, 3.6381325097486987`*^9}, {
-  3.6381326069160004`*^9, 3.6381326552421427`*^9}, {3.6381353823524723`*^9, 
-  3.638135440620571*^9}}],
+   3.6381326069160004`*^9, 3.6381326552421427`*^9}, {3.6381353823524723`*^9, 
+   3.638135440620571*^9}, 3.638361118933124*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -612,34 +612,32 @@ Cell[BoxData[
           RowBox[{"mapQuadTree", "[", 
            RowBox[{"f", ",", "#"}], "]"}], "&"}], "/@", 
          RowBox[{"qTree", "@", "\"\<chlds\>\""}]}]}], "}"}], ",", 
-      "\[IndentingNewLine]", 
-      RowBox[{"updateAssoc", "[", 
-       RowBox[{"qTree", ",", 
-        RowBox[{"<|", 
-         RowBox[{
-          RowBox[{"\"\<chlds\>\"", "\[Rule]", "children"}], ",", 
-          RowBox[{"\"\<CofM\>\"", "\[Rule]", 
-           FractionBox[
-            RowBox[{"Sum", "[", 
-             RowBox[{
-              RowBox[{
-               RowBox[{"qt", "@", "\"\<mas\>\""}], " ", 
-               RowBox[{"qt", "@", "\"\<CofM\>\""}]}], ",", 
-              RowBox[{"{", 
-               RowBox[{"qt", ",", "children"}], "}"}]}], "]"}], 
-            RowBox[{"Sum", "[", 
-             RowBox[{
-              RowBox[{"qt", "@", "\"\<mas\>\""}], ",", 
-              RowBox[{"{", 
-               RowBox[{"qt", ",", "children"}], "}"}]}], "]"}]]}], ",", 
-          RowBox[{"\"\<mas\>\"", "\[Rule]", 
-           RowBox[{"Sum", "[", 
-            RowBox[{
-             RowBox[{"qt", "@", "\"\<mas\>\""}], ",", 
-             RowBox[{"{", 
-              RowBox[{"qt", ",", "children"}], "}"}]}], "]"}]}]}], "|>"}]}], 
-       "]"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
- CellChangeTimes->{{3.638135999081102*^9, 3.6381361436158752`*^9}}]
+      RowBox[{"With", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"totMass", "=", 
+          RowBox[{"totalMass", "[", "children", "]"}]}], "}"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"updateAssoc", "[", 
+         RowBox[{"qTree", ",", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<chlds\>\"", "\[Rule]", "children"}], ",", 
+            RowBox[{"\"\<CofM\>\"", "\[Rule]", 
+             FractionBox[
+              RowBox[{"Sum", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"qt", "@", "\"\<mas\>\""}], " ", 
+                 RowBox[{"qt", "@", "\"\<CofM\>\""}]}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"qt", ",", "children"}], "}"}]}], "]"}], 
+              "totMass"]}], ",", 
+            RowBox[{"\"\<mas\>\"", "\[Rule]", "totMass"}]}], "|>"}]}], 
+         "]"}]}], "]"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.638135999081102*^9, 3.6381361436158752`*^9}, {
+  3.638361176081495*^9, 3.638361181400529*^9}, {3.6383612264794226`*^9, 
+  3.6383612465711527`*^9}, {3.6383613016285105`*^9, 3.638361342011072*^9}}]
 },
 WindowSize->{1366, 686},
 WindowMargins->{{-8, Automatic}, {Automatic, -8}},
@@ -666,13 +664,13 @@ Cell[5852, 166, 725, 15, 31, "Input"],
 Cell[6580, 183, 688, 17, 31, "Input"],
 Cell[7271, 202, 525, 14, 31, "Input"],
 Cell[7799, 218, 2597, 66, 172, "Input"],
-Cell[10399, 286, 3640, 85, 267, "Input"],
-Cell[14042, 373, 2538, 63, 221, "Input"],
-Cell[16583, 438, 558, 14, 112, "Input"],
-Cell[17144, 454, 426, 11, 52, "Input"],
-Cell[17573, 467, 1341, 33, 192, "Input"],
-Cell[18917, 502, 3553, 86, 307, "Input"],
-Cell[22473, 590, 1946, 51, 173, "Input"]
+Cell[10399, 286, 3688, 85, 267, "Input"],
+Cell[14090, 373, 2562, 63, 221, "Input"],
+Cell[16655, 438, 558, 14, 112, "Input"],
+Cell[17216, 454, 426, 11, 52, "Input"],
+Cell[17645, 467, 1341, 33, 192, "Input"],
+Cell[18989, 502, 3553, 86, 307, "Input"],
+Cell[22545, 590, 1943, 49, 171, "Input"]
 }
 ]
 *)
