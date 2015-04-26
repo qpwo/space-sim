@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     25341,        669]
-NotebookOptionsPosition[     24492,        641]
-NotebookOutlinePosition[     24838,        656]
-CellTagsIndexPosition[     24795,        653]
+NotebookDataLength[     29641,        769]
+NotebookOptionsPosition[     28710,        739]
+NotebookOutlinePosition[     29056,        754]
+CellTagsIndexPosition[     29013,        751]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -637,7 +637,105 @@ Cell[BoxData[
          "]"}]}], "]"}]}], "]"}]}], "\[IndentingNewLine]", "]"}]}]], "Input",
  CellChangeTimes->{{3.638135999081102*^9, 3.6381361436158752`*^9}, {
   3.638361176081495*^9, 3.638361181400529*^9}, {3.6383612264794226`*^9, 
-  3.6383612465711527`*^9}, {3.6383613016285105`*^9, 3.638361342011072*^9}}]
+  3.6383612465711527`*^9}, {3.6383613016285105`*^9, 3.638361342011072*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"positionPred", "[", 
+   RowBox[{"lst_", ",", "pred_"}], "]"}], " ", ":=", " ", 
+  "\[IndentingNewLine]", 
+  RowBox[{"Select", "[", 
+   RowBox[{
+    RowBox[{"MapIndexed", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"pred", "[", "#1", "]"}], ",", "#2", ",", "Missing"}], "]"}],
+        "&"}], ",", "lst"}], "]"}], ",", 
+    RowBox[{
+     RowBox[{"#", "=!=", "Missing"}], "&"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.638895772642396*^9, 3.638895818383665*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"updateCircInTree", "[", 
+   RowBox[{"qTree_", ",", "pos_", ",", "changes_"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"retTree", "=", "qTree"}], "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"!", 
+       RowBox[{"circInSquareQ", "[", 
+        RowBox[{"pos", ",", 
+         RowBox[{"retTree", "@", "\"\<crnrs\>\""}]}], "]"}]}], ",", 
+      "\[IndentingNewLine]", "retTree", ",", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"!", 
+         RowBox[{"hasChildrenQ", "[", "retTree", "]"}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"With", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"index", "=", 
+             RowBox[{"First", "@", 
+              RowBox[{"First", "@", 
+               RowBox[{"positionPred", "[", 
+                RowBox[{
+                 RowBox[{"retTree", "@", "\"\<chlds\>\""}], ",", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"SquaredEuclideanDistance", "[", 
+                    RowBox[{"pos", ",", 
+                    RowBox[{"#", "@", "\"\<pos\>\""}]}], "]"}], "<", 
+                   RowBox[{
+                    RowBox[{"#", "@", "\"\<rad\>\""}], " ", 
+                    RowBox[{"#", "@", "\"\<rad\>\""}]}]}], "&"}]}], 
+                "]"}]}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"retTree", "\[LeftDoubleBracket]", 
+              RowBox[{"Key", "[", "\"\<chlds\>\"", "]"}], 
+              "\[RightDoubleBracket]"}], "\[LeftDoubleBracket]", "index", 
+             "\[RightDoubleBracket]"}], "=", 
+            RowBox[{"updateAssoc", "[", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"retTree", "@", "\"\<chlds\>\""}], ")"}], 
+               "\[LeftDoubleBracket]", "index", "\[RightDoubleBracket]"}], 
+              ",", "changes"}], "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+         "retTree"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"retTree", "@", "\"\<chlds\>\""}], "=", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"updateCircInTree", "[", 
+             RowBox[{"#", ",", "pos", ",", "changes"}], "]"}], "&"}], "/@", 
+           RowBox[{"retTree", "@", "\"\<chlds\>\""}]}]}], ";", 
+         "\[IndentingNewLine]", "retTree"}]}], "]"}]}], "]"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.638893954916356*^9, 3.638893964096309*^9}, {
+   3.6388944916959724`*^9, 3.6388945079009724`*^9}, {3.6388947355734725`*^9, 
+   3.638894751400941*^9}, 3.638895144902396*^9, {3.638895371637396*^9, 
+   3.638895376022396*^9}, {3.638895754519896*^9, 3.6388957566948957`*^9}, {
+   3.6388958678278913`*^9, 3.6388959158420773`*^9}, {3.6388959576835375`*^9, 
+   3.6388959704289846`*^9}, {3.6388962613882103`*^9, 3.638896343883174*^9}, {
+   3.638896425924314*^9, 3.6388965874743137`*^9}, {3.638896770839314*^9, 
+   3.638896779456814*^9}, {3.6388972526777544`*^9, 3.6388972725052547`*^9}, {
+   3.6388973874327545`*^9, 3.638897423752754*^9}, {3.638897517747754*^9, 
+   3.6388975250227547`*^9}, {3.638897845185254*^9, 3.638897870855254*^9}, {
+   3.6388980349727545`*^9, 3.6388980488827543`*^9}, {3.6388981061352544`*^9, 
+   3.6388981313602543`*^9}, {3.6388981779777546`*^9, 
+   3.6388982018002543`*^9}, {3.6388982390402546`*^9, 
+   3.6388984041827545`*^9}, {3.6388984840702543`*^9, 
+   3.6388985298852544`*^9}, {3.6388986448977547`*^9, 
+   3.6388987224952545`*^9}, {3.6388987647977543`*^9, 3.6388987909002542`*^9}}]
 },
 WindowSize->{1366, 686},
 WindowMargins->{{-8, Automatic}, {Automatic, -8}},
@@ -670,7 +768,9 @@ Cell[16655, 438, 558, 14, 112, "Input"],
 Cell[17216, 454, 426, 11, 52, "Input"],
 Cell[17645, 467, 1341, 33, 192, "Input"],
 Cell[18989, 502, 3553, 86, 307, "Input"],
-Cell[22545, 590, 1943, 49, 171, "Input"]
+Cell[22545, 590, 1943, 49, 171, "Input"],
+Cell[24491, 641, 549, 16, 52, "Input"],
+Cell[25043, 659, 3663, 78, 192, "Input"]
 }
 ]
 *)

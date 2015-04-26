@@ -10,14 +10,33 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    106361,       2292]
-NotebookOptionsPosition[    105146,       2253]
-NotebookOutlinePosition[    105643,       2273]
-CellTagsIndexPosition[    105600,       2270]
+NotebookDataLength[    115669,       2489]
+NotebookOptionsPosition[    114373,       2448]
+NotebookOutlinePosition[    114870,       2468]
+CellTagsIndexPosition[    114827,       2465]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"gFlag", "=", 
+   GraphicsBox[
+    {Thickness[0.00125], 
+     {Thickness[0.00125], 
+      FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{0., 0.}, {0., 
+       480.}, {800., 480.}, {800., 0.}}}]}, 
+     {FaceForm[{RGBColor[0.8666670000000001, 0., 0.], Opacity[1.]}], 
+      FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{0., 320.}, {800.,
+        320.}, {800., 0.}, {0., 0.}}}]}, 
+     {FaceForm[{RGBColor[1., 0.8078430000000001, 0.], Opacity[1.]}], 
+      FilledCurveBox[{{{0, 2, 0}, {0, 1, 0}, {0, 1, 0}}}, {{{0., 160.}, {800.,
+        160.}, {800., 0.}, {0., 0.}}}]}},
+    AspectRatio->Automatic,
+    ImageSize->{120., 69.},
+    PlotRange->{{0., 800.}, {0., 480.}}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.6390646250374317`*^9, 3.639064627764432*^9}}],
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"G", "=", "1"}], ";"}], "\n", 
@@ -893,6 +912,33 @@ Cell[BoxData[
       RowBox[{"-", "amount"}]}], "]"}]}], "]"}]}]], "Input",
  CellChangeTimes->{{3.6381415216699495`*^9, 3.6381415522181883`*^9}}],
 
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"getClickedCirc", "[", "circs_", "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"clicked", "=", 
+      RowBox[{"Select", "[", 
+       RowBox[{"circs", ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"EuclideanDistance", "[", 
+           RowBox[{
+            RowBox[{"#", "@", "\"\<pos\>\""}], ",", 
+            RowBox[{"MousePosition", "@", "\"\<Graphics\>\""}]}], "]"}], 
+          "\[LessEqual]", 
+          RowBox[{"#", "@", "\"\<rad\>\""}]}], "&"}]}], "]"}]}], "}"}], ",", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Length", "@", "clicked"}], "\[Equal]", "0"}], ",", 
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"First", "@", "clicked"}]}], "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6388799901812377`*^9, 3.6388800409921107`*^9}, {
+  3.638880161284054*^9, 3.638880185761653*^9}, {3.6388804474973*^9, 
+  3.638880456364783*^9}, {3.6388806187957954`*^9, 3.638880625356247*^9}}],
+
 Cell[CellGroupData[{
 
 Cell[BoxData[{
@@ -915,18 +961,14 @@ Cell[BoxData[{
           RowBox[{"{", 
            RowBox[{"spaceSize", ",", "spaceSize"}], "}"}]}], "}"}]}], ",", 
        "\[IndentingNewLine]", "ohover", ",", "objectCreationMenu", ",", 
-       RowBox[{"orad", "=", "5"}], ",", 
-       RowBox[{"oden", "=", "10"}], ",", 
        RowBox[{"ospd", "=", "10"}], ",", 
        RowBox[{"odir", "=", 
         RowBox[{"{", 
          RowBox[{"0", ",", "1"}], "}"}]}], ",", 
-       RowBox[{"ocol", "=", 
-        RowBox[{"Darker", "@", "Green"}]}], ",", 
-       RowBox[{"oste", "=", "gaseous"}], ",", 
        RowBox[{"otype", "=", "0"}], ",", "\[IndentingNewLine]", "cursorMenu", 
        ",", 
-       RowBox[{"mouse", "=", "\"\<Arrow\>\""}], ",", "\[IndentingNewLine]", 
+       RowBox[{"mouse", "=", "\"\<Arrow\>\""}], ",", 
+       RowBox[{"hasSelected", "=", "False"}], ",", "\[IndentingNewLine]", 
        RowBox[{"advanceFrame", "=", "False"}], ",", 
        RowBox[{"framePeriod", "=", ".5"}], ",", 
        RowBox[{"time", "=", "0"}], ",", 
@@ -962,51 +1004,109 @@ Cell[BoxData[{
       "\[IndentingNewLine]", 
       RowBox[{"ohover", "=", 
        RowBox[{"makeCirc", "[", 
-        RowBox[{"orad", ",", 
+        RowBox[{"10", ",", 
          RowBox[{
           RowBox[{"{", 
-           RowBox[{"0", ",", "0"}], "}"}], "+", "orad", "+", "windowSize"}], 
+           RowBox[{"0", ",", "0"}], "}"}], "+", "10", "+", "windowSize"}], 
          ",", 
-         RowBox[{"odir", " ", "ospd"}], ",", "oden", ",", "oste", ",", 
-         "ocol"}], "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         RowBox[{"odir", " ", "ospd"}], ",", "15", ",", "1", ",", "Red"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"frame", ":=", 
-       RowBox[{"MouseAppearance", "[", 
+       RowBox[{"MouseAppearance", "[", "\[IndentingNewLine]", 
         RowBox[{
          RowBox[{"EventHandler", "[", 
           RowBox[{
-           RowBox[{"Show", "[", 
+           RowBox[{"Show", "[", "\[IndentingNewLine]", 
             RowBox[{
-             RowBox[{"drawCircs", "@", 
-              RowBox[{"(", 
-               RowBox[{"circs", "~", "Append", "~", 
-                RowBox[{"updateAssoc", "[", 
-                 RowBox[{"ohover", ",", 
-                  RowBox[{"<|", 
-                   RowBox[{"\"\<col\>\"", "\[Rule]", 
+             RowBox[{"drawCircs", "@", "circs"}], ",", "\[IndentingNewLine]", 
+             
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{"mouse", "\[Equal]", "\"\<Arrow\>\""}], ",", 
+               RowBox[{"drawCircs", "@", 
+                RowBox[{"{", 
+                 RowBox[{"updateAssoc", "[", 
+                  RowBox[{"ohover", ",", 
+                   RowBox[{"<|", 
+                    RowBox[{"\"\<col\>\"", "\[Rule]", 
                     RowBox[{"Opacity", "[", 
                     RowBox[{".5", ",", 
                     RowBox[{"ohover", "@", "\"\<col\>\""}]}], "]"}]}], 
-                   "|>"}]}], "]"}]}], ")"}]}], ",", 
-             RowBox[{"ImageSize", "\[Rule]", "Large"}]}], "]"}], ",", 
-           "\[IndentingNewLine]", 
+                    "|>"}]}], "]"}], "}"}]}], ",", 
+               RowBox[{"{", "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"ohover", "=!=", 
+                 RowBox[{"{", "}"}]}], "&&", 
+                RowBox[{"mouse", "\[Equal]", "\"\<DragGraphics\>\""}], "&&", 
+                "hasSelected"}], ",", 
+               RowBox[{"Graphics", "[", 
+                RowBox[{"{", 
+                 RowBox[{
+                  RowBox[{"ColorNegate", "@", 
+                   RowBox[{"ohover", "@", "\"\<col\>\""}]}], ",", 
+                  RowBox[{"Circle", "[", 
+                   RowBox[{
+                    RowBox[{"ohover", "@", "\"\<pos\>\""}], ",", 
+                    RowBox[{
+                    RowBox[{"ohover", "@", "\"\<rad\>\""}], "+", ".1"}]}], 
+                   "]"}]}], "}"}], "]"}], ",", 
+               RowBox[{"{", "}"}]}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"ImageSize", "\[Rule]", "Large"}]}], 
+            "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
            RowBox[{"{", 
             RowBox[{
              RowBox[{"\"\<MouseDown\>\"", "\[RuleDelayed]", 
-              RowBox[{"(", 
+              RowBox[{"(", "\[IndentingNewLine]", 
                RowBox[{"Switch", "[", 
                 RowBox[{
                 "mouse", ",", "\[IndentingNewLine]", "\"\<Arrow\>\"", ",", 
-                 RowBox[{"circTree", "=", 
-                  RowBox[{"addCircToQuadTree", "[", 
-                   RowBox[{"circTree", ",", "ohover"}], "]"}]}]}], "]"}], 
+                 RowBox[{
+                  RowBox[{"circTree", "=", 
+                   RowBox[{"addCircToQuadTree", "[", 
+                    RowBox[{"circTree", ",", "ohover"}], "]"}]}], ";", 
+                  RowBox[{"hasSelected", "=", "False"}]}], ",", 
+                 "\[IndentingNewLine]", "\[IndentingNewLine]", "\"\<NoOp\>\"",
+                  ",", 
+                 RowBox[{
+                  RowBox[{"hasSelected", "=", "False"}], ";", 
+                  RowBox[{"With", "[", 
+                   RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"clicked", "=", 
+                    RowBox[{"getClickedCirc", "[", "circs", "]"}]}], "}"}], 
+                    ",", "\[IndentingNewLine]", 
+                    RowBox[{"If", "[", 
+                    RowBox[{
+                    RowBox[{"clicked", "=!=", 
+                    RowBox[{"{", "}"}]}], ",", 
+                    RowBox[{"circTree", "=", 
+                    RowBox[{"removeCircFromQuadTree", "[", 
+                    RowBox[{"circTree", ",", "clicked"}], "]"}]}]}], "]"}]}], 
+                   "]"}]}], ",", "\[IndentingNewLine]", 
+                 "\[IndentingNewLine]", "\"\<DragGraphics\>\"", ",", 
+                 RowBox[{
+                  RowBox[{"ohover", "=", 
+                   RowBox[{"getClickedCirc", "[", "circs", "]"}]}], ";", 
+                  RowBox[{"ospd", "=", 
+                   RowBox[{"Norm", "@", 
+                    RowBox[{"ohover", "@", "\"\<vel\>\""}]}]}], ";", 
+                  RowBox[{"odir", "=", 
+                   RowBox[{"Normalize", "@", 
+                    RowBox[{"ohover", "@", "\"\<vel\>\""}]}]}], ";", 
+                  RowBox[{"hasSelected", "=", "True"}], ";"}]}], "]"}], 
                ")"}]}], ",", "\[IndentingNewLine]", 
              RowBox[{"\"\<MouseMoved\>\"", "\[RuleDelayed]", 
-              RowBox[{"(", 
-               RowBox[{"ohover", "=", 
-                RowBox[{"updateAssoc", "[", 
-                 RowBox[{"ohover", ",", "\[IndentingNewLine]", 
-                  RowBox[{"<|", 
-                   RowBox[{
+              RowBox[{"(", "\[IndentingNewLine]", 
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{"mouse", "\[Equal]", "\"\<Arrow\>\""}], ",", 
+                 RowBox[{"ohover", "=", 
+                  RowBox[{"updateAssoc", "[", 
+                   RowBox[{"ohover", ",", "\[IndentingNewLine]", 
+                    RowBox[{"<|", 
+                    RowBox[{
                     RowBox[{"\"\<pos\>\"", "\[Rule]", 
                     RowBox[{"(", 
                     RowBox[{"MousePosition", "[", 
@@ -1014,7 +1114,9 @@ Cell[BoxData[{
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"0", ",", "0"}], "}"}], "+", "screenCenter", "+", 
-                    "windowSize", "+", "orad"}]}], "]"}], ")"}]}], ",", 
+                    "windowSize", "+", 
+                    RowBox[{"ohover", "@", "\"\<rad\>\""}]}]}], "]"}], 
+                    ")"}]}], ",", 
                     RowBox[{"\"\<his\>\"", "\[Rule]", 
                     RowBox[{"{", 
                     RowBox[{"MousePosition", "[", 
@@ -1022,9 +1124,10 @@ Cell[BoxData[{
                     RowBox[{
                     RowBox[{"{", 
                     RowBox[{"0", ",", "0"}], "}"}], "+", "screenCenter", "+", 
-                    "windowSize", "+", "orad"}]}], "]"}], "}"}]}]}], "|>"}]}],
-                  "]"}]}], ")"}]}]}], "}"}]}], "]"}], ",", 
-         "\[IndentingNewLine]", "mouse"}], "]"}]}], ";", 
+                    "windowSize", "+", 
+                    RowBox[{"ohover", "@", "\"\<rad\>\""}]}]}], "]"}], 
+                    "}"}]}]}], "|>"}]}], "]"}]}]}], "]"}], ")"}]}]}], "}"}]}],
+           "]"}], ",", "\[IndentingNewLine]", "mouse"}], "]"}]}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"table", ":=", 
        RowBox[{"Column", "@", 
@@ -1179,8 +1282,13 @@ Cell[BoxData[{
             RowBox[{"Dynamic", "@", "windowSize"}], ",", " ", 
             RowBox[{"{", 
              RowBox[{"100", ",", " ", "spaceSize"}], "}"}], ",", " ", 
-            RowBox[{"ImageSize", "\[Rule]", "Small"}]}], "]"}]}], "}"}]}]}], 
-      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"ImageSize", "\[Rule]", "Small"}]}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"InputField", "[", 
+           RowBox[{
+            RowBox[{"Dynamic", "@", "windowSize"}], ",", "Number", ",", 
+            RowBox[{"FieldSize", "\[Rule]", "6"}]}], "]"}]}], "}"}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"objectCreationMenu", ":=", 
        RowBox[{"Column", "@", 
         RowBox[{"{", "\[IndentingNewLine]", 
@@ -1199,7 +1307,8 @@ Cell[BoxData[{
               RowBox[{"\"\<radius\>\"", ",", " ", 
                RowBox[{"Slider", "[", 
                 RowBox[{
-                 RowBox[{"Dynamic", "@", "orad"}], ",", " ", 
+                 RowBox[{"Dynamic", "@", 
+                  RowBox[{"ohover", "@", "\"\<rad\>\""}]}], ",", " ", 
                  RowBox[{"Dynamic", "@", 
                   RowBox[{"radiusBounds", "@", "otype"}]}], ",", 
                  RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "]"}]}], "}"}], 
@@ -1208,7 +1317,8 @@ Cell[BoxData[{
               RowBox[{"\"\<density\>\"", ",", " ", 
                RowBox[{"Slider", "[", 
                 RowBox[{
-                 RowBox[{"Dynamic", "@", "oden"}], ",", " ", 
+                 RowBox[{"Dynamic", "@", 
+                  RowBox[{"ohover", "@", "\"\<den\>\""}]}], ",", " ", 
                  RowBox[{"Dynamic", "@", 
                   RowBox[{"densityBounds", "@", "otype"}]}], ",", 
                  RowBox[{"ImageSize", "\[Rule]", "Tiny"}]}], "]"}]}], "}"}], 
@@ -1224,13 +1334,16 @@ Cell[BoxData[{
           RowBox[{"Dynamic", "@", 
            RowBox[{"SetterBar", "[", 
             RowBox[{
-             RowBox[{"Dynamic", "@", "oste"}], ",", 
+             RowBox[{"Dynamic", "@", 
+              RowBox[{"ohover", "@", "\"\<ste\>\""}]}], ",", 
              RowBox[{"possibleStates", "@", "otype"}]}], "]"}]}], ",", 
           "\[IndentingNewLine]", "\"\<color\>\"", ",", "\[IndentingNewLine]", 
           
           RowBox[{"ColorSlider", "@", 
-           RowBox[{"Dynamic", "@", "ocol"}]}], ",", "\[IndentingNewLine]", 
-          "\"\<direction\>\"", ",", "\[IndentingNewLine]", 
+           RowBox[{"Dynamic", "@", 
+            RowBox[{"ohover", "@", "\"\<col\>\""}]}]}], ",", 
+          "\[IndentingNewLine]", "\"\<direction\>\"", ",", 
+          "\[IndentingNewLine]", 
           RowBox[{"EventHandler", "[", 
            RowBox[{
             RowBox[{"Show", "[", 
@@ -1253,17 +1366,16 @@ Cell[BoxData[{
                     RowBox[{"0", ",", "0"}], "}"}], ",", 
                     RowBox[{"Dynamic", "@", "odir"}]}], "}"}]}]}], "}"}]}], 
                  "}"}], ",", "\[IndentingNewLine]", 
-                RowBox[{"{", 
-                 RowBox[{"PlotRange", "\[Rule]", 
-                  RowBox[{"{", 
-                   RowBox[{
-                    RowBox[{"{", 
+                RowBox[{"PlotRange", "\[Rule]", 
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"{", 
                     RowBox[{
                     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
-                    RowBox[{"{", 
+                   RowBox[{"{", 
                     RowBox[{
-                    RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]}], "}"}]}],
-                "]"}], ",", "\[IndentingNewLine]", 
+                    RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]}]}], "]"}],
+               ",", "\[IndentingNewLine]", 
               RowBox[{"ImageSize", "\[Rule]", "Small"}]}], "]"}], ",", 
             "\[IndentingNewLine]", 
             RowBox[{"{", 
@@ -1284,15 +1396,26 @@ Cell[BoxData[{
            "\"\<Arrow\>\"", "\[Rule]", "\"\<Object Creation Cursor\>\""}], 
            ",", 
            RowBox[{
-           "\"\<DragGraphics\>\"", "\[Rule]", "\"\<Object Edit Cursor\>\""}], 
-           ",", 
+           "\"\<NoOp\>\"", "\[Rule]", "\"\<Object Deletion Cursor\>\""}], ",", 
            RowBox[{
-           "\"\<NoOp\>\"", "\[Rule]", "\"\<Object Deletion Cursor\>\""}]}], 
-          "}"}], ",", 
+           "\"\<DragGraphics\>\"", "\[Rule]", 
+            "\"\<Object Edit Cursor\>\""}]}], "}"}], ",", 
          RowBox[{"Appearance", "\[Rule]", "\"\<Vertical\>\""}]}], "]"}]}], 
       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"menuChooser", ":=", 
+         RowBox[{"SetterBar", "[", 
+          RowBox[{
+           RowBox[{"Dynamic", "@", "curMenu"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"worldMenu", "\[Rule]", "\"\<world\>\""}], ",", 
+             RowBox[{"objectCreationMenu", "\[Rule]", "\"\<object\>\""}], ",", 
+             RowBox[{"cursorMenu", "\[Rule]", "\"\<cursor\>\""}]}], "}"}]}], 
+          "]"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
       RowBox[{"menuChooser", ":=", 
-       RowBox[{"SetterBar", "[", 
+       RowBox[{"PopupMenu", "[", 
         RowBox[{
          RowBox[{"Dynamic", "@", "curMenu"}], ",", 
          RowBox[{"{", 
@@ -1314,11 +1437,11 @@ Cell[BoxData[{
                 RowBox[{"frame", ",", 
                  RowBox[{"Column", "@", 
                   RowBox[{"{", 
-                   RowBox[{"\"\<Go!\>\"", ",", 
-                    RowBox[{"CountryData", "[", 
-                    RowBox[{"\"\<Germany\>\"", ",", "\"\<Flag\>\""}], "]"}], 
-                    ",", "menuChooser", ",", "curMenu"}], "}"}]}]}], "}"}], 
-               ",", 
+                   RowBox[{"\"\<GO!\>\"", ",", "gFlag", ",", 
+                    RowBox[{"Row", "@", 
+                    RowBox[{"{", 
+                    RowBox[{"\"\<Menu: \>\"", ",", "menuChooser"}], "}"}]}], 
+                    ",", "curMenu"}], "}"}]}]}], "}"}], ",", 
                RowBox[{"Frame", "\[Rule]", "True"}]}], "]"}], ",", "table"}], 
             "}"}]}], ",", "\[IndentingNewLine]", 
           RowBox[{"UpdateInterval", "\[Rule]", "framePeriod"}]}], "]"}]}]}], 
@@ -1385,7 +1508,9 @@ Cell[BoxData[{
                     RowBox[{"#", "@", "\"\<pos\>\""}]}], "&"}]}], "]"}], ",", 
                     "spaceCorners"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
                 RowBox[{"time", "+=", "dt"}], ";", "\[IndentingNewLine]", 
-                RowBox[{"advanceFrame", "=", "False"}]}]}], "]"}], ";", 
+                RowBox[{"advanceFrame", "=", "False"}], ";", 
+                "\[IndentingNewLine]", 
+                RowBox[{"hasSelected", "=", "False"}], ";"}]}], "]"}], ";", 
              "\[IndentingNewLine]", 
              RowBox[{"ohover", "=", 
               RowBox[{"updateAssoc", "[", 
@@ -1393,19 +1518,33 @@ Cell[BoxData[{
                 RowBox[{"N", "@", 
                  RowBox[{"<|", 
                   RowBox[{
-                   RowBox[{"\"\<rad\>\"", "\[Rule]", "orad"}], ",", 
-                   RowBox[{"\"\<den\>\"", "\[Rule]", "oden"}], ",", 
                    RowBox[{"\"\<vel\>\"", "\[Rule]", 
                     RowBox[{"odir", " ", "ospd"}]}], ",", 
-                   RowBox[{"\"\<ste\>\"", "\[Rule]", "oste"}], ",", 
-                   RowBox[{"\"\<col\>\"", "\[Rule]", "ocol"}], ",", " ", 
                    RowBox[{"\"\<mas\>\"", "\[Rule]", " ", 
                     RowBox[{
                     RowBox[{"4", "/", "3"}], "Pi", " ", 
-                    RowBox[{"orad", "^", "3"}], "*", "oden"}]}]}], "|>"}]}]}],
-                "]"}]}], ";", "\[IndentingNewLine]", "frame", ";"}], "]"}], 
-           "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], ";", 
-         "\[IndentingNewLine]", 
+                    RowBox[{
+                    RowBox[{"(", 
+                    RowBox[{"ohover", "@", "\"\<rad\>\""}], ")"}], "^", "3"}],
+                     "*", 
+                    RowBox[{"(", 
+                    RowBox[{"ohover", "@", "\"\<den\>\""}], ")"}]}]}]}], 
+                  "|>"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"mouse", "\[Equal]", "\"\<DragGraphics\>\""}], "&&", 
+                "hasSelected", "&&", 
+                RowBox[{"ohover", "=!=", 
+                 RowBox[{"{", "}"}]}], "&&", 
+                RowBox[{"!", "running"}]}], ",", 
+               RowBox[{"circTree", "=", 
+                RowBox[{"updateCircInTree", "[", 
+                 RowBox[{"circTree", ",", 
+                  RowBox[{"ohover", "@", "\"\<pos\>\""}], ",", "ohover"}], 
+                 "]"}]}]}], "]"}], ";", "\[IndentingNewLine]", "frame", ";"}],
+             "]"}], "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
+         ";", "\[IndentingNewLine]", 
          RowBox[{"ResetScheduledTask", "[", 
           RowBox[{"$ScheduledTask", ",", 
            RowBox[{"Max", "[", 
@@ -1649,50 +1788,104 @@ Cell[BoxData[{
    3.6388784790882235`*^9, 3.638878511841133*^9}, {3.638878558439917*^9, 
    3.638878593206064*^9}, {3.6388786309418344`*^9, 3.6388786456417522`*^9}, {
    3.638878716533019*^9, 3.638878742724872*^9}, {3.6388789636066413`*^9, 
-   3.638878973821586*^9}, {3.6388790246923075`*^9, 3.6388790347142544`*^9}}],
+   3.638878973821586*^9}, {3.6388790246923075`*^9, 3.6388790347142544`*^9}, {
+   3.6388791187397833`*^9, 3.6388791619895425`*^9}, {3.6388791995973372`*^9, 
+   3.6388792064032974`*^9}, {3.638879335320943*^9, 3.6388794669709425`*^9}, {
+   3.6388795131089425`*^9, 3.6388795404349422`*^9}, {3.6388795840809426`*^9, 
+   3.638879586690943*^9}, {3.6388796297889423`*^9, 3.6388796811069427`*^9}, {
+   3.6388797116735373`*^9, 3.638879738582582*^9}, {3.6388798629913373`*^9, 
+   3.638879887827031*^9}, {3.6388799292562475`*^9, 3.6388799753099995`*^9}, {
+   3.638880049734662*^9, 3.638880146767109*^9}, {3.638880201620713*^9, 
+   3.6388802861103477`*^9}, {3.6388803878320365`*^9, 
+   3.6388803962084956`*^9}, {3.638880462559119*^9, 3.6388804628071327`*^9}, {
+   3.6388805608135448`*^9, 3.6388805649057603`*^9}, 3.638880595414444*^9, {
+   3.6388806766716356`*^9, 3.63888068235793*^9}, {3.6388807322054157`*^9, 
+   3.638880734329404*^9}, 3.638880947720228*^9, {3.638886624636812*^9, 
+   3.638886631084575*^9}, {3.638886669272708*^9, 3.6388866694738874`*^9}, {
+   3.638886794472622*^9, 3.638886796500435*^9}, {3.6388868516056724`*^9, 
+   3.6388868552759514`*^9}, {3.6388869211677923`*^9, 3.638886961844426*^9}, {
+   3.6388871904086957`*^9, 3.638887221345536*^9}, {3.638887294576021*^9, 
+   3.638887306897966*^9}, {3.6388916356591444`*^9, 3.6388916555141444`*^9}, {
+   3.638892001178767*^9, 3.638892146635677*^9}, {3.638898864476873*^9, 
+   3.6388990123036985`*^9}, {3.6390633625511312`*^9, 
+   3.6390634337451315`*^9}, {3.6390635277141314`*^9, 3.639063531279131*^9}, {
+   3.6390635655751314`*^9, 3.6390636307081313`*^9}, {3.639063678786131*^9, 
+   3.639063695152131*^9}, {3.6390637287191315`*^9, 3.6390637322941313`*^9}, {
+   3.639063828835131*^9, 3.6390638476491313`*^9}, {3.6390638925853596`*^9, 
+   3.6390639908834205`*^9}, {3.639064107527628*^9, 3.639064155756126*^9}, {
+   3.639064200558604*^9, 3.63906421722578*^9}, {3.639064264750271*^9, 
+   3.6390643869584312`*^9}, {3.639064421839432*^9, 3.6390645403354316`*^9}, {
+   3.639064640014432*^9, 3.6390646444594316`*^9}, {3.6390646855904317`*^9, 
+   3.6390646862104316`*^9}, {3.639064826608432*^9, 3.6390648411824317`*^9}, {
+   3.6390649499471774`*^9, 3.6390649853105383`*^9}}],
 
-Cell[BoxData[""], "Print",
- GeneratedCell->False,
- CellAutoOverwrite->False,
+Cell[BoxData[
+ DynamicBox[ToBoxes[
+   Refresh[
+    Row[{
+      Row[{$CellContext`frame$100476, 
+        Column[{"GO!", $CellContext`gFlag, 
+          
+          Row[{"Menu: ", $CellContext`menuChooser$100476}], \
+$CellContext`curMenu$100476}]}, Frame -> True], $CellContext`table$100476}], 
+    UpdateInterval -> $CellContext`framePeriod$100476], StandardForm],
+  ImageSizeCache->{1206., {289., 297.}}]], "Print",
  CellChangeTimes->{
-  3.6381984871941423`*^9, 3.638198701373842*^9, 3.6381987679819775`*^9, 
-   3.638198945061945*^9, 3.638281027074664*^9, 3.6382810641203003`*^9, 
-   3.638281176352798*^9, 3.638291430964656*^9, 3.638291535230818*^9, 
-   3.638291615830269*^9, 3.6382938811855383`*^9, 3.6382941476765385`*^9, 
-   3.638295536895713*^9, 3.638296266618538*^9, 3.6382963052293987`*^9, {
-   3.638296355014372*^9, 3.6382964037322435`*^9}, 3.638360287523921*^9, 
-   3.6383629162354207`*^9, 3.6383630522502055`*^9, 3.6383632428225455`*^9, 
-   3.6383633251233797`*^9, 3.638877993986616*^9, 3.638878433012127*^9, {
-   3.6388787270359592`*^9, 3.638878743569868*^9}, 3.6388789240258718`*^9, 
-   3.6388789761145716`*^9, {3.638879036012247*^9, 3.6388790641230965`*^9}}],
+  3.6388802866323833`*^9, 3.6388803969975386`*^9, 3.6388804639551973`*^9, {
+   3.638880571870146*^9, 3.6388805963504963`*^9}, 3.6388806369869127`*^9, 
+   3.6388806830939713`*^9, 3.638880734810401*^9, 3.6388866321154966`*^9, 
+   3.638886981692528*^9, 3.6388873086752396`*^9, 3.638891656921644*^9, 
+   3.6388917396562777`*^9, 3.6388921482582226`*^9, 3.638892987992185*^9, 
+   3.6388988769728727`*^9, {3.6388989101930304`*^9, 3.6388989559591913`*^9}, 
+   3.638899013458791*^9, {3.639063264303067*^9, 3.639063282275131*^9}, 
+   3.6390634354171314`*^9, 3.639063668552131*^9, 3.6390636997801313`*^9, 
+   3.639063738175131*^9, 3.6390638579291315`*^9, 3.639064001717538*^9, 
+   3.6390642387540045`*^9, {3.6390643681314316`*^9, 3.6390643873074317`*^9}, {
+   3.639064426271432*^9, 3.639064440120432*^9}, {3.6390645123544316`*^9, 
+   3.6390645407884316`*^9}, {3.6390646451194315`*^9, 3.6390646913884315`*^9}, 
+   3.63906498842557*^9}],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`frame$$ = MouseAppearance[
    EventHandler[
-    Graphics[{{{
-        Opacity[0.5, 
-         RGBColor[0., 0.6666666666666666, 0.]], 
-        Disk[{505., 505.}, 5.]}, {
-        RGBColor[0.5, 0.8333333333333333, 0.5, 0.5], 
-        Arrow[{{505., 505.}, {505., 515.}}]}}}, {
+    Graphics[{{}, {{{
+         Opacity[0.5, 
+          RGBColor[1., 0., 0.]], 
+         Disk[{510., 510.}, 10.]}, {
+         RGBColor[1., 0.5, 0.5, 0.5], 
+         Arrow[{{510., 510.}, {510., 520.}}]}}}}, {
      ImageSize -> Large, PlotRange -> {{-500, 500}, {-500, 500}}, Background -> 
       RGBColor[0.2, 0.2, 0.2], PlotRangeClipping -> True}], {
     "MouseDown" :> 
      Switch[$CellContext`mouse$$, 
        "Arrow", $CellContext`circTree$$ = \
 $CellContext`addCircToQuadTree[$CellContext`circTree$$, \
-$CellContext`ohover$$]], 
-     "MouseMoved" :> ($CellContext`ohover$$ = \
+$CellContext`ohover$$]; $CellContext`hasSelected$$ = False, 
+       "NoOp", $CellContext`hasSelected$$ = False; 
+       With[{$CellContext`clicked$ = \
+$CellContext`getClickedCirc[$CellContext`circs$$]}, 
+         If[$CellContext`clicked$ =!= {}, $CellContext`circTree$$ = \
+$CellContext`removeCircFromQuadTree[$CellContext`circTree$$, \
+$CellContext`clicked$]]], 
+       "DragGraphics", $CellContext`ohover$$ = \
+$CellContext`getClickedCirc[$CellContext`circs$$]; $CellContext`ospd$$ = 
+        Norm[
+          $CellContext`ohover$$["vel"]]; $CellContext`odir$$ = Normalize[
+          $CellContext`ohover$$["vel"]]; $CellContext`hasSelected$$ = True; 
+       Null], "MouseMoved" :> 
+     If[$CellContext`mouse$$ == 
+       "Arrow", $CellContext`ohover$$ = \
 $CellContext`updateAssoc[$CellContext`ohover$$, 
-        Association[
-        "pos" -> MousePosition[
-          "Graphics", {0, 
-            0} + $CellContext`screenCenter + $CellContext`windowSize + \
-$CellContext`orad$$], "his" -> {
-           MousePosition[
+         Association[
+         "pos" -> MousePosition[
            "Graphics", {0, 
              0} + $CellContext`screenCenter + $CellContext`windowSize + \
-$CellContext`orad$$]}]])}], "Arrow"], $CellContext`worldMenu$$ = Column[{
+$CellContext`ohover$$["rad"]], "his" -> {
+            MousePosition[
+            "Graphics", {0, 
+              0} + $CellContext`screenCenter + $CellContext`windowSize + \
+$CellContext`ohover$$["rad"]]}]]]}], "Arrow"], $CellContext`worldMenu$$ = 
+  Column[{
     Button[
     "Reset", $CellContext`reset$$; $CellContext`circTree$$ = \
 $CellContext`createQuadTree[{}, $CellContext`spaceCorners$$]; Null], 
@@ -1733,8 +1926,10 @@ $CellContext`addCircToQuadTree[$CellContext`circTree$$,
      Dynamic[{-$CellContext`spaceSize + $CellContext`windowSize, \
 $CellContext`spaceSize - $CellContext`windowSize}]], "Zoom level:", 
     Slider[
-     Dynamic[$CellContext`windowSize], {100, 10000}, ImageSize -> 
-     Small]}], $CellContext`table$$ = Column[{"Number of circles: 0", 
+     Dynamic[$CellContext`windowSize], {100, 10000}, ImageSize -> Small], 
+    InputField[
+     Dynamic[$CellContext`windowSize], Number, FieldSize -> 
+     6]}], $CellContext`table$$ = Column[{"Number of circles: 0", 
     TableForm[{{
       "radius", "position", "velocity", "mass", "color", "state", 
        "History Length"}}], "Time: 0", 
@@ -1743,7 +1938,7 @@ $CellContext`spaceSize - $CellContext`windowSize}]], "Zoom level:",
   "chlds" -> {}, "crnrs" -> {{-10000, -10000}, {10000, 10000}}, 
    "CofM" -> {0, 0}, "mas" -> 
    0], $CellContext`circs$$ = {}, $CellContext`curMenu$$, \
-$CellContext`menuChooser$$ = SetterBar[
+$CellContext`menuChooser$$ = PopupMenu[
    Dynamic[$CellContext`curMenu$$], {Column[{
        Button[
        "Reset", $CellContext`reset$$; $CellContext`circTree$$ = \
@@ -1785,7 +1980,9 @@ $CellContext`addCircToQuadTree[$CellContext`circTree$$,
         Dynamic[{-$CellContext`spaceSize + $CellContext`windowSize, \
 $CellContext`spaceSize - $CellContext`windowSize}]], "Zoom level:", 
        Slider[
-        Dynamic[$CellContext`windowSize], {100, 10000}, ImageSize -> Small]}] -> 
+        Dynamic[$CellContext`windowSize], {100, 10000}, ImageSize -> Small], 
+       InputField[
+        Dynamic[$CellContext`windowSize], Number, FieldSize -> 6]}] -> 
     "world", Column[{
        TableForm[{{"type", 
           PopupMenu[
@@ -1793,12 +1990,14 @@ $CellContext`spaceSize - $CellContext`windowSize}]], "Zoom level:",
            0 -> "Planet", 1 -> "Star", 2 -> "Particle", 3 -> "Asteroid"}]}, {
          "radius", 
           Slider[
-           Dynamic[$CellContext`orad$$], 
+           Dynamic[
+            $CellContext`ohover$$["rad"]], 
            Dynamic[
             $CellContext`radiusBounds[$CellContext`otype$$]], ImageSize -> 
            Tiny]}, {"density", 
           Slider[
-           Dynamic[$CellContext`oden$$], 
+           Dynamic[
+            $CellContext`ohover$$["den"]], 
            Dynamic[
             $CellContext`densityBounds[$CellContext`otype$$]], ImageSize -> 
            Tiny]}, {"speed", 
@@ -1806,10 +2005,12 @@ $CellContext`spaceSize - $CellContext`windowSize}]], "Zoom level:",
            Dynamic[$CellContext`ospd$$], FieldSize -> 4]}}], "state", 
        Dynamic[
         SetterBar[
-         Dynamic[$CellContext`oste$$], 
+         Dynamic[
+          $CellContext`ohover$$["ste"]], 
          $CellContext`possibleStates[$CellContext`otype$$]]], "color", 
        ColorSlider[
-        Dynamic[$CellContext`ocol$$]], "direction", 
+        Dynamic[
+         $CellContext`ohover$$["col"]]], "direction", 
        EventHandler[
         Graphics[{{
            GrayLevel[1], 
@@ -1822,27 +2023,28 @@ $CellContext`spaceSize - $CellContext`windowSize}]], "Zoom level:",
         "MouseDragged" :> ($CellContext`odir$$ = Normalize[
             MousePosition["Graphics"]])}]}] -> "object", SetterBar[
       Dynamic[$CellContext`mouse$$], {
-      "Arrow" -> "Object Creation Cursor", "DragGraphics" -> 
-       "Object Edit Cursor", "NoOp" -> "Object Deletion Cursor"}, Appearance -> 
-      "Vertical"] -> "cursor"}], $CellContext`reset$$ = 
+      "Arrow" -> "Object Creation Cursor", "NoOp" -> "Object Deletion Cursor",
+        "DragGraphics" -> "Object Edit Cursor"}, Appearance -> "Vertical"] -> 
+    "cursor"}], $CellContext`reset$$ = 
   Null, $CellContext`spaceCorners$$ = {{-10000, -10000}, {10000, 
   10000}}, $CellContext`ohover$$ = Association[
-  "rad" -> 5., "pos" -> {505., 505.}, "vel" -> {0., 10.}, "den" -> 10., "ste" -> 
-   1., "mas" -> 5235.987755982988, "col" -> 
-   RGBColor[0., 0.6666666666666666, 0.], 
-   "his" -> {{505., 505.}}], $CellContext`objectCreationMenu$$ = Column[{
+  "rad" -> 10., "pos" -> {510., 510.}, "vel" -> {0., 10.}, "den" -> 15., 
+   "ste" -> 1., "mas" -> 62831.853071795864`, "col" -> RGBColor[1., 0., 0.], 
+   "his" -> {{510., 510.}}], $CellContext`objectCreationMenu$$ = Column[{
     TableForm[{{"type", 
        PopupMenu[
         Dynamic[$CellContext`otype$$], {
         0 -> "Planet", 1 -> "Star", 2 -> "Particle", 3 -> "Asteroid"}]}, {
       "radius", 
        Slider[
-        Dynamic[$CellContext`orad$$], 
+        Dynamic[
+         $CellContext`ohover$$["rad"]], 
         Dynamic[
          $CellContext`radiusBounds[$CellContext`otype$$]], ImageSize -> 
         Tiny]}, {"density", 
        Slider[
-        Dynamic[$CellContext`oden$$], 
+        Dynamic[
+         $CellContext`ohover$$["den"]], 
         Dynamic[
          $CellContext`densityBounds[$CellContext`otype$$]], ImageSize -> 
         Tiny]}, {"speed", 
@@ -1850,10 +2052,12 @@ $CellContext`spaceSize - $CellContext`windowSize}]], "Zoom level:",
         Dynamic[$CellContext`ospd$$], FieldSize -> 4]}}], "state", 
     Dynamic[
      SetterBar[
-      Dynamic[$CellContext`oste$$], 
+      Dynamic[
+       $CellContext`ohover$$["ste"]], 
       $CellContext`possibleStates[$CellContext`otype$$]]], "color", 
     ColorSlider[
-     Dynamic[$CellContext`ocol$$]], "direction", 
+     Dynamic[
+      $CellContext`ohover$$["col"]]], "direction", 
     EventHandler[
      Graphics[{{
         GrayLevel[1], 
@@ -1864,18 +2068,17 @@ $CellContext`spaceSize - $CellContext`windowSize}]], "Zoom level:",
           Dynamic[$CellContext`odir$$]}]}}, {
       ImageSize -> Small, PlotRange -> {{-1, 1}, {-1, 1}}}], {
      "MouseDragged" :> ($CellContext`odir$$ = Normalize[
-         MousePosition["Graphics"]])}]}], $CellContext`orad$$ = 
-  5, $CellContext`oden$$ = 10, $CellContext`ospd$$ = 
-  10, $CellContext`odir$$ = {0, 1}, $CellContext`ocol$$ = RGBColor[0, 
-   Rational[2, 3], 0], $CellContext`oste$$ = 1, $CellContext`otype$$ = 
+         MousePosition["Graphics"]])}]}], $CellContext`ospd$$ = 
+  10, $CellContext`odir$$ = {0, 1}, $CellContext`otype$$ = 
   0, $CellContext`cursorMenu$$ = SetterBar[
    Dynamic[$CellContext`mouse$$], {
-   "Arrow" -> "Object Creation Cursor", "DragGraphics" -> 
-    "Object Edit Cursor", "NoOp" -> "Object Deletion Cursor"}, Appearance -> 
-   "Vertical"], $CellContext`mouse$$ = "Arrow", $CellContext`advanceFrame$$ = 
-  False, $CellContext`framePeriod$$ = 0.5, $CellContext`time$$ = 
-  0, $CellContext`running$$ = False, $CellContext`frameTime$$ = 
-  0, $CellContext`dt$$ = 0.05, $CellContext`ds$$ = 4}, 
+   "Arrow" -> "Object Creation Cursor", "NoOp" -> "Object Deletion Cursor", 
+    "DragGraphics" -> "Object Edit Cursor"}, Appearance -> 
+   "Vertical"], $CellContext`mouse$$ = "Arrow", $CellContext`hasSelected$$ = 
+  False, $CellContext`advanceFrame$$ = False, $CellContext`framePeriod$$ = 
+  0.5, $CellContext`time$$ = 0, $CellContext`running$$ = 
+  False, $CellContext`frameTime$$ = 0, $CellContext`dt$$ = 
+  0.05, $CellContext`ds$$ = 4}, 
   InterpretationBox[
    RowBox[{
     TagBox["ScheduledTaskObject",
@@ -1993,31 +2196,12 @@ dEAPPwB9A46P
              Thickness[Tiny], 
              GrayLevel[0.7]],
            FrameTicks->None,
-           ImageSize->{Automatic, 31.5},
-           ImageCache->GraphicsData["CompressedBitmap", "\<\
-eJytVj2LGkEYHrO7epdLSJukib8mqfIj5AjcFSHhcj9AsBAsBAvBQrAQDBgs
-ROHEL1BERAvRQhARFIwfiMYrkibF5H1eZxblILeSFDuzM/PM+7wfz8zue9/t
-1YePvtvrS5/33Y3v89X15Rfv2083NGW4hBBePF6Bd0mvqvGK3W4nxBuZy+Vc
-+3dhYPCt3W7/7vV64pXcbrc0t1qt7huNBtbEEfK+VCrJzWYjXgPpkuPx2PXA
-3I96vc6GFGg+n/8r6Cm3luz3+7JSqci7uzvuaSwunBg4U5EVi0UZDAal3+8X
-JrcGjzFv4x4z5ub2OaKXsVgMZmQ4HJaJRII963Q63GMcCoV4HTjCC48TAovb
-F3IwGMhAIMAG0um0nE6nstVqyXw+L+PxOPcYYx7rwAHf7Xb3Tj5GZKp41uu1
-jEQivBneI8/kucUZcnMQZJMfQDCmLZZzCpMTAv9Ugs5VCWq1GicfS5lMxpFJ
-QyVpNpuxO9FolFNAbpGzsHvGRUWKdEomk4ldK3o3nfPsfcQ+KC6bzbqVblBe
-mAXtExUOqqDhFNZJNLqCyDKFZCqT8F7JEx4YahrlGg6HvCOVSp3EBM+xTyVQ
-M6HyYIEaKCh9PoACmtIpTqJJJpM636iHpkF8moaiMA7iPKA6iYmUw/sQAe+F
-ScvWLdjUWbIrBdFA5upsnUSHM6e1TKXRgkC8iICmbRocUegGcLpST6CxdB1Y
-y9A36fdI31AFNA0pgBdYZHGxWDjiMRWPDgeywJ0GQXtUCrXMSGKMIXELR4fU
-Uq3eqO8v6oWljGMOjtOhshXm6N7SFyQ261MNT1FsZE1/J9BjjHmsaxwp0hmR
-R7X69tIP1IPrhXphqPKj1CCzPxFOP0qQJlJBNbWNob6YozVx7sTYhTKmw6de
-PPtvH+C/gX4WCoVDEFX5IajabDblaDRSoF/0y3EEMjHwLpfL7+VyeVetVl+C
-Wxgw/hXH+uBf5OgPxvUHRrXK8A==\
-\>"]], GridBox[{
+           ImageSize->{Automatic, 31.5}], GridBox[{
             {
              RowBox[{
               TagBox["\<\"Unique ID: \"\>",
                "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-              TagBox["6",
+              TagBox["27",
                "SummaryItem"]}]},
             {
              RowBox[{
@@ -2157,7 +2341,7 @@ dEAPPwB9A46P
              RowBox[{
               TagBox["\<\"Unique ID: \"\>",
                "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-              TagBox["6",
+              TagBox["27",
                "SummaryItem"]}]},
             {
              RowBox[{
@@ -2201,7 +2385,7 @@ dEAPPwB9A46P
        ImageSize->Automatic],
       BaselinePosition->Baseline],
      DynamicModuleValues:>{}], "]"}],
-   ScheduledTaskObject[6, 
+   ScheduledTaskObject[27, 
     HoldForm[$CellContext`frameTime$$ = Part[
         AbsoluteTiming[If[
            
@@ -2220,17 +2404,25 @@ $CellContext`circTree$$ = $CellContext`updateQuadTree[
 $CellContext`inSpace[
                  #["pos"]]& ], $CellContext`spaceCorners$$]]; 
            AddTo[$CellContext`time$$, $CellContext`dt$$]; \
-$CellContext`advanceFrame$$ = 
-            False]; $CellContext`ohover$$ = \
+$CellContext`advanceFrame$$ = False; $CellContext`hasSelected$$ = False; 
+           Null]; $CellContext`ohover$$ = \
 $CellContext`updateAssoc[$CellContext`ohover$$, 
             N[
              Association[
-             "rad" -> $CellContext`orad$$, "den" -> $CellContext`oden$$, 
-              "vel" -> $CellContext`odir$$ $CellContext`ospd$$, 
-              "ste" -> $CellContext`oste$$, "col" -> $CellContext`ocol$$, 
+             "vel" -> $CellContext`odir$$ $CellContext`ospd$$, 
               "mas" -> (4/3) 
-               Pi $CellContext`orad$$^3 $CellContext`oden$$]]]; \
-$CellContext`frame$$; Null], 1]; ResetScheduledTask[$ScheduledTask, 
+               Pi $CellContext`ohover$$["rad"]^3 $CellContext`ohover$$[
+                "den"]]]]; If[
+           
+           And[$CellContext`mouse$$ == 
+            "DragGraphics", $CellContext`hasSelected$$, $CellContext`ohover$$ =!= \
+{}, 
+            
+            Not[$CellContext`running$$]], $CellContext`circTree$$ = \
+$CellContext`updateCircInTree[$CellContext`circTree$$, 
+             $CellContext`ohover$$[
+             "pos"], $CellContext`ohover$$]]; $CellContext`frame$$; Null], 1]; 
+     ResetScheduledTask[$ScheduledTask, 
        Max[{$CellContext`dt$$ - $CellContext`frameTime$$, 0}]]; 
      StartScheduledTask[$ScheduledTask]; Null], {0.05, 1}, Automatic, True, 
     "AutoRemove" -> False, "EpilogFunction" :> Null, "TaskGroup" -> "Global`"],
@@ -2239,16 +2431,19 @@ $CellContext`frame$$; Null], 1]; ResetScheduledTask[$ScheduledTask,
    Selectable->False],
   DynamicModuleValues:>{}]], "Output",
  CellChangeTimes->{
-  3.6381984871941423`*^9, 3.6381987014050426`*^9, 3.6381987680599804`*^9, 
-   3.6381989451087456`*^9, 3.6382810287451963`*^9, 3.6382810641539965`*^9, 
-   3.638281176402093*^9, 3.638291431038663*^9, 3.638291537395935*^9, 
-   3.63829161586127*^9, 3.6382938812185383`*^9, 3.6382941477165384`*^9, 
-   3.638295536935711*^9, 3.6382962668295593`*^9, 3.6382963055534315`*^9, {
-   3.6382963550643773`*^9, 3.6382964037822485`*^9}, 3.6383602928989754`*^9, 
-   3.638362916282221*^9, 3.6383630522970057`*^9, 3.6383632428693457`*^9, 
-   3.63836332518578*^9, 3.6388779975463276`*^9, 3.638878433062131*^9, {
-   3.6388787270729594`*^9, 3.638878743599868*^9}, 3.638878924107871*^9, 
-   3.638878976146571*^9, 3.638879036026247*^9}]
+  3.638880286662385*^9, 3.638880397031542*^9, 3.6388804639851975`*^9, {
+   3.6388805718951464`*^9, 3.638880596371497*^9}, 3.638880637003914*^9, 
+   3.6388806831209726`*^9, 3.6388807348424015`*^9, 3.6388866321385174`*^9, 
+   3.6388869817285423`*^9, 3.6388873086942434`*^9, 3.6388916570741444`*^9, 
+   3.6388917397187805`*^9, 3.6388921484082284`*^9, 3.6388929880371857`*^9, 
+   3.638898877005375*^9, {3.638898910293038*^9, 3.6388989560767*^9}, 
+   3.6388990135788*^9, {3.639063266202087*^9, 3.639063282305131*^9}, 
+   3.639063435477131*^9, 3.639063668612131*^9, 3.6390636998401313`*^9, 
+   3.639063738225131*^9, 3.6390638579591312`*^9, 3.6390640017295384`*^9, 
+   3.639064238784004*^9, {3.6390643681614313`*^9, 3.639064387337432*^9}, {
+   3.6390644262914314`*^9, 3.639064440160432*^9}, {3.639064512384432*^9, 
+   3.6390645408384314`*^9}, {3.6390646451494317`*^9, 3.6390646914184313`*^9}, 
+   3.63906498845557*^9}]
 }, Open  ]]
 },
 WindowSize->{1366, 686},
@@ -2272,27 +2467,29 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 6250, 154, 272, "Input"],
-Cell[6811, 176, 1835, 38, 192, "Input"],
-Cell[8649, 216, 746, 16, 54, "Input"],
-Cell[9398, 234, 1115, 26, 92, "Input"],
-Cell[10516, 262, 613, 16, 31, "Input"],
-Cell[11132, 280, 524, 15, 31, "Input"],
-Cell[11659, 297, 491, 14, 31, "Input"],
-Cell[12153, 313, 3544, 73, 152, "Input"],
-Cell[15700, 388, 2643, 66, 232, "Input"],
-Cell[18346, 456, 3694, 90, 328, "Input"],
-Cell[22043, 548, 710, 18, 31, "Input"],
-Cell[22756, 568, 1571, 31, 152, "Input"],
-Cell[24330, 601, 1476, 37, 172, "Input"],
-Cell[25809, 640, 2140, 52, 192, "Input"],
-Cell[27952, 694, 6104, 161, 178, "Input"],
-Cell[34059, 857, 915, 22, 52, "Input"],
-Cell[34977, 881, 494, 12, 92, "Input"],
+Cell[558, 20, 805, 17, 86, "Input"],
+Cell[1366, 39, 6250, 154, 272, "Input"],
+Cell[7619, 195, 1835, 38, 192, "Input"],
+Cell[9457, 235, 746, 16, 54, "Input"],
+Cell[10206, 253, 1115, 26, 92, "Input"],
+Cell[11324, 281, 613, 16, 31, "Input"],
+Cell[11940, 299, 524, 15, 31, "Input"],
+Cell[12467, 316, 491, 14, 31, "Input"],
+Cell[12961, 332, 3544, 73, 152, "Input"],
+Cell[16508, 407, 2643, 66, 232, "Input"],
+Cell[19154, 475, 3694, 90, 328, "Input"],
+Cell[22851, 567, 710, 18, 31, "Input"],
+Cell[23564, 587, 1571, 31, 152, "Input"],
+Cell[25138, 620, 1476, 37, 172, "Input"],
+Cell[26617, 659, 2140, 52, 192, "Input"],
+Cell[28760, 713, 6104, 161, 178, "Input"],
+Cell[34867, 876, 915, 22, 52, "Input"],
+Cell[35785, 900, 494, 12, 92, "Input"],
+Cell[36282, 914, 994, 25, 52, "Input"],
 Cell[CellGroupData[{
-Cell[35496, 897, 40484, 754, 1812, "Input"],
-Cell[75983, 1653, 831, 13, 23, "Print"],
-Cell[76817, 1668, 28313, 582, 75, "Output"]
+Cell[37301, 943, 47057, 876, 2212, "Input"],
+Cell[84361, 1821, 1357, 24, 596, "Print"],
+Cell[85721, 1847, 28636, 598, 75, "Output"]
 }, Open  ]]
 }
 ]
