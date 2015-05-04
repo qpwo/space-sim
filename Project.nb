@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    138600,       2977]
-NotebookOptionsPosition[    137196,       2931]
-NotebookOutlinePosition[    137683,       2951]
-CellTagsIndexPosition[    137640,       2948]
+NotebookDataLength[    138691,       2980]
+NotebookOptionsPosition[    137286,       2934]
+NotebookOutlinePosition[    137773,       2954]
+CellTagsIndexPosition[    137730,       2951]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -431,7 +431,7 @@ Cell[BoxData[{
         
         RowBox[{"2", " ", 
          RowBox[{"Pi", "/", "n"}]}]}], "]"}]}], "]"}]}]}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"mergeCircs", "[", 
@@ -560,7 +560,7 @@ Cell[BoxData[{
            "|>"}]}], "]"}], "&"}], "/@", 
        RowBox[{"(", 
         RowBox[{"splitDirs", "@", "numNews"}], ")"}]}]}], "]"}]}]}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{"resolveCollisions", "[", "circs_", "]"}], ":=", 
   RowBox[{"Module", "[", 
@@ -796,7 +796,7 @@ Cell[BoxData[{
       RowBox[{
        RowBox[{"Cos", "[", "\[Theta]", "]"}], ",", 
        RowBox[{"Sin", "[", "\[Theta]", "]"}]}], "}"}]}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"makeRandCirc", "[", 
@@ -819,7 +819,7 @@ Cell[BoxData[{
      ",", "\[IndentingNewLine]", 
      RowBox[{"RandomReal", "@", "maxDensity"}], ",", "\[IndentingNewLine]", 
      RowBox[{"RandomInteger", "[", "]"}]}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"makeRandCircRadial", "[", 
    RowBox[{
@@ -2151,13 +2151,13 @@ Cell[BoxData[{
 Cell[BoxData[
  DynamicBox[ToBoxes[
    Row[{
-     Row[{$CellContext`frame$324029, 
+     Row[{$CellContext`frame$529, 
        Column[{"GO!", $CellContext`gFlag, 
          Row[{
-          "Menu: ", $CellContext`menuChooser$324029}], \
-$CellContext`curMenu$324029}]}, Frame -> True], $CellContext`table$324029}], 
+          "Menu: ", $CellContext`menuChooser$529}], \
+$CellContext`curMenu$529}]}, Frame -> True], $CellContext`table$529}], 
    StandardForm],
-  ImageSizeCache->{1214., {290., 296.}}]], "Print",
+  ImageSizeCache->{1120., {290., 296.}}]], "Print",
  CellChangeTimes->{
   3.6388802866323833`*^9, 3.6388803969975386`*^9, 3.6388804639551973`*^9, {
    3.638880571870146*^9, 3.6388805963504963`*^9}, 3.6388806369869127`*^9, 
@@ -2194,7 +2194,8 @@ $CellContext`curMenu$324029}]}, Frame -> True], $CellContext`table$324029}],
    3.639687342203588*^9, 3.639687541034132*^9, {3.63968858400211*^9, 
    3.6396886310556927`*^9}, {3.639688667634231*^9, 3.6396886939029913`*^9}, {
    3.639688903841124*^9, 3.639688945327724*^9}, 3.639689061616888*^9, 
-   3.639689120345097*^9, 3.63968939567467*^9, 3.639689612457739*^9}],
+   3.639689120345097*^9, 3.63968939567467*^9, 3.639689612457739*^9, 
+   3.6397540219519157`*^9}],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`frame$$ = MouseAppearance[
@@ -2624,7 +2625,7 @@ dEAPPwB9A46P
              RowBox[{
               TagBox["\<\"Unique ID: \"\>",
                "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-              TagBox["18",
+              TagBox["4",
                "SummaryItem"]}]},
             {
              RowBox[{
@@ -2764,7 +2765,7 @@ dEAPPwB9A46P
              RowBox[{
               TagBox["\<\"Unique ID: \"\>",
                "SummaryItemAnnotation"], "\[InvisibleSpace]", 
-              TagBox["18",
+              TagBox["4",
                "SummaryItem"]}]},
             {
              RowBox[{
@@ -2808,7 +2809,7 @@ dEAPPwB9A46P
        ImageSize->Automatic],
       BaselinePosition->Baseline],
      DynamicModuleValues:>{}], "]"}],
-   ScheduledTaskObject[18, 
+   ScheduledTaskObject[4, 
     HoldForm[If[
        Or[$CellContext`running$$, $CellContext`advanceFrame$$], \
 $CellContext`circTree$$ = $CellContext`mapQuadTree[$CellContext`updateAssoc[
@@ -2891,7 +2892,8 @@ $CellContext`windowSize, $CellContext`spaceSize - $CellContext`windowSize}]], \
    3.6396873422321663`*^9, 3.639687541084639*^9, {3.639688584048191*^9, 
    3.639688631101074*^9}, {3.63968866768185*^9, 3.639688693950622*^9}, {
    3.639688903890921*^9, 3.639688945373789*^9}, 3.639689061662991*^9, 
-   3.6396891203977213`*^9, 3.639689395722374*^9, 3.639689612507901*^9}]
+   3.6396891203977213`*^9, 3.639689395722374*^9, 3.639689612507901*^9, 
+   3.6397540219930563`*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -2913,9 +2915,9 @@ Cell[BoxData[
 
 Cell[BoxData[
  DynamicBox[ToBoxes[$CellContext`abc, StandardForm],
-  ImageSizeCache->{54., {0., 10.}}]], "Output",
+  ImageSizeCache->{63., {0., 10.}}]], "Output",
  CellChangeTimes->{{3.6396877708356457`*^9, 3.6396877981620092`*^9}, 
-   3.6396885840700808`*^9, 3.6396896125312243`*^9}]
+   3.6396885840700808`*^9, 3.6396896125312243`*^9, 3.639754022048171*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2926,11 +2928,12 @@ Cell[BoxData[
  CellChangeTimes->{{3.639688955797946*^9, 3.6396889605120068`*^9}}],
 
 Cell[BoxData["1"], "Output",
- CellChangeTimes->{3.6396889607871323`*^9, 3.639689612540018*^9}]
+ CellChangeTimes->{3.6396889607871323`*^9, 3.639689612540018*^9, 
+  3.6397540220626173`*^9}]
 }, Open  ]]
 },
 WindowSize->{1366, 715},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, 2}, {0, Automatic}},
 PrintingCopies->1,
 PrintingPageRange->{32000, 32000},
 PrintingOptions->{"Magnification"->1.,
@@ -2966,18 +2969,18 @@ Cell[44493, 1104, 494, 12, 99, "Input"],
 Cell[44990, 1118, 994, 25, 55, "Input"],
 Cell[CellGroupData[{
 Cell[46009, 1147, 53749, 1001, 2893, "Input"],
-Cell[99761, 2150, 2998, 46, 596, "Print"],
-Cell[102762, 2198, 33401, 695, 69, "Output"]
+Cell[99761, 2150, 3014, 47, 596, "Print"],
+Cell[102778, 2199, 33426, 696, 69, "Output"]
 }, Open  ]],
-Cell[136178, 2896, 140, 3, 32, "Input"],
-Cell[136321, 2901, 178, 4, 32, "Input"],
+Cell[136219, 2898, 140, 3, 32, "Input"],
+Cell[136362, 2903, 178, 4, 32, "Input"],
 Cell[CellGroupData[{
-Cell[136524, 2909, 125, 2, 32, "Input"],
-Cell[136652, 2913, 236, 4, 32, "Output"]
+Cell[136565, 2911, 125, 2, 32, "Input"],
+Cell[136693, 2915, 258, 4, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[136925, 2922, 158, 3, 32, "Input"],
-Cell[137086, 2927, 94, 1, 32, "Output"]
+Cell[136988, 2924, 158, 3, 32, "Input"],
+Cell[137149, 2929, 121, 2, 32, "Output"]
 }, Open  ]]
 }
 ]
