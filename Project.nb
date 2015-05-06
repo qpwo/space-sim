@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    137609,       2919]
-NotebookOptionsPosition[    136509,       2883]
-NotebookOutlinePosition[    137006,       2903]
-CellTagsIndexPosition[    136963,       2900]
+NotebookDataLength[    137661,       2920]
+NotebookOptionsPosition[    136561,       2884]
+NotebookOutlinePosition[    137058,       2904]
+CellTagsIndexPosition[    137015,       2901]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1332,7 +1332,7 @@ Cell[BoxData[{
                     RowBox[{
                     RowBox[{"Floor", "@", 
                     RowBox[{"#", "@", "\"\<ste\>\""}]}], ",", "0", ",", 
-                    "\"\<gaseous\>\"", ",", "1", ",", "\"\<solid\>\""}], 
+                    "\"\<solid\>\"", ",", "1", ",", "\"\<gaseous\>\""}], 
                     "]"}]}], 
                   RowBox[{"(*", 
                    RowBox[{",", 
@@ -2120,7 +2120,8 @@ Cell[BoxData[{
    3.639689052446383*^9, 3.6396890607606363`*^9}, {3.639689105560916*^9, 
    3.639689119816581*^9}, {3.639689230753915*^9, 3.6396893879541483`*^9}, {
    3.639689471683693*^9, 3.639689645227145*^9}, 3.6398653051689806`*^9, {
-   3.6398653708567677`*^9, 3.639865392723003*^9}}],
+   3.6398653708567677`*^9, 3.639865392723003*^9}, {3.639865484956026*^9, 
+   3.6398654881700587`*^9}}],
 
 Cell[BoxData[
  DynamicBox[ToBoxes[
@@ -2131,7 +2132,7 @@ Cell[BoxData[
           "Menu: ", $CellContext`menuChooser$40538}], \
 $CellContext`curMenu$40538}]}, Frame -> True], $CellContext`table$40538}], 
    StandardForm],
-  ImageSizeCache->{1083., {289., 297.}}]], "Print",
+  ImageSizeCache->{1174., {289., 297.}}]], "Print",
  CellChangeTimes->{
   3.6388802866323833`*^9, 3.6388803969975386`*^9, 3.6388804639551973`*^9, {
    3.638880571870146*^9, 3.6388805963504963`*^9}, 3.6388806369869127`*^9, 
@@ -2917,9 +2918,9 @@ Cell[42510, 1042, 915, 22, 52, "Input"],
 Cell[43428, 1066, 494, 12, 92, "Input"],
 Cell[43925, 1080, 994, 25, 52, "Input"],
 Cell[CellGroupData[{
-Cell[44944, 1109, 54514, 1013, 2652, "Input"],
-Cell[99461, 2124, 3136, 48, 596, "Print"],
-Cell[102600, 2174, 33893, 706, 75, "Output"]
+Cell[44944, 1109, 54566, 1014, 2652, "Input"],
+Cell[99513, 2125, 3136, 48, 596, "Print"],
+Cell[102652, 2175, 33893, 706, 75, "Output"]
 }, Open  ]]
 }
 ]
