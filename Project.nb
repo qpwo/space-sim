@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    144675,       3053]
-NotebookOptionsPosition[    143536,       3016]
-NotebookOutlinePosition[    144033,       3036]
-CellTagsIndexPosition[    143990,       3033]
+NotebookDataLength[    146032,       3078]
+NotebookOptionsPosition[    144892,       3041]
+NotebookOutlinePosition[    145389,       3061]
+CellTagsIndexPosition[    145346,       3058]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1118,8 +1118,11 @@ Cell[BoxData[
      RowBox[{"pred", "=", 
       RowBox[{
        RowBox[{
-        RowBox[{"-", "spaceSize"}], "\[LessEqual]", "#", "\[LessEqual]", " ", 
-        "spaceSize"}], " ", "&"}]}], "}"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"-", "1.1"}], " ", "spaceSize"}], "\[LessEqual]", "#", 
+        "\[LessEqual]", " ", 
+        RowBox[{"1.1", " ", "spaceSize"}]}], " ", "&"}]}], "}"}], ",", 
+    "\[IndentingNewLine]", 
     RowBox[{
      RowBox[{"inSpace", "[", 
       RowBox[{"{", 
@@ -1132,7 +1135,7 @@ Cell[BoxData[
    3.637421334489126*^9}, {3.637635355040273*^9, 3.6376354635955267`*^9}, {
    3.637635581278305*^9, 3.6376355824133186`*^9}, {3.637635710651105*^9, 
    3.63763571352861*^9}, 3.637717798769085*^9, {3.6378809025169907`*^9, 
-   3.6378809054590034`*^9}}],
+   3.6378809054590034`*^9}, {3.640020949444086*^9, 3.6400209528834295`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -1204,8 +1207,9 @@ Cell[BoxData[{
        RowBox[{"ds", "=", "4"}], ",", "\[IndentingNewLine]", "rulesMenu", ",",
         "\[IndentingNewLine]", "fileMenu", ",", 
        RowBox[{"saveFilepath", "=", "\"\<save.txt\>\""}], ",", 
-       RowBox[{"loadFilepath", "=", "\"\<save.txt\>\""}]}], "}"}], ",", 
-     "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"loadFilepath", "=", "\"\<save.txt\>\""}], ",", 
+       RowBox[{"screenFilepath", "=", "\"\<screenshot.png\>\""}]}], "}"}], 
+     ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
      RowBox[{
       RowBox[{"spaceCorners", " ", ":=", " ", 
        RowBox[{"{", 
@@ -1778,7 +1782,18 @@ Cell[BoxData[{
             RowBox[{"reset", ";", 
              RowBox[{"circTree", "=", 
               RowBox[{"ToExpression", "@", 
-               RowBox[{"Import", "@", "loadFilepath"}]}]}]}]}], "]"}]}], 
+               RowBox[{"Import", "@", "loadFilepath"}]}]}]}]}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"InputField", "[", 
+           RowBox[{
+            RowBox[{"Dynamic", "@", "screenFilepath"}], ",", "String", ",", 
+            RowBox[{"FieldSize", "\[Rule]", "7"}]}], "]"}], ",", 
+          "\[IndentingNewLine]", 
+          RowBox[{"Button", "[", 
+           RowBox[{"\"\<Screenshot\>\"", ",", 
+            RowBox[{"Export", "[", 
+             RowBox[{"screenFilepath", ",", 
+              RowBox[{"Rasterize", "@", "frame"}]}], "]"}]}], "]"}]}], 
          "\[IndentingNewLine]", "}"}]}]}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{"menuChooser", ":=", 
@@ -2217,18 +2232,19 @@ Cell[BoxData[{
    3.639910789385798*^9, 3.6399107963798914`*^9}, 3.639910887782908*^9, 
    3.6399110928991156`*^9, {3.639912225402116*^9, 3.6399122262458153`*^9}, {
    3.639912299407716*^9, 3.639912299485716*^9}, {3.6399144591034794`*^9, 
-   3.639914469991415*^9}}],
+   3.639914469991415*^9}, {3.640020963605502*^9, 3.6400210759217324`*^9}, {
+   3.640021201770316*^9, 3.640021207089848*^9}}],
 
 Cell[BoxData[
  DynamicBox[ToBoxes[
    Row[{
-     Row[{$CellContext`frame$68461, 
+     Row[{$CellContext`frame$215701, 
        Column[{"GO!", $CellContext`gFlag, 
          Row[{
-          "Menu: ", $CellContext`menuChooser$68461}], \
-$CellContext`curMenu$68461}]}, Frame -> True], $CellContext`table$68461}], 
+          "Menu: ", $CellContext`menuChooser$215701}], \
+$CellContext`curMenu$215701}]}, Frame -> True], $CellContext`table$215701}], 
    StandardForm],
-  ImageSizeCache->{1150., {295., 302.}}]], "Print",
+  ImageSizeCache->{1128., {289., 297.}}]], "Print",
  CellChangeTimes->{
   3.6388802866323833`*^9, 3.6388803969975386`*^9, 3.6388804639551973`*^9, {
    3.638880571870146*^9, 3.6388805963504963`*^9}, 3.6388806369869127`*^9, 
@@ -2274,7 +2290,8 @@ $CellContext`curMenu$68461}]}, Frame -> True], $CellContext`table$68461}],
    3.6398698550378723`*^9, 3.6398763337665424`*^9, 3.6398765158655424`*^9, 
    3.639910798522526*^9, 3.6399108882715144`*^9, 3.6399110934214153`*^9, 
    3.6399122474209156`*^9, 3.6399123051912155`*^9, 3.6399136076530156`*^9, 
-   3.6399143002263317`*^9, 3.639914470728945*^9}],
+   3.6399143002263317`*^9, 3.639914470728945*^9, 3.6399226711970935`*^9, 
+   3.6400202452836027`*^9, 3.640021077424883*^9, 3.6400212085669956`*^9}],
 
 Cell[BoxData[
  DynamicModuleBox[{$CellContext`frame$$ = MouseAppearance[
@@ -2282,15 +2299,11 @@ Cell[BoxData[
     Graphics[{{}, {{{
          Opacity[0.5, 
           RGBColor[1., 0., 0.]], 
-         Disk[{110., 110.}, 10.]}, {
+         Disk[{1010., 1010.}, 10.]}, {
          RGBColor[1., 0.5, 0.5, 0.5], 
-         Arrow[{{110., 110.}, {110., 120.}}]}}}, {
-       EdgeForm[
-        Thickness[Large]], 
-       Opacity[0], 
-       Rectangle[{-1000, -1000}, {1000, 1000}]}}, {
-     ImageSize -> Large, PlotRange -> {{-100, 100}, {-100, 100}}, Background -> 
-      RGBColor[0.2, 0.2, 0.2], PlotRangeClipping -> True}], {
+         Arrow[{{1010., 1010.}, {1010., 1020.}}]}}}}, {
+     ImageSize -> Large, PlotRange -> {{-1000., 1000.}, {-1000., 1000.}}, 
+      Background -> RGBColor[0.2, 0.2, 0.2], PlotRangeClipping -> True}], {
     "MouseDown" :> 
      Switch[$CellContext`mouse$$, 
        "Arrow", $CellContext`circTree$$ = \
@@ -2524,12 +2537,17 @@ $CellContext`spaceSize - $CellContext`windowSize}])]}], "Zoom Level:",
         Dynamic[$CellContext`loadFilepath$$], String, FieldSize -> 7], 
        Button[
        "Load", $CellContext`reset$$; $CellContext`circTree$$ = ToExpression[
-           Import[$CellContext`loadFilepath$$]]]}] -> 
+           Import[$CellContext`loadFilepath$$]]], 
+       InputField[
+        Dynamic[$CellContext`screenFilepath$$], String, FieldSize -> 7], 
+       Button["Screenshot", 
+        Export[$CellContext`screenFilepath$$, 
+         Rasterize[$CellContext`frame$$]]]}] -> 
     "file"}], $CellContext`reset$$, $CellContext`spaceCorners$$ = {{-1000, \
 -1000}, {1000, 1000}}, $CellContext`ohover$$ = Association[
-  "rad" -> 10., "pos" -> {110., 110.}, "vel" -> {0., 10.}, "den" -> 15., 
+  "rad" -> 10., "pos" -> {1010., 1010.}, "vel" -> {0., 10.}, "den" -> 15., 
    "ste" -> 1., "mas" -> 62831.853071795864`, "col" -> RGBColor[1., 0., 0.], 
-   "his" -> {{110., 110.}}], $CellContext`objectCreationMenu$$ = Column[{
+   "his" -> {{1010., 1010.}}], $CellContext`objectCreationMenu$$ = Column[{
     TableForm[{{"type", 
        PopupMenu[
         Dynamic[$CellContext`otype$$], {
@@ -2611,8 +2629,14 @@ $CellContext`spaceSize - $CellContext`windowSize}])]}], "Zoom Level:",
      Dynamic[$CellContext`loadFilepath$$], String, FieldSize -> 7], 
     Button[
     "Load", $CellContext`reset$$; $CellContext`circTree$$ = ToExpression[
-        Import[$CellContext`loadFilepath$$]]]}], $CellContext`saveFilepath$$ =
-   "save.txt", $CellContext`loadFilepath$$ = "save.txt"}, 
+        Import[$CellContext`loadFilepath$$]]], 
+    InputField[
+     Dynamic[$CellContext`screenFilepath$$], String, FieldSize -> 7], 
+    Button["Screenshot", 
+     Export[$CellContext`screenFilepath$$, 
+      Rasterize[$CellContext`frame$$]]]}], $CellContext`saveFilepath$$ = 
+  "save.txt", $CellContext`loadFilepath$$ = 
+  "save.txt", $CellContext`screenFilepath$$ = "screenshot.png"}, 
   InterpretationBox[
    RowBox[{
     TagBox["ScheduledTaskObject",
@@ -3011,7 +3035,8 @@ $CellContext`windowSize, $CellContext`spaceSize - $CellContext`windowSize}]], \
    3.639869855115872*^9, 3.6398763338565426`*^9, 3.639876515895542*^9, 
    3.6399107987147284`*^9, 3.6399108883701158`*^9, 3.639911093564316*^9, 
    3.6399122475301156`*^9, 3.6399123053547153`*^9, 3.639913608188016*^9, 
-   3.6399143002563343`*^9, 3.639914470768946*^9}]
+   3.6399143002563343`*^9, 3.639914470768946*^9, 3.639922671385233*^9, 
+   3.640020245565603*^9, 3.6400210775008907`*^9, 3.640021208651004*^9}]
 }, Open  ]]
 },
 WindowSize->{1366, 686},
@@ -3047,13 +3072,13 @@ Cell[17378, 422, 20095, 480, 792, "Input"],
 Cell[37476, 904, 2972, 77, 372, "Input"],
 Cell[40451, 983, 2126, 51, 192, "Input"],
 Cell[42580, 1036, 3133, 74, 121, "Input"],
-Cell[45716, 1112, 915, 22, 52, "Input"],
-Cell[46634, 1136, 494, 12, 92, "Input"],
-Cell[47131, 1150, 994, 25, 52, "Input"],
+Cell[45716, 1112, 1031, 25, 52, "Input"],
+Cell[46750, 1139, 494, 12, 92, "Input"],
+Cell[47247, 1153, 994, 25, 52, "Input"],
 Cell[CellGroupData[{
-Cell[48150, 1179, 56137, 1040, 2812, "Input"],
-Cell[104290, 2221, 3638, 55, 607, "Print"],
-Cell[107931, 2278, 35589, 735, 75, "Output"]
+Cell[48266, 1182, 56813, 1053, 2852, "Input"],
+Cell[105082, 2237, 3740, 56, 596, "Print"],
+Cell[108825, 2295, 36051, 743, 75, "Output"]
 }, Open  ]]
 }
 ]
