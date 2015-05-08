@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     31758,        825]
-NotebookOptionsPosition[     30745,        793]
-NotebookOutlinePosition[     31091,        808]
-CellTagsIndexPosition[     31048,        805]
+NotebookDataLength[     31594,        822]
+NotebookOptionsPosition[     30581,        790]
+NotebookOutlinePosition[     30927,        805]
+CellTagsIndexPosition[     30884,        802]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -505,7 +505,7 @@ Cell[BoxData[
 Cell[BoxData[
  RowBox[{
   RowBox[{"gravitationalForce", "[", 
-   RowBox[{"qTree_", ",", "circ_", ",", "\[Theta]_"}], "]"}], " ", ":=", 
+   RowBox[{"qTree_", ",", "pos_", ",", "\[Theta]_"}], "]"}], " ", ":=", 
   "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
@@ -517,8 +517,7 @@ Cell[BoxData[
      RowBox[{"dist", "=", 
       RowBox[{
        RowBox[{"EuclideanDistance", "[", 
-        RowBox[{
-         RowBox[{"circ", "@", "\"\<pos\>\""}], ",", 
+        RowBox[{"pos", ",", 
          RowBox[{"qTree", "@", "\"\<CofM\>\""}]}], "]"}], "+", ".0001"}]}], 
      "}"}], ",", "\[IndentingNewLine]", 
     RowBox[{"If", "[", 
@@ -538,8 +537,7 @@ Cell[BoxData[
          RowBox[{"qTree", "@", "\"\<mas\>\""}], " ", 
          RowBox[{"(", 
           RowBox[{
-           RowBox[{"qTree", "@", "\"\<CofM\>\""}], "-", 
-           RowBox[{"circ", "@", "\"\<pos\>\""}]}], ")"}]}], 
+           RowBox[{"qTree", "@", "\"\<CofM\>\""}], "-", "pos"}], ")"}]}], 
         SuperscriptBox["dist", "3"]]}], ",", "\[IndentingNewLine]", 
       RowBox[{"(*", 
        RowBox[{
@@ -556,21 +554,19 @@ Cell[BoxData[
            RowBox[{"If", "[", 
             RowBox[{
              RowBox[{
-              RowBox[{"c", "@", "\"\<pos\>\""}], "\[Equal]", 
-              RowBox[{"circ", "@", "\"\<pos\>\""}]}], ",", "0", ",", 
+              RowBox[{"c", "@", "\"\<pos\>\""}], "\[Equal]", "pos"}], ",", 
+             "0", ",", 
              FractionBox[
               RowBox[{
                RowBox[{"c", "@", "\"\<mas\>\""}], " ", 
                RowBox[{"(", 
                 RowBox[{
-                 RowBox[{"c", "@", "\"\<pos\>\""}], "-", 
-                 RowBox[{"circ", "@", "\"\<pos\>\""}]}], ")"}]}], 
+                 RowBox[{"c", "@", "\"\<pos\>\""}], "-", "pos"}], ")"}]}], 
               SuperscriptBox[
                RowBox[{"EuclideanDistance", "[", 
                 RowBox[{
-                 RowBox[{"c", "@", "\"\<pos\>\""}], ",", 
-                 RowBox[{"circ", "@", "\"\<pos\>\""}]}], "]"}], "3"]]}], 
-            "]"}], ",", 
+                 RowBox[{"c", "@", "\"\<pos\>\""}], ",", "pos"}], "]"}], 
+               "3"]]}], "]"}], ",", 
            RowBox[{"{", 
             RowBox[{"c", ",", 
              RowBox[{"qTree", "@", "\"\<chlds\>\""}]}], "}"}]}], "]"}]}], ",",
@@ -578,7 +574,7 @@ Cell[BoxData[
         RowBox[{"Sum", "[", 
          RowBox[{
           RowBox[{"gravitationalForce", "[", 
-           RowBox[{"qt", ",", "circ", ",", "\[Theta]"}], "]"}], ",", 
+           RowBox[{"qt", ",", "pos", ",", "\[Theta]"}], "]"}], ",", 
           RowBox[{"{", 
            RowBox[{"qt", ",", 
             RowBox[{"qTree", "@", "\"\<chlds\>\""}]}], "}"}]}], "]"}]}], 
@@ -587,7 +583,8 @@ Cell[BoxData[
   3.6381337213136845`*^9, 3.638133773182442*^9}, {3.638133865000166*^9, 
   3.6381339582651663`*^9}, {3.638133991830166*^9, 3.638134269190675*^9}, {
   3.6381383238123245`*^9, 3.6381383779523244`*^9}, {3.638138594440374*^9, 
-  3.6381385959624343`*^9}, {3.6398756615796137`*^9, 3.6398756619405413`*^9}}],
+  3.6381385959624343`*^9}, {3.6398756615796137`*^9, 3.6398756619405413`*^9}, {
+  3.640098861557934*^9, 3.640098885863906*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -821,12 +818,12 @@ Cell[14215, 375, 2562, 63, 221, "Input"],
 Cell[16780, 440, 558, 14, 112, "Input"],
 Cell[17341, 456, 426, 11, 52, "Input"],
 Cell[17770, 469, 1341, 33, 192, "Input"],
-Cell[19114, 504, 3520, 85, 307, "Input"],
-Cell[22637, 591, 1943, 49, 171, "Input"],
-Cell[24583, 642, 549, 16, 52, "Input"],
-Cell[25135, 660, 3663, 78, 192, "Input"],
-Cell[28801, 740, 622, 15, 31, "Input"],
-Cell[29426, 757, 1315, 34, 132, "Input"]
+Cell[19114, 504, 3356, 82, 307, "Input"],
+Cell[22473, 588, 1943, 49, 171, "Input"],
+Cell[24419, 639, 549, 16, 52, "Input"],
+Cell[24971, 657, 3663, 78, 192, "Input"],
+Cell[28637, 737, 622, 15, 31, "Input"],
+Cell[29262, 754, 1315, 34, 132, "Input"]
 }
 ]
 *)
