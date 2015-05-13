@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     31594,        822]
-NotebookOptionsPosition[     30581,        790]
-NotebookOutlinePosition[     30927,        805]
-CellTagsIndexPosition[     30884,        802]
+NotebookDataLength[     31757,        826]
+NotebookOptionsPosition[     30744,        794]
+NotebookOutlinePosition[     31090,        809]
+CellTagsIndexPosition[     31047,        806]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -548,29 +548,32 @@ Cell[BoxData[
         RowBox[{"!", 
          RowBox[{"hasChildrenQ", "[", "qTree", "]"}]}], ",", 
         "\[IndentingNewLine]", 
-        RowBox[{"G", " ", 
-         RowBox[{"Sum", "[", 
-          RowBox[{
-           RowBox[{"If", "[", 
-            RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}], "+", 
+         RowBox[{"G", " ", 
+          RowBox[{"Sum", "[", 
+           RowBox[{
+            RowBox[{"If", "[", 
              RowBox[{
-              RowBox[{"c", "@", "\"\<pos\>\""}], "\[Equal]", "pos"}], ",", 
-             "0", ",", 
-             FractionBox[
               RowBox[{
-               RowBox[{"c", "@", "\"\<mas\>\""}], " ", 
-               RowBox[{"(", 
-                RowBox[{
-                 RowBox[{"c", "@", "\"\<pos\>\""}], "-", "pos"}], ")"}]}], 
-              SuperscriptBox[
-               RowBox[{"EuclideanDistance", "[", 
-                RowBox[{
-                 RowBox[{"c", "@", "\"\<pos\>\""}], ",", "pos"}], "]"}], 
-               "3"]]}], "]"}], ",", 
-           RowBox[{"{", 
-            RowBox[{"c", ",", 
-             RowBox[{"qTree", "@", "\"\<chlds\>\""}]}], "}"}]}], "]"}]}], ",",
-         "\[IndentingNewLine]", 
+               RowBox[{"c", "@", "\"\<pos\>\""}], "\[Equal]", "pos"}], ",", 
+              "0", ",", 
+              FractionBox[
+               RowBox[{
+                RowBox[{"c", "@", "\"\<mas\>\""}], " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  RowBox[{"c", "@", "\"\<pos\>\""}], "-", "pos"}], ")"}]}], 
+               SuperscriptBox[
+                RowBox[{"EuclideanDistance", "[", 
+                 RowBox[{
+                  RowBox[{"c", "@", "\"\<pos\>\""}], ",", "pos"}], "]"}], 
+                "3"]]}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"c", ",", 
+              RowBox[{"qTree", "@", "\"\<chlds\>\""}]}], "}"}]}], "]"}]}]}], 
+        ",", "\[IndentingNewLine]", 
         RowBox[{"Sum", "[", 
          RowBox[{
           RowBox[{"gravitationalForce", "[", 
@@ -584,7 +587,8 @@ Cell[BoxData[
   3.6381339582651663`*^9}, {3.638133991830166*^9, 3.638134269190675*^9}, {
   3.6381383238123245`*^9, 3.6381383779523244`*^9}, {3.638138594440374*^9, 
   3.6381385959624343`*^9}, {3.6398756615796137`*^9, 3.6398756619405413`*^9}, {
-  3.640098861557934*^9, 3.640098885863906*^9}}],
+  3.640098861557934*^9, 3.640098885863906*^9}, {3.640099406139103*^9, 
+  3.6400994078915324`*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -818,12 +822,12 @@ Cell[14215, 375, 2562, 63, 221, "Input"],
 Cell[16780, 440, 558, 14, 112, "Input"],
 Cell[17341, 456, 426, 11, 52, "Input"],
 Cell[17770, 469, 1341, 33, 192, "Input"],
-Cell[19114, 504, 3356, 82, 307, "Input"],
-Cell[22473, 588, 1943, 49, 171, "Input"],
-Cell[24419, 639, 549, 16, 52, "Input"],
-Cell[24971, 657, 3663, 78, 192, "Input"],
-Cell[28637, 737, 622, 15, 31, "Input"],
-Cell[29262, 754, 1315, 34, 132, "Input"]
+Cell[19114, 504, 3519, 86, 307, "Input"],
+Cell[22636, 592, 1943, 49, 171, "Input"],
+Cell[24582, 643, 549, 16, 52, "Input"],
+Cell[25134, 661, 3663, 78, 192, "Input"],
+Cell[28800, 741, 622, 15, 31, "Input"],
+Cell[29425, 758, 1315, 34, 132, "Input"]
 }
 ]
 *)
