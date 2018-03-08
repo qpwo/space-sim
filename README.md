@@ -16,7 +16,7 @@ git clone --depth 1 https://github.com/qpwo/space-sim/
 
 For detailed info about the project, read `report.pdf`, but here's a little taste:
 
-![][screenshot.png]
+![](screenshot.png)
 
 The physics acts as if everything is in 3d space, but happens to be coplanar.
 
